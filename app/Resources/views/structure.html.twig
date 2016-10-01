@@ -8,6 +8,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
     {% endblock %}
     
     <!-- Google Analytics -->
@@ -17,14 +18,90 @@
 
 <body>
 <div id="body-content">
-    <header></header>
-    <nav></nav>
+    <header>
+        <div id="header-content">
+            <div id="header-logo">
+                <img style="width: 150px;" src="{{ asset('img/header-logo.png') }}" alt="header-logo">
+            </div>
+            <div id="header-title">
+                Nicole CANIVENQ
+            </div>
+            <div id="header-contact">
+                <div>
+                    <p>
+                        Sophrologue, praticienne en soins énergétiques et chamaniques
+                    </p>
+                    <p>
+                        <a class="bold" href="tel:+33622437901">06 22 43 79 01</a>
+                    </p>
+                    <p>
+                        <a class="button" href="">Prendre rendez-vous</a>
+                    </p>
+                </div>
+                <div>
+                    <div class="fb-like" 
+                        data-href="https://developers.facebook.com/docs/plugins/" 
+                        data-layout="button_count" 
+                        data-action="like" 
+                        data-size="small" 
+                        data-show-faces="false" 
+                        data-share="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul id="menu-deroulant">
+            <li><a href="">Accueil</a>
+                <ul>
+                    <li><a href="">Déroulement d'un séance</a></li>
+                    <li><a href="">À qui s'adresse la sophrologie ?</a></li>
+                    <li><a href="">Bénéfices</a></li>
+                    <li><a href="">Actualités</a></li>
+                    <li><a href="">3 principes fondateurs de la sophrologie</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="">Mes valeurs</a></li>
+            
+            <li><a href="">Modules et stages</a>
+                <ul>
+                    <li><a href="">Planning et lieu de pratique</a></li>
+                    <li><a href="">Me contacter</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="">Qui suis-je ?</a>
+                <ul>
+                    <li><a href="">Mon approche</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="">Bibliographie</a></li>
+            
+            <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+    
     <div id="content">
         {% block content %}{% endblock %}
     </div>
     <footer></footer>
 </div>
 
-{% block javascripts %}{% endblock %}
+{% block javascripts %}
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.7";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    {% endblock %}
 </body>
 </html>
