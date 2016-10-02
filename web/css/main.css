@@ -23,6 +23,24 @@ a {
     white-space: nowrap;
 }
 
+.flex-center {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.flex-space-around {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
 .button {
     display: inline-block;
     padding: 10px 20px 10px 20px;
@@ -67,12 +85,6 @@ header {
 }
 
 #header-content {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-    -webkit-align-items: center;
-    align-items: center;
     width: 90%;
     height: 100%;
     margin: auto;
@@ -120,12 +132,6 @@ nav {
     height: 45px;
     background-color: #a39382;
     margin: auto;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-    -webkit-align-items: center;
-    align-items: center;   
 }
 
 #menu-deroulant, #menu-deroulant > ul {
@@ -162,6 +168,7 @@ nav {
     max-height: 0;
     left: 0;
     right: 0;
+    background-color: rgba(163, 147, 130, 0.95);
     overflow: hidden;
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
@@ -169,7 +176,6 @@ nav {
 
 #menu-deroulant li:hover ul {
     max-height: 20em;
-    background-color: rgba(163, 147, 130, 0.8);
 }
 
 #menu-deroulant li:hover ul li:last-child, #menu-deroulant li ul {
@@ -193,7 +199,8 @@ nav {
 }
 
 #menu-deroulant ul a {
-    padding: 8px 0;
+    padding: 12px 10px 12px 32px;
+    text-align: left;
 }
 
 #menu-deroulant li:hover li a {
@@ -203,4 +210,28 @@ nav {
 
 #menu-deroulant li:hover a, #menu-deroulant li li:hover a {
     color:#000;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 25px;    
+}
+
+#content-blocs {
+    width: 70%;
+    margin-right: 25px;
+}
+
+.bloc {
+    height: 500px;
+    margin-bottom: 25px;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+#aside {
+    width: 20%;
+    height: 700px;
+    background-color: rgba(255, 255, 255, 0.95);
 }

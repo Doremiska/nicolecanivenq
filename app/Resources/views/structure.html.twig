@@ -19,7 +19,7 @@
 <body>
 <div id="body-content">
     <header>
-        <div id="header-content">
+        <div id="header-content" class="flex-space-around">
             <div id="header-logo">
                 <img style="width: 150px;" src="{{ asset('img/header-logo.png') }}" alt="header-logo">
             </div>
@@ -40,11 +40,11 @@
                 </div>
                 <div>
                     <div class="fb-like" 
-                        data-href="https://developers.facebook.com/docs/plugins/" 
+                        data-href="http://www.sophrologieactive.com/qui_suis_je___048.htm" 
                         data-layout="button_count" 
                         data-action="like" 
                         data-size="small" 
-                        data-show-faces="false" 
+                        data-show-faces="true" 
                         data-share="true">
                     </div>
                 </div>
@@ -53,9 +53,10 @@
     </header>
     
     <nav>
-        <ul id="menu-deroulant">
-            <li><a href="">Accueil</a>
-                <ul>
+        <ul id="menu-deroulant" class="flex-center">
+            <li>
+                <a href="">Accueil</a>
+                <ul style="width: 350px;">
                     <li><a href="">Déroulement d'un séance</a></li>
                     <li><a href="">À qui s'adresse la sophrologie ?</a></li>
                     <li><a href="">Bénéfices</a></li>
@@ -63,30 +64,32 @@
                     <li><a href="">3 principes fondateurs de la sophrologie</a></li>
                 </ul>
             </li>
-            
             <li><a href="">Mes valeurs</a></li>
-            
-            <li><a href="">Modules et stages</a>
-                <ul>
+            <li>
+                <a href="">Modules et stages</a>
+                <ul style="width: 250px;">
                     <li><a href="">Planning et lieu de pratique</a></li>
                     <li><a href="">Me contacter</a></li>
                 </ul>
             </li>
-            
-            <li><a href="">Qui suis-je ?</a>
+            <li>
+                <a href="">Qui suis-je ?</a>
                 <ul>
                     <li><a href="">Mon approche</a></li>
                 </ul>
             </li>
-            
             <li><a href="">Bibliographie</a></li>
-            
             <li><a href="">Contact</a></li>
         </ul>
     </nav>
-    
+     
     <div id="content">
         {% block content %}{% endblock %}
+        <div id="content-blocs">
+            <div class="bloc"></div>
+            <div class="bloc"></div>
+        </div>
+        <div id="aside"></div>
     </div>
     <footer></footer>
 </div>
