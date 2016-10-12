@@ -1,0 +1,147 @@
+.slider {
+    max-width: 1292px;
+    margin: auto;
+    position: relative;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    max-width: 1292px;
+    max-height: 350px;
+}
+
+.slide figcaption {
+    position: absolute;
+    left: 90px;
+    right: 36%;
+    top: 15%;
+}
+
+.slide-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ffd18d;
+    font-family: arial;
+    font-weight: bold;
+    color: #6d4a3c;
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+
+.slide-link:hover {
+    background-color: #f7dcb5;
+    color: #623521;
+}
+
+.slide-caption {
+    padding: 15px 20px;
+    background-color: rgba(0, 0, 0, 0.50);
+    color: white;
+}
+
+.slide figcaption span {
+    display: block;
+    font-family: sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.navigation-slider {
+}
+
+.button-slider, .badges {
+    cursor: pointer;
+    color: white;
+}
+
+.button-slider {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    font-size: 1.2em;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+}
+
+.button-slider:hover {
+    background-color: rgba(204, 204, 204, 0.5); 
+}
+
+.button-slider-left {
+    position: absolute;
+    left: 30px;
+    bottom: 45%;
+}
+
+.button-slider-right {
+    position: absolute;
+    right: 30px;
+    bottom: 45%;
+}
+
+.badge-container {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.badges {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: transparent;
+    color: #fff;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+}
+
+.badges:hover, .white {
+    background-color: #fff;
+}
+
+@media all and (max-width: 1000px) {
+    .slider {
+        margin-bottom: 200px;
+    }
+    
+    .slide figcaption {
+        top: 90%;
+        right: 20px;
+        left: 20px;
+    }
+
+    .slide-link {
+        margin-top: 10px;
+    }
+
+    .slide-caption {
+        padding: 15px 20px;
+        background-color: rgb(126, 126, 126);
+        color: white;
+    }
+
+    .slide figcaption span {
+        display: block;
+        font-family: sans-serif;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+}

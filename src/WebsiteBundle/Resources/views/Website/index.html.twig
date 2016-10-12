@@ -1,0 +1,147 @@
+{% extends "::structure.html.twig" %}
+
+{% block metaTitle %}Bienvenue{% endblock %}
+{% block metaDescription %}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/slider.css') }}" type="text/css">
+{% endblock %}
+
+{% block activeSideMenuIndex %}style="background-color:#f4d0b7;color:black;"{% endblock %}
+{% block activeMenuIndex %}style="background-color:#f4d0b7;color:black;"{% endblock %}
+
+{% block main %}
+    <div class="bloc">
+        <div class="slider">
+            <div class="slide">
+                <img src="{{ asset('img/slide1.jpg') }}" alt="Slide 1">
+                <figcaption>
+                    <div class="slide-caption">
+                        <span>À qui s'adresse la Sophrologie ?</span>
+                        La sophrologie s'adresse à tous en favorisant l'autonomie et en respectant le rythme et les objectifs de chacun. 
+                    </div>
+                    <a class="slide-link" href="">En savoir plus</a>
+                </figcaption>
+            </div>
+            <div class="slide">
+                <img src="{{ asset('img/slide2.jpg') }}" alt="Slide 2">
+                <figcaption>
+                    <div class="slide-caption">
+                        <span>Déroulement d'un séance</span>
+                        Les séances peuvent se pratiquer en groupe ou en individuel selon les objectifs de la personne qui consulte. 
+                    </div>
+                    <a class="slide-link" href="">En savoir plus</a>
+                </figcaption> 
+            </div>
+            <div class="slide">
+                <img src="{{ asset('img/slide3.jpg') }}" alt="Slide 3">
+                <figcaption>
+                    <div class="slide-caption">
+                        <span>Quel sont les bénéfices ?</span>
+                        Un art de vivre, une pratique pour un plus grand bien-être.  
+                    </div>
+                    <a class="slide-link" href="">En savoir plus</a>
+                </figcaption>  
+            </div>
+            <div class="slide">
+                <img src="{{ asset('img/slide4.jpg') }}" alt="Slide 4">
+                <figcaption>
+                    <div class="slide-caption">
+                        <span>Les principes fondateurs de la sophrologie</span>
+                        La pratique de la sophrologie s'appuie sur la relaxation, la respiration et la visualisation. 
+                    </div>
+                    <a class="slide-link" href="">En savoir plus</a>
+                </figcaption>
+            </div>
+            <div class="navigation-slider">
+                <div class="button-slider button-slider-left" onclick="plusDivs(-1)">
+                    <span style="margin-bottom:3px;" class="glyphicon glyphicon-chevron-left"></span>
+                </div>
+                <div class="button-slider button-slider-right" onclick="plusDivs(1)">
+                    <span style="margin-bottom:3px;" class="glyphicon glyphicon-chevron-right"></span>
+                </div>
+                <div class="badge-container">
+                    <span class="badges" onclick="currentDiv(1)"></span>
+                    <span class="badges" onclick="currentDiv(2)"></span>
+                    <span class="badges" onclick="currentDiv(3)"></span>
+                    <span class="badges" onclick="currentDiv(4)"></span>
+                </div>  
+            </div>      
+        </div>
+    </div>
+    
+    <div class="bloc">
+        <h2>Rechercher le bonheur… oui mais encore ?</h2>
+        
+        <img style="float:left;margin-right:30px;margin-bottom:10px;border-radius:10px;" width="33%" src="{{ asset('img/woman-peace.jpg') }}" alt="Image de paix">
+        <p>
+            Nous avons tous en commun de <strong>rechercher le bonheur, la joie, l’amour, l’état de paix</strong> et de vouloir nous libérer de la souffrance, de la maladie, des problèmes relationnels... Quand nous souffrons et cherchons à guérir, c’est pour trouver de la satisfaction à exister dans ce monde. Nous avons tous le goût de pouvoir un jour nous réaliser totalement en tant qu’être incarné en accord avec qui l’on est, ici et maintenant. C’est bien légitime et c’est une belle quête.
+        </p>
+        <p>
+            Pour cela, il est essentiel d’avoir conscience que le bien-être est lié à de nombreux facteurs dont notre santé physique, mentale, émotionnelle et spirituelle entre autres. Nous avons un rôle à jouer pour maintenir l’harmonie en nous sur ces 4 plans.<br>
+            Notre bien être est également lié à la santé de la planète sur laquelle nous vivons,  à la qualité de notre relation à nous même (notre écologie intérieure), notre relation aux autres, et à notre goût de vivre et d’incarner nos valeurs. Enfin, notre bonheur est lié aussi au respect du Vivant au sens plus large du terme. Car tout est interconnecté, tout est en mouvement, tout est en évolution. Nous y compris.<br>
+            Connaissez-vous la belle citation de Voltaire ? « J'ai décidé d'être <strong>heureux</strong> parce que c'est bon pour la santé !». Cheminer vers le Bonheur, la Joie, la Paix est donc avant tout un choix, une orientation de l’esprit que l’on décide un jour.
+        </p>
+        <p>
+            Seulement parfois la vie nous bouscule par des épreuves, des deuils, la maladie et nous pouvons perdre un peu pied. La vie semble parfois nous conduire dans des impasses et peut nous confronter notre impuissance à trouver une issue. Parfois, elle nous fait vivre des situations douloureuses face auxquelles on peut se trouver sans force et sans espoir. Dans tous ces moments et bien d’autres, où l‘on se sent comme victime, on peut parfois désespérer et avoir l’impression de subir ce qui nous arrive.<br>
+            C’est souvent le moment de se faire aider, accompagner.
+        </p>
+        <img style="float:right;margin-left:30px;margin-bottom:10px;border-radius:10px;" width="33%" height="195px" src="{{ asset('img/aide-mains.jpg') }}" alt="Image d'aide">
+        <p>
+            C’est mon rôle d’accompagner les moments de rupture, de transition, de deuil, ces moments de bascule où nous devrons faire un  « saut quantique » pour être un peu plus en harmonie intérieure avec qui nous sommes vraiment et avec la Vie elle-même.
+        </p>
+        <p>
+            Bien sûr je n’ai pas de baguette magique, il s’agira de suivre un processus, un cheminement afin de prendre conscience de vos forces, vos ressources, lâcher les illusions et de les conditionnements qui ont pour conséquence un tiraillement entre le moi et notre être profond.
+        </p>
+        <p>
+            La sophrologie et les soins énergétiques sont des outils de choix. Ils vous aideront notamment à : 
+            <ul>
+                <li>apprendre à vous écouter,</li>
+                <li>connaître vos besoins, vos véritables envies,</li>
+                <li>écouter et comprendre vos émotions,</li>
+                <li>ressentir votre corps,</li>
+                <li>vous accueillir, vous accepter dans votre individualité avec vos propres limites, mais aussi toutes vos forces,</li>
+                <li>à vous respecter, vous aimer,</li>
+                <li>à mieux vous connaître,</li>
+                <li>à appréhender vos doutes et vos angoisses autrement,</li>
+                <li>à rétablir l’harmonie entre votre corps et votre esprit.</li>
+            </ul>
+            Peu à peu vous changez votre manière d’appréhender les choses, les évènements et cela vous permet de mieux les vivre.
+        </p>
+        <p class="citation">
+            « La vie c’est comme une bicyclette, il faut avancer pour ne pas perdre l’équilibre » A.EINSTEIN
+        </p>
+        
+    </div>
+   
+
+
+    <div class="bloc">   
+        <div class="bloc-links">
+            <div>
+                <img src="{{ asset('img/slide1.jpg') }}" alt="">
+                <figcaption>Séances individuelles</figcaption>
+                <p>Une personne peut souhaiter travailler sur une question plus personnelle. La séance est créée en fonction des objectifs spécifiques de la personne qui consulte, c'est du "sur mesure".</p>
+                <a class="button" href="">Découvrir</a>
+            </div>
+            <div>
+                <img src="{{ asset('img/slide1.jpg') }}" alt="">
+                <figcaption>Séances de groupe</figcaption>
+                <p>Un groupe de sophrologie comprend maximum 12 personnes. Chacun s'inscrit  pour le module de son choix, selon le thème qui l'intéresse.</p>
+                <a class="button" href="">Découvrir</a>
+            </div>
+            <div>
+                <img src="{{ asset('img/slide1.jpg') }}" alt="">
+                <figcaption>Modules et stages</figcaption>
+                <p>Des modules de formation et stages vous permettrons de développer vos potentiels, d'acquérir des outils et d'enrichir toute votre relation à la Vie.</p>
+                <a class="button" href="">Découvrir</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/slider.js') }}"></script>
+{% endblock %}

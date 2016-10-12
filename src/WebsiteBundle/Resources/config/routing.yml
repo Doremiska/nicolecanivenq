@@ -1,3 +1,27 @@
 website_index:
     path:     /
-    defaults: { _controller: WebsiteBundle:Public:index }
+    defaults: { _controller: WebsiteBundle:Website:index }
+
+website_sophrologie:
+    path:     /sophrologie
+    defaults: { _controller: WebsiteBundle:Website:sophrologie }
+
+website_soins_energetiques:
+    path:     /soins_energetiques
+    defaults: { _controller: WebsiteBundle:Website:soinsEnergetiques }
+
+website_qui_suis_je:
+    path:     /qui_suis_je
+    defaults: { _controller: WebsiteBundle:Website:quiSuisJe }
+
+website_bibliographie:
+    path:     /bibliographie
+    defaults: { _controller: WebsiteBundle:Website:bibliographie }
+
+website_tarifs:
+    path:     /tarifs
+    defaults: { _controller: WebsiteBundle:Website:tarifs }
+
+website_contact:
+    path:     /contact
+    defaults: { _controller: WebsiteBundle:Website:contact }
