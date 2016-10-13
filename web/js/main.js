@@ -1,3 +1,13 @@
+// Ancre Top
+$(function(){
+    $(window).scroll(function(){
+        if($(document).scrollTop() >= 320)
+            $('#ancre-top').fadeIn();
+        else
+            $('#ancre-top').fadeOut();
+    })
+});
+
 // Script Scroll Smooth
 $(function() {
     $('a[href*="#"]:not([href="#"])').click(function() {

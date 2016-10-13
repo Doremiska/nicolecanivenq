@@ -25,8 +25,16 @@ body {
 }
 
 h2 {
+    color: #9bbb59;
+    font-family: 'gartonmedium', serif;
+    font-size: 50px;
+    margin-top: 0;
+    text-align: center;
+}
+
+h4 {
     color: #f8a51e;
-    border-bottom: 2px solid #f8a51e;
+    border-bottom: 1px solid #f8a51e;
     font-family: 'gartonmedium', serif;
     font-size: 35px;
     margin-top: 0;
@@ -39,6 +47,10 @@ a {
 
 .bold {
     font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 .nowrap {
@@ -115,7 +127,7 @@ h1 {
 #header-contact {
     width: 25%;
     height: 100%;
-    margin-top: 10px;
+    margin-top: 0px;
     text-align: right;
     display: -webkit-flex;
     display: flex;
@@ -358,38 +370,36 @@ nav {
 }
 
 .bloc-links {
+    display: -webkit-flex;
     display: flex;
-    justify-content: space-between
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    text-align: center;
 }
 
-.bloc-links div {
+.bloc-links > div {
     width: 31%;
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
     align-items: center;
-    -webkit-justify-content: flex-start;
-    justify-content: flex-start;
+    -webkit-justify-content: ;
+    justify-content: space-between;
     -webkit-flex-direction: column;
     flex-direction: column;
     
 }
 
 .bloc-links img {
-    width: 100%;  
+    width: 100%;
+    border-radius: 10px;
 }
 
 .bloc-links figcaption {
     margin-top: 15px;
     font-weight: bold;
-    font-size: 1.3em;
-    font-family: sans-serif;
+    font-size: 1.4em;
     color: #f8a51e;
-}
-
-.bloc-links p {
-    margin: 14px;
-    text-align: center;
 }
 
 h3 {
@@ -417,7 +427,7 @@ footer {
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
-    height: 200px;
+    height: 220px;
     color: white;
     background-color: #c6875a;
     padding: 10px 20px;
@@ -442,19 +452,14 @@ footer {
 
 #footer-text {
     height: 20%;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: flex-end;
-    align-items: flex-end;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
+    text-align: center;
 }
 
 #ancre-top {
     position: fixed;
     bottom: 50px;
     right: 50px;
-    display: block;
+    display: none;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 5px;
@@ -474,4 +479,38 @@ footer {
     text-align: center;
     color: #9bbb59;
     font-size: 1.4em;
+}
+
+.center {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #DAB58A;
+}
+
+td {
+    padding: 8px;
+}
+
+th {
+    background-color: #FFE4C4;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #FFF1E0;
+}
+
+tr:nth-child(odd) {
+    background-color: #FFFBF5;
+}
+
+
+
+.link:hover {
+    color: #cc6a24;
 }

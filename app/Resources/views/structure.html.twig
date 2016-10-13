@@ -92,7 +92,7 @@
                 <h1>Sophrologue et  Praticienne en Soins Énergétiques</h1>
             </div>
             <div id="header-contact">
-                <p>sur Fabrègues et environs</p>
+                <p>Fabrègues, Montpellier et environs</p>
                 <p><a class="button" href="">Prendre rendez-vous</a></p>
                 <div class="fb-like" 
                     data-href="http://www.sophrologieactive.com/qui_suis_je___048.htm" 
@@ -113,10 +113,11 @@
             </li>
             <li>
                 <a {% block activeMenuSophrologie %}{% endblock %} href="{{ path('website_sophrologie') }}">Sophrologie</a>
-                <ul>
-                    <li><a href="">Sous-menu 1</a></li>
-                    <li><a href="">Sous-menu 2</a></li>
-                    <li><a href="">Sous-menu 3</a></li>
+                <ul style="width:250px;">
+                    <li><a href="{{ path('website_sophrologie_deroulement_seance') }}">Déroulement d'une séance</a></li>
+                    <li><a href="{{ path('website_sophrologie_groupe') }}">Les séances en groupe hebdomadaire</a></li>
+                    <li><a href="{{ path('website_sophrologie_individuel') }}">Séance en individuel</a></li>
+                    <li><a href="{{ path('website_sophrologie_ateliers_stages') }}">Ateliers et stages</a></li>
                 </ul>
             </li>
             <li>
@@ -195,15 +196,15 @@
     
     <footer>
         <div id="footer-logos">
-            <img src="{{ asset('img/logo-ecole-fran%C3%A7aise-de-sophrologie.jpg') }}" alt="Logo de l'Ecole Française de Sophrologie">
-            <img src="{{ asset('img/logo-federation-ecoles-sophro.jpg') }}" alt="Logo de la Fédération des Ecoles Professionnelles en Sophrologie">
-            <img src="{{ asset('img/logo-ges.JPG') }}" alt="Logo G.E.S.">
-            <img src="{{ asset('img/logo-membre-adh%C3%A9rent-syndicat.JPG') }}" alt="Logo du Syndicat des Sophrologues Professionnels">
-            <img src="{{ asset('img/logo-societe-francaise-de-sophrologie.jpg') }}" alt="Logo de la Société Française de Sophrologie">
+            <a href="http://www.ecole-formation-sophrologie.fr/" target="_blank"><img src="{{ asset('img/logo-ecole-fran%C3%A7aise-de-sophrologie.jpg') }}" alt="Logo de l'Ecole Française de Sophrologie"></a>
+            <a href="http://www.feps-sophrologie.fr/accueil.html" target="_blank"><img src="{{ asset('img/logo-federation-ecoles-sophro.jpg') }}" alt="Logo de la Fédération des Ecoles Professionnelles en Sophrologie"></a>
+            <a href="http://www.sophrologie-recherche.com/" target="_blank"><img src="{{ asset('img/logo-ges.JPG') }}" alt="Logo G.E.S."></a>
+            <a href="http://www.syndicat-sophrologues.fr/" target="_blank"><img src="{{ asset('img/logo-membre-adh%C3%A9rent-syndicat.JPG') }}" alt="Logo du Syndicat des Sophrologues Professionnels"></a>
+            <a href="https://www.sophrologie-francaise.com/" target="_blank"><img src="{{ asset('img/logo-societe-francaise-de-sophrologie.jpg') }}" alt="Logo de la Société Française de Sophrologie"></a>
         </div>
         <div id="footer-text">
-            <div>Nicole CANIVENQ - Création 2016</div>
-            <div>Contact webmaster : Mickaël LALANDE - <a href="mailto:lalandeartdesign@gmail.com" title="Envoyer un email à Mickaël LALANDE" target="_blank">lalandeartdesign@gmail.com</a></div>
+            <div>Tous droits réservés  © 2016</div>
+            <div>Conception : Mickaël LALANDE - <a href="mailto:lalandeartdesign@gmail.com" title="Envoyer un email à Mickaël LALANDE" target="_blank">lalandeartdesign@gmail.com</a></div>
         </div>
     </footer>
 </div>
