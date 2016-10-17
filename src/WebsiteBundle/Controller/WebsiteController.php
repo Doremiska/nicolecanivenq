@@ -16,29 +16,14 @@ class WebsiteController extends Controller
         return $this->render('WebsiteBundle:Website:sophrologie.html.twig');
     }
     
-    public function sophrologieDeroulementSeanceAction()
+    public function sophrologieIndividuelAction()
     {
-        return $this->render('WebsiteBundle:Website:sophro_deroulement_seance.html.twig');
-    }
-    
-    public function sophrologiePourQuiAction()
-    {
-        return $this->render('WebsiteBundle:Website:sophro_pour_qui.html.twig');
-    }
-    
-    public function sophrologieBeneficesAction()
-    {
-        return $this->render('WebsiteBundle:Website:sophro_benefices.html.twig');
+        return $this->render('WebsiteBundle:Website:sophro_individuel.html.twig');
     }
     
     public function sophrologieGroupeAction()
     {
         return $this->render('WebsiteBundle:Website:sophro_groupe.html.twig');
-    }
-    
-    public function sophrologieIndividuelAction()
-    {
-        return $this->render('WebsiteBundle:Website:sophro_individuel.html.twig');
     }
     
     public function sophrologieAteliersStagesAction()
@@ -59,11 +44,6 @@ class WebsiteController extends Controller
     public function bibliographieAction()
     {
         return $this->render('WebsiteBundle:Website:bibliographie.html.twig');
-    }
-    
-    public function tarifsAction()
-    {
-        return $this->render('WebsiteBundle:Website:tarifs.html.twig');
     }
     
     public function contactAction()

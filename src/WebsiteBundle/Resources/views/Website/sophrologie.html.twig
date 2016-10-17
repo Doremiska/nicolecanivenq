@@ -10,27 +10,27 @@
         <div class="bloc-links">
             <div>
                 <div>
-                    <img src="{{ asset('img/slide1.jpg') }}" alt="">
+                    <img src="{{ asset('img/slide1.jpg') }}" alt="Séances individuelles">
                     <figcaption>Séances individuelles</figcaption>
                     <p>La séance est créée en fonction des objectifs spécifiques de la personne qui consulte, c'est du "sur mesure".</p>
                 </div>
-                <a class="button" href="">Découvrir</a>
+                <a class="button" href="{{ path('website_sophrologie_individuel') }}">Découvrir</a>
             </div>
             <div>
                 <div>
-                    <img src="{{ asset('img/slide1.jpg') }}" alt="">
+                    <img src="{{ asset('img/slide1.jpg') }}" alt="Séances de groupe">
                     <figcaption>Séances de groupe</figcaption>
                     <p>Un groupe de sophrologie comprend maximum 12 personnes. Chacun s'inscrit  pour le module de son choix, selon le thème qui l'intéresse.</p>
                 </div>
-                <a class="button" href="">Découvrir</a>
+                <a class="button" href="{{ path('website_sophrologie_groupe') }}">Découvrir</a>
             </div>
             <div>
                 <div>
-                    <img src="{{ asset('img/slide1.jpg') }}" alt="">
+                    <img src="{{ asset('img/ateliers_et_stages-mini.jpg') }}" alt="Ateliers et stages">
                     <figcaption>Ateliers et stages</figcaption>
                     <p>Des modules de formation et stages vous permettrons de développer vos potentiels, d'acquérir des outils et d'enrichir toute votre relation à la Vie.</p>
                 </div>
-                <a class="button" href="">Découvrir</a>
+                <a class="button" href="{{ path('website_sophrologie_ateliers_stages') }}">Découvrir</a>
             </div>    
         </div>
     </div>
@@ -59,29 +59,12 @@
     
     <div style="margin-top:-20px;" class="bloc">
         <h4>Les techniques utilisées :</h4>
-        <ul>
+        <ul class="space-list">
             <li><span class="underline">Les techniques de relaxation statique</span> vont  mobiliser notre mental, notre imaginaire et s’effectuent le plus souvent sous forme de visualisation créatrice. Elles se pratiquent assis ou allongé.</li>
             <li><span class="underline">Les techniques de relaxation dynamique</span> mobiliseront plus notre corps. Elles forment une méthode pour développer notre conscience dans sa relation à notre corps Les 4 premiers degrés de la relaxation dynamique sont les plus utilisés. Elle se pratique debout ou / et assis.</li>
         </ul>
         <p>
             Tous les entraînements sont effectués au niveau « sophroliminal », il s’agit d’un niveau particulier de conscience « au bord du sommeil » qui, par ses qualités spécifiques, permet de renforcer l’efficacité des techniques.
         </p>
-    </div>
-    
-    <div class="bloc">
-        <p class="center">
-            Rechercher un sophrologue dans votre ville, suivre une formation ? <br>
-            Visitez les sites en lien :
-            <ul class="center" style="list-style:none;margin:0;padding:0;">
-                <li><a href="http://www.sophrologie-info.com/" target="_blank">http://www.sophrologie-info.com/</a></li>
-                <li><a href="https://www.sophrologie-francaise.com/" target="_blank">https://www.sophrologie-francaise.com/</a></li>
-                <li><a href="http://www.syndicat-sophrologues.fr/" target="_blank">http://www.syndicat-sophrologues.fr/</a></li>
-                <li><a href="http://www.sophrologie-recherche.com/" target="_blank">http://www.sophrologie-recherche.com/</a></li>
-                <li><a href="http://www.ecole-formation-sophrologie.fr/" target="_blank">http://www.ecole-formation-sophrologie.fr/</a></li>
-                <li><a href="http://ecoles.sophrologues.fr/" target="_blank">http://ecoles.sophrologues.fr/</a></li>
-                <li><a href="http://www.annuaire.sophrologues.fr/" target="_blank">http://www.annuaire.sophrologues.fr/</a></li>
-            </ul>
-        </p>
-    </div>
-    
+    </div>   
 {% endblock %}

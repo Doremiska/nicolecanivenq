@@ -5,21 +5,17 @@ website_index:
 website_sophrologie:
     path:     /sophrologie
     defaults: { _controller: WebsiteBundle:Website:sophrologie }
-    
-website_sophrologie_deroulement_seance:
-    path:     /sophrologie/deroulement_seance
-    defaults: { _controller: WebsiteBundle:Website:sophrologieDeroulementSeance }
-
-website_sophrologie_groupe:
-    path:     /sophrologie/groupe
-    defaults: { _controller: WebsiteBundle:Website:sophrologieGroupe }
 
 website_sophrologie_individuel:
-    path:     /sophrologie/individuel
+    path:     /sophrologie/seances_individuelles
     defaults: { _controller: WebsiteBundle:Website:sophrologieIndividuel }
 
+website_sophrologie_groupe:
+    path:     /sophrologie/seances_de_groupe
+    defaults: { _controller: WebsiteBundle:Website:sophrologieGroupe }
+
 website_sophrologie_ateliers_stages:
-    path:     /sophrologie/ateliers_stages
+    path:     /sophrologie/ateliers_et_stages
     defaults: { _controller: WebsiteBundle:Website:sophrologieAteliersStages }
 
 website_soins_energetiques:
@@ -33,10 +29,6 @@ website_qui_suis_je:
 website_bibliographie:
     path:     /bibliographie
     defaults: { _controller: WebsiteBundle:Website:bibliographie }
-
-website_tarifs:
-    path:     /tarifs
-    defaults: { _controller: WebsiteBundle:Website:tarifs }
 
 website_contact:
     path:     /contact

@@ -1,12 +1,59 @@
 {% extends "::structure.html.twig" %}
 
-{% block metaTitle %}Sophrologie - Déroulement d'une séance{% endblock %}
+{% block metaTitle %}Sophrologie - Ateliers et stages{% endblock %}
 {% block metaDescription %}{% endblock %}
 {% block activeSideMenuSophrologie %}style="background-color:#f4d0b7;color:black;"{% endblock %}
 {% block activeMenuSophrologie %}style="background-color:#f4d0b7;color:black;"{% endblock %}
 
 {% block main %}
     <div class="bloc">
+        <h2>Ateliers et stages</h2>
         
+        <div class="center">
+           <img style="border-radius:10px;" src="{{ asset('img/ateliers_et_stages.jpg') }}" alt="Image d'une salle pour des ateliers ou des stages">
+        </div>
+        <p>
+            J’anime des ateliers mensuels de 3 H autour de divers thèmes à l’institut Holos à St Georges d’Orques et à la Maison des Associations à St Jean de Védas.<br><br>
+            
+            <strong>Les adresses sont : </strong>
+            <ul>
+                <li>à l’institut Holos, 17 rue de la Cadelle à St Georges d’Orques (près de  Montpellier)</li>
+                <li>à la Maison des Associations de St Jean de Védas.</li>
+            </ul>
+            
+            <div id="maps">
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81576.33577012549!2d3.723056012825414!3d43.603855620993365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b6ad1c9716a205%3A0xdea1753a8d62d14a!2s17+Rue+de+la+Cadelle%2C+34680+Saint-Georges-d&#39;Orques%2C+France!5e0!3m2!1sfr!2sfr!4v1476710187056" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38145.82752562983!2d3.8045331109580274!3d43.57897301401723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3f642aea96b84e0!2sMaisons+des+Associations!5e0!3m2!1sfr!2sfr!4v1476710218649" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <br>
+            <br>
+            <strong>Tarif par atelier : </strong>50 euros. Dégressif dès le 2ème atelier réservé : 45 euros l’un.            
+        </p>
+    </div>
+    
+    <div class="bloc">
+        <h4>Le calendrier :</h4>
+        <div id="sophrologie-caldendrier" class="center">
+            <h5>A St Georges d'Orques :</h5>
+            <ul class="space-list">
+                <li>16/10/2016 : "Un temps pour soi, centrage et présence"</li>
+                <li>13/11/2016 : "Traverser la douleur et vivre l'instant présent"</li>
+                <li>04/12/2016 : "Libération émotionnelle"</li>
+            </ul>
+            
+            <h5>A St Jean de Védas : </h5> 
+            Programme  à venir.
+        </div>
+        
+    </div>
+    
+    <div class="bloc">
+        <p class="citation">
+            "Seul le travail de conscience, d'attention et de présence à soi-même permet cette transformation de notre qualité d'énergie"  Nicole Canivenq
+        </p>
     </div>
 {% endblock %}

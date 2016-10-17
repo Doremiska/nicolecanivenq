@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ asset('css/fonts.css') }}" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
     {% endblock %}
     
     <!-- Google Analytics -->
@@ -34,9 +35,9 @@
             <span id="side-menu-glyphicon-right-sophrologie" class="glyphicon glyphicon-menu-right" onclick="expandNav('sophrologie')"></span>
             <span id="side-menu-glyphicon-down-sophrologie" class="glyphicon glyphicon-menu-down" onclick="unexpandNav('sophrologie')"></span>
             <ul id="side-menu-expand-sophrologie">
-                <li><a href="">Sous-menu 1</a></li>
-                <li><a href="">Sous-menu 2</a></li>
-                <li><a href="">Sous-menu 3</a></li>
+                <li><a href="{{ path('website_sophrologie_individuel') }}">Séances individuelles</a></li>
+                <li><a href="{{ path('website_sophrologie_groupe') }}">Séances de groupe</a></li>
+                <li><a href="{{ path('website_sophrologie_ateliers_stages') }}">Ateliers et stages</a></li>
             </ul>
         </li>
         <li>
@@ -51,26 +52,9 @@
         </li>
         <li>
             <a {% block activeSideMenuQuiSuisJe %}{% endblock %} href="{{ path('website_qui_suis_je') }}">Qui suis-je ?</a>
-            <span id="side-menu-glyphicon-right-qui-suis-je" class="glyphicon glyphicon-menu-right" onclick="expandNav('qui-suis-je')"></span>
-            <span id="side-menu-glyphicon-down-qui-suis-je" class="glyphicon glyphicon-menu-down" onclick="unexpandNav('qui-suis-je')"></span>
-            <ul id="side-menu-expand-qui-suis-je">
-                <li><a href="">Sous-menu 1</a></li>
-                <li><a href="">Sous-menu 2</a></li>
-                <li><a href="">Sous-menu 3</a></li>
-            </ul>
         </li>
         <li>
             <a {% block activeSideMenuBibliographie %}{% endblock %} href="{{ path('website_bibliographie') }}">Bibliographie</a>
-        </li>
-        <li>
-            <a {% block activeSideMenuTarifs %}{% endblock %} href="{{ path('website_tarifs') }}">Tarifs</a>
-            <span id="side-menu-glyphicon-right-tarifs" class="glyphicon glyphicon-menu-right" onclick="expandNav('tarifs')"></span>
-            <span id="side-menu-glyphicon-down-tarifs" class="glyphicon glyphicon-menu-down" onclick="unexpandNav('tarifs')"></span>
-            <ul id="side-menu-expand-tarifs">
-                <li><a href="">Sous-menu 1</a></li>
-                <li><a href="">Sous-menu 2</a></li>
-                <li><a href="">Sous-menu 3</a></li>
-            </ul>
         </li>
         <li>
             <a {% block contact %}{% endblock %} href="{{ path('website_contact') }}">Contact</a>
@@ -113,10 +97,9 @@
             </li>
             <li>
                 <a {% block activeMenuSophrologie %}{% endblock %} href="{{ path('website_sophrologie') }}">Sophrologie</a>
-                <ul style="width:250px;">
-                    <li><a href="{{ path('website_sophrologie_deroulement_seance') }}">Déroulement d'une séance</a></li>
-                    <li><a href="{{ path('website_sophrologie_groupe') }}">Les séances en groupe hebdomadaire</a></li>
-                    <li><a href="{{ path('website_sophrologie_individuel') }}">Séance en individuel</a></li>
+                <ul style="width:200px;">
+                    <li><a href="{{ path('website_sophrologie_individuel') }}">Séances individuelles</a></li>
+                    <li><a href="{{ path('website_sophrologie_groupe') }}">Séances de groupe</a></li>
                     <li><a href="{{ path('website_sophrologie_ateliers_stages') }}">Ateliers et stages</a></li>
                 </ul>
             </li>
@@ -130,22 +113,9 @@
             </li>
             <li>
                 <a {% block activeMenuQuiSuisJe %}{% endblock %} href="{{ path('website_qui_suis_je') }}">Qui suis-je ?</a>
-                <ul>
-                    <li><a href="">Sous-menu 1</a></li>
-                    <li><a href="">Sous-menu 2</a></li>
-                    <li><a href="">Sous-menu 3</a></li>
-                </ul>
             </li>
             <li>
                 <a {% block activeMenuBibliographie %}{% endblock %} href="{{ path('website_bibliographie') }}">Bibliographie</a>
-            </li>
-            <li>
-                <a {% block activeMenuTarifs %}{% endblock %} href="{{ path('website_tarifs') }}">Tarifs</a>
-                <ul>
-                    <li><a href="">Sous-menu 1</a></li>
-                    <li><a href="">Sous-menu 2</a></li>
-                    <li><a href="">Sous-menu 3</a></li>
-                </ul>
             </li>
             <li>
                 <a {% block activeMenuContact %}{% endblock %} href="{{ path('website_contact') }}">Contact</a>
@@ -196,14 +166,14 @@
     
     <footer>
         <div id="footer-logos">
-            <a href="http://www.ecole-formation-sophrologie.fr/" target="_blank"><img src="{{ asset('img/logo-ecole-fran%C3%A7aise-de-sophrologie.jpg') }}" alt="Logo de l'Ecole Française de Sophrologie"></a>
-            <a href="http://www.feps-sophrologie.fr/accueil.html" target="_blank"><img src="{{ asset('img/logo-federation-ecoles-sophro.jpg') }}" alt="Logo de la Fédération des Ecoles Professionnelles en Sophrologie"></a>
-            <a href="http://www.sophrologie-recherche.com/" target="_blank"><img src="{{ asset('img/logo-ges.JPG') }}" alt="Logo G.E.S."></a>
             <a href="http://www.syndicat-sophrologues.fr/" target="_blank"><img src="{{ asset('img/logo-membre-adh%C3%A9rent-syndicat.JPG') }}" alt="Logo du Syndicat des Sophrologues Professionnels"></a>
             <a href="https://www.sophrologie-francaise.com/" target="_blank"><img src="{{ asset('img/logo-societe-francaise-de-sophrologie.jpg') }}" alt="Logo de la Société Française de Sophrologie"></a>
+            <a href="http://www.feps-sophrologie.fr/accueil.html" target="_blank"><img src="{{ asset('img/logo-federation-ecoles-sophro.jpg') }}" alt="Logo de la Fédération des Ecoles Professionnelles en Sophrologie"></a>
+            <a href="http://www.ecole-formation-sophrologie.fr/" target="_blank"><img src="{{ asset('img/logo-ecole-fran%C3%A7aise-de-sophrologie.jpg') }}" alt="Logo de l'Ecole Française de Sophrologie"></a>
+            <a href="http://www.sophrologie-recherche.com/" target="_blank"><img src="{{ asset('img/logo-ges.JPG') }}" alt="Logo G.E.S."></a>   
         </div>
         <div id="footer-text">
-            <div>Tous droits réservés  © 2016</div>
+            <div>Nicole CANIVENQ - Tous droits réservés  © 2016</div>
             <div>Conception : Mickaël LALANDE - <a href="mailto:lalandeartdesign@gmail.com" title="Envoyer un email à Mickaël LALANDE" target="_blank">lalandeartdesign@gmail.com</a></div>
         </div>
     </footer>

@@ -1,6 +1,6 @@
 {% extends "::structure.html.twig" %}
 
-{% block metaTitle %}Sophrologie - Les séances en groupe hebdomadaire{% endblock %}
+{% block metaTitle %}Sophrologie - Séances de groupe{% endblock %}
 {% block metaDescription %}{% endblock %}
 {% block activeSideMenuSophrologie %}style="background-color:#f4d0b7;color:black;"{% endblock %}
 {% block activeMenuSophrologie %}style="background-color:#f4d0b7;color:black;"{% endblock %}
@@ -16,15 +16,15 @@
             Vous pratiquez de manière hebdomadaire (hors vacances scolaires). J’anime en Maison pour Tous et dans les clubs Age d’Or à Montpellier en partenariat avec le CCAS.
         </p>
         <p>
-            <a class="link" href="#planningMTP">&#x27A5; Accès direct au planning Maison pour Tous</a><br>
-            <a class="link" href="#planningAgeOr">&#x27A5; Accès direct au planning Âge d'or</a>
+            <a href="#planningMTP">&#x27A5; Accès direct au planning Maison pour Tous</a><br>
+            <a href="#planningAgeOr">&#x27A5; Accès direct au planning Âge d'or</a>
         </p>
     </div>
     
     <div class="bloc">
         <h4>Les thèmes abordés en un an</h4>
         
-        <ul>
+        <ul id="themes">
             <li>I/ GESTION DU STRESS, SE RELAXER :
                 <ul>
                     <li>Connaître les formes du stress, différencier « bon stress » et « mauvais stress »,</li>
@@ -38,6 +38,7 @@
                     <li>Choisir où mettre son énergie entre passé, présent et futur.</li>
                 </ul>
             </li>
+            <br>
             <li>II/ GESTION DES EMOTIONS :
                 <ul>
                     <li>Qu’est-ce qu’une émotion ?</li>
@@ -48,6 +49,7 @@
                     <li>La relaxation dynamique du 2ème degré, un outil pour se voir fonctionner.</li>
                 </ul>
             </li>
+            <br>
             <li>III/ CONFIANCE EN SOI :
                 <ul>
                     <li>Définir la confiance en soi ou le manque par le vécu,</li>
@@ -60,6 +62,7 @@
                     <li>Assumer ses propres choix,</li>
                 </ul>
             </li>
+            <br>
             <li>IV/ VALEURS DE VIE :
                 <ul>
                     <li>Qu’est-ce qu’une valeur de vie ?</li>

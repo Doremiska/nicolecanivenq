@@ -24,9 +24,15 @@ body {
     transition: background-color 0.5s;
 }
 
+h1 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 40px;
+    color: #835711;
+}
+
 h2 {
     color: #9bbb59;
-    font-family: 'gartonmedium', serif;
+    font-family: 'Dancing Script', cursive;
     font-size: 50px;
     margin-top: 0;
     text-align: center;
@@ -35,9 +41,16 @@ h2 {
 h4 {
     color: #f8a51e;
     border-bottom: 1px solid #f8a51e;
-    font-family: 'gartonmedium', serif;
-    font-size: 35px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 32px;
     margin-top: 0;
+    margin-bottom: 30px;
+}
+
+h5 {
+    text-decoration: underline;
+    font-size: 1em;
+    margin-bottom: 15px;  
 }
 
 a {
@@ -90,9 +103,8 @@ header {
     display: flex;
     -webkit-justify-content: space-around;
     justify-content: space-around;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
-    padding-top: 30px;
+    -webkit-align-items: center;
+    align-items: center;
 }
 
 #header-logo {
@@ -105,29 +117,28 @@ header {
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
+    text-align: center;
     font-family: 'gartonmedium', serif;
     font-size: 35px;
     color: #447745;
 }
 
+@media all and (max-width: 1150px) {
+    #header-logo {
+        font-size: 30px;
+    }
+}
+
 #header-title {
     width: 50%;
     text-align: center;
-    padding: 10px 0 0 0;
+    padding: 8px 0 0 0;
     background-color: rgba(240, 248, 255, 0.6);
     border-radius: 100%;
 }
 
-h1 {
-    font-family: 'Indie Flower', cursive;
-    font-size: 40px;
-    color: #835711;
-}
-
 #header-contact {
     width: 25%;
-    height: 100%;
-    margin-top: 0px;
     text-align: right;
     display: -webkit-flex;
     display: flex;
@@ -137,6 +148,10 @@ h1 {
 
 #header-contact p:first-child {
     font-size: 1.2em;
+}
+
+.fb-like {
+    height: 23.4px;
 }
 
 nav {
@@ -353,13 +368,13 @@ nav {
 }
 
 #main {
-    width: 80%;
+    width: 77%;
     padding: 25px;
     background-color: #fffbe3;
 }
 
 #aside {
-    width: 20%;
+    width: 23%;
     text-align: center;
     background-color: #fff8d2;
     padding: 15px;
@@ -414,12 +429,18 @@ h3 {
 
 #aside-presentation img {
     border-radius: 100%;
-    margin: 15px 0;
+    margin: 35px 0;
 }
 
 #aside-presentation figcaption {
     font-weight: bold;
     
+}
+
+#aside-presentation figure {
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 footer {
@@ -509,8 +530,78 @@ tr:nth-child(odd) {
     background-color: #FFFBF5;
 }
 
-
-
-.link:hover {
+a:hover {
     color: #cc6a24;
+}
+
+.space-list li {
+    margin-bottom: 8px;
+}
+
+.space-list ul {
+    margin-top: 6px;
+}
+
+#themes, #sophrologie-caldendrier ul {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+}
+
+#themes li {
+    font-weight: bold;
+}
+
+#themes ul li {
+    font-weight: normal;
+    list-style: none;
+}
+
+#themes ul li:before, #sophrologie-caldendrier ul li:before {
+    content: '- ';
+}
+
+#themes ul {
+    margin: 10px;
+    padding: 0;
+}
+
+.img-float-left {
+    border-radius: 10px;
+    float: left;
+    margin-right: 20px;
+}
+
+#maps {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: auto;
+}
+
+#maps div {
+    width: 48%;
+    height: 300px;
+}
+
+#maps iframe {
+    border-radius: 20px;
+}
+
+#formations_et_parcours {
+    list-style: none;
+    padding-left: 20px;
+}
+
+#formations_et_parcours li {
+    margin-bottom: 5px;
+}
+
+#formations_et_parcours li:before {
+    content: '- ';
+}
+
+#mes_valeurs li {
+    margin-bottom: 8px;
 }
