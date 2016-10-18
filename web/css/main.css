@@ -92,7 +92,7 @@ header {
     background-image: url(../img/header.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: right
+    background-position: center;
 }
 
 #header-content {
@@ -604,4 +604,22 @@ a:hover {
 
 #mes_valeurs li {
     margin-bottom: 8px;
+}
+
+.bibliographie li {
+    margin-bottom: 15px;
+}
+
+.bibliographie_list ul li {
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.bibliographie_list ul li:before {
+    content: '- ';
+}
+
+.bibliographie img {
+    border-radius: 10px;
+    margin-top: 25px;
 }
