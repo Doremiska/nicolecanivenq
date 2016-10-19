@@ -41,6 +41,16 @@ class WebsiteController extends Controller
         return $this->render('WebsiteBundle:Website:qui_suis_je.html.twig');
     }
     
+    public function quiFormationParcoursAction()
+    {
+        return $this->render('WebsiteBundle:Website:qui_formation_parcours.html.twig');
+    }
+    
+    public function quiMesValeursAction()
+    {
+        return $this->render('WebsiteBundle:Website:qui_mes_valeurs.html.twig');
+    }
+    
     public function bibliographieAction()
     {
         return $this->render('WebsiteBundle:Website:bibliographie.html.twig');

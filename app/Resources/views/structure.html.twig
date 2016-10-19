@@ -32,26 +32,54 @@
         </li>
         <li>
             <a {% block activeSideMenuSophrologie %}{% endblock %} href="{{ path('website_sophrologie') }}">Sophrologie</a>
+            
             <span id="side-menu-glyphicon-right-sophrologie" class="glyphicon glyphicon-menu-right" onclick="expandNav('sophrologie')"></span>
             <span id="side-menu-glyphicon-down-sophrologie" class="glyphicon glyphicon-menu-down" onclick="unexpandNav('sophrologie')"></span>
+            
             <ul id="side-menu-expand-sophrologie">
-                <li><a href="{{ path('website_sophrologie_individuel') }}">Séances individuelles</a></li>
-                <li><a href="{{ path('website_sophrologie_groupe') }}">Séances de groupe</a></li>
-                <li><a href="{{ path('website_sophrologie_ateliers_stages') }}">Ateliers et stages</a></li>
+                <li>
+                    <a {% block activeSideMenuSophrologieIndividuel %}{% endblock %} href="{{ path('website_sophrologie_individuel') }}">Séances individuelles</a>
+                </li>
+                <li>
+                    <a {% block activeSideMenuSophrologieGroupe %}{% endblock %} href="{{ path('website_sophrologie_groupe') }}">Séances de groupe</a>
+                </li>
+                <li>
+                    <a {% block activeSideMenuSophrologieAteliersStages %}{% endblock %} href="{{ path('website_sophrologie_ateliers_stages') }}">Ateliers et stages</a>
+                </li>
             </ul>
         </li>
         <li>
             <a {% block activeSideMenuSoinsEnergetiques %}{% endblock %} href="{{ path('website_soins_energetiques') }}">Soins énergétiques</a>
+            
             <span id="side-menu-glyphicon-right-soins-energetiques" class="glyphicon glyphicon-menu-right" onclick="expandNav('soins-energetiques')"></span>
             <span id="side-menu-glyphicon-down-soins-energetiques" class="glyphicon glyphicon-menu-down" onclick="unexpandNav('soins-energetiques')"></span>
+            
             <ul id="side-menu-expand-soins-energetiques">
-                <li><a href="">Sous-menu 1</a></li>
-                <li><a href="">Sous-menu 2</a></li>
-                <li><a href="">Sous-menu 3</a></li>
+                <li>
+                    <a href="">Sous-menu 1</a>
+                </li>
+                <li>
+                    <a href="">Sous-menu 2</a>
+                </li>
+                <li>
+                    <a href="">Sous-menu 3</a>
+                </li>
             </ul>
         </li>
         <li>
             <a {% block activeSideMenuQuiSuisJe %}{% endblock %} href="{{ path('website_qui_suis_je') }}">Qui suis-je ?</a>
+            
+            <span id="side-menu-glyphicon-right-qui-suis-je" class="glyphicon glyphicon-menu-right" onclick="expandNav('qui-suis-je')"></span>
+            <span id="side-menu-glyphicon-down-qui-suis-je" class="glyphicon glyphicon-menu-down" onclick="unexpandNav('qui-suis-je')"></span>
+            
+            <ul id="side-menu-expand-qui-suis-je">
+                <li>
+                    <a {% block activeSideMenuQuiFormationParcours %}{% endblock %} href="{{ path('website_qui_formation_parcours') }}">Formation et parcours</a>
+                </li>
+                <li>
+                    <a {% block activeSideMenuQuiMesValeurs %}{% endblock %} href="{{ path('website_qui_mes_valeurs') }}">Mes valeurs</a>
+                </li>
+            </ul>
         </li>
         <li>
             <a {% block activeSideMenuBibliographie %}{% endblock %} href="{{ path('website_bibliographie') }}">Bibliographie</a>
@@ -97,22 +125,42 @@
             </li>
             <li>
                 <a {% block activeMenuSophrologie %}{% endblock %} href="{{ path('website_sophrologie') }}">Sophrologie</a>
-                <ul style="width:200px;">
-                    <li><a href="{{ path('website_sophrologie_individuel') }}">Séances individuelles</a></li>
-                    <li><a href="{{ path('website_sophrologie_groupe') }}">Séances de groupe</a></li>
-                    <li><a href="{{ path('website_sophrologie_ateliers_stages') }}">Ateliers et stages</a></li>
+                <ul style="width:210px;">
+                    <li>
+                        <a {% block activeMenuSophrologieIndividuel %}{% endblock %} href="{{ path('website_sophrologie_individuel') }}">Séances individuelles</a>
+                    </li>
+                    <li>
+                        <a {% block activeMenuSophrologieGroupe %}{% endblock %} href="{{ path('website_sophrologie_groupe') }}">Séances de groupe</a>
+                    </li>
+                    <li>
+                        <a {% block activeMenuSophrologieAteliersStages %}{% endblock %} href="{{ path('website_sophrologie_ateliers_stages') }}">Ateliers et stages</a>
+                    </li>
                 </ul>
             </li>
             <li>
                 <a {% block activeMenuSoinsEnergetiques %}{% endblock %} href="{{ path('website_soins_energetiques') }}">Soins énergétiques</a>
                 <ul>
-                    <li><a href="">Sous-menu 1</a></li>
-                    <li><a href="">Sous-menu 2</a></li>
-                    <li><a href="">Sous-menu 3</a></li>
+                    <li>
+                        <a href="">Sous-menu 1</a>
+                    </li>
+                    <li>
+                        <a href="">Sous-menu 2</a>
+                    </li>
+                    <li>
+                        <a href="">Sous-menu 3</a>
+                    </li>
                 </ul>
             </li>
             <li>
                 <a {% block activeMenuQuiSuisJe %}{% endblock %} href="{{ path('website_qui_suis_je') }}">Qui suis-je ?</a>
+                <ul style="width:210px;">
+                    <li>
+                        <a {% block activeMenuQuiFormationParcours %}{% endblock %} href="{{ path('website_qui_formation_parcours') }}">Formation et parcours</a>
+                    </li>
+                    <li>
+                        <a {% block activeMenuQuiMesValeurs %}{% endblock %} href="{{ path('website_qui_mes_valeurs') }}">Mes valeurs</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a {% block activeMenuBibliographie %}{% endblock %} href="{{ path('website_bibliographie') }}">Bibliographie</a>
