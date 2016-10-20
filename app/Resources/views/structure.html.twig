@@ -74,10 +74,7 @@
             
             <ul id="side-menu-expand-qui-suis-je">
                 <li>
-                    <a {% block activeSideMenuQuiFormationParcours %}{% endblock %} href="{{ path('website_qui_formation_parcours') }}">Formation et parcours</a>
-                </li>
-                <li>
-                    <a {% block activeSideMenuQuiMesValeurs %}{% endblock %} href="{{ path('website_qui_mes_valeurs') }}">Mes valeurs</a>
+                    <a {% block activeSideMenuQuiMaPratique %}{% endblock %} href="{{ path('website_qui_ma_pratique') }}">Ma pratique professionnelle</a>
                 </li>
             </ul>
         </li>
@@ -153,12 +150,9 @@
             </li>
             <li>
                 <a {% block activeMenuQuiSuisJe %}{% endblock %} href="{{ path('website_qui_suis_je') }}">Qui suis-je ?</a>
-                <ul style="width:210px;">
+                <ul style="width:250px;">
                     <li>
-                        <a {% block activeMenuQuiFormationParcours %}{% endblock %} href="{{ path('website_qui_formation_parcours') }}">Formation et parcours</a>
-                    </li>
-                    <li>
-                        <a {% block activeMenuQuiMesValeurs %}{% endblock %} href="{{ path('website_qui_mes_valeurs') }}">Mes valeurs</a>
+                        <a {% block activeMenuQuiMaPratique %}{% endblock %} href="{{ path('website_qui_ma_pratique') }}">Ma pratique professionnelle</a>
                     </li>
                 </ul>
             </li>
@@ -191,7 +185,7 @@
                 </figure>
                 <p>
                     Diplômée de l'Ecole Française de Sophrologie de Montpellier <br><br>
-                    Contact : <a href="tel:+33622437901" title="Appelez-moi">06 22 43 79 01</a>
+                    <strong>Contact : <a href="tel:+33622437901" title="Appelez-moi">06 22 43 79 01</a></strong>
                 </p>
             </div>
             

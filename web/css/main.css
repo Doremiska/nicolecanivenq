@@ -87,7 +87,7 @@ a:hover {
 
 .button:hover {
     background-color: #C0DEAA;
-    color: #314e24;
+    color: #314e24!important;
 }
 
 header {
@@ -502,7 +502,7 @@ footer {
 }
 
 #ancre-top:hover {
-    color: white;
+    color: white!important;
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -596,19 +596,6 @@ tr:nth-child(odd) {
     border-radius: 20px;
 }
 
-#formations_et_parcours {
-    list-style: none;
-    padding-left: 20px;
-}
-
-#formations_et_parcours li {
-    margin-bottom: 5px;
-}
-
-#formations_et_parcours li:before {
-    content: '- ';
-}
-
 #mes_valeurs li {
     margin-bottom: 8px;
 }
@@ -638,5 +625,9 @@ tr:nth-child(odd) {
 }
 
 .small {
+    font-size: smaller;
+}
+
+#information_entreprise {
     font-size: smaller;
 }

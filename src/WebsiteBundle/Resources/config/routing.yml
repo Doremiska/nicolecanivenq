@@ -26,13 +26,9 @@ website_qui_suis_je:
     path:     /qui_suis_je
     defaults: { _controller: WebsiteBundle:Website:quiSuisJe }
 
-website_qui_formation_parcours:
-    path:     /qui_suis_je/formation_et_parcours
-    defaults: { _controller: WebsiteBundle:Website:quiFormationParcours }
-
-website_qui_mes_valeurs:
-    path:     /qui_suis_je/mes_valeurs
-    defaults: { _controller: WebsiteBundle:Website:quiMesValeurs }
+website_qui_ma_pratique:
+    path:     /qui_suis_je/ma_pratique_profesionnelle
+    defaults: { _controller: WebsiteBundle:Website:quiMaPratique }
 
 website_bibliographie:
     path:     /bibliographie
