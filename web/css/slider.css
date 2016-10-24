@@ -2,6 +2,7 @@
     max-width: 1292px;
     margin: auto;
     position: relative;
+    width: 85%;
 }
 
 .slide {
@@ -17,7 +18,7 @@
 
 .slide figcaption {
     position: absolute;
-    left: 90px;
+    left: 80px;
     right: 36%;
     top: 15%;
 }
@@ -48,7 +49,7 @@
 .slide figcaption span {
     display: block;
     font-family: sans-serif;
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-bottom: 10px;
 }
 
@@ -71,7 +72,7 @@
     height: 50px;
     background-color: transparent;
     border-radius: 50%;
-    font-size: 1.2em;
+    font-size: 1.1em;
     -webkit-transition: background-color .3s;
     transition: background-color .3s;
 }
@@ -82,27 +83,27 @@
 
 .button-slider-left {
     position: absolute;
-    left: 30px;
+    left: 2%;
     bottom: 45%;
 }
 
 .button-slider-right {
     position: absolute;
-    right: 30px;
+    right: 2%;
     bottom: 45%;
 }
 
 .badge-container {
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     left: 0;
     right: 0;
     text-align: center;
 }
 
 .badges {
-    height: 15px;
-    width: 15px;
+    height: 14px;
+    width: 14px;
     margin: 0 2px;
     background-color: transparent;
     color: #fff;

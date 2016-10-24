@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style type="text/css">
+            h2 {
+                font-size: inherit;
+                text-decoration: underline;
+            }
+            
+            ul {
+                list-style: none;
+            }
+            
+            .smaller {
+                font-size: smaller;
+            }
+        </style>
+    </head>
+    
+    <body>
+       <p class="smaller">
+            Cet email vous a été transmi via le formulaire de contact de votre site internet : www.nicolecanivenq.fr (vous pouvez y répondre directement pour contacter l'expéditeur). 
+       </p>
+
+        <p>
+            <h2>Coordonnées du contact :</h2>
+            <ul>
+                <li>Nom : {{ lastName }}</li>
+                <li>Prénom : {{ firstName }}</li>
+                <li>Téléphone : {{ tel }}</li>
+            </ul>
+        </p>
+        <br>
+        <p>
+            <h2>Message :</h2>
+            {{ content|nl2br }}
+        </p>
+    </body>
+</html>

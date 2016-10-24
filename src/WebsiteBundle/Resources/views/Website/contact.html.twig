@@ -4,7 +4,156 @@
 {% block metaDescription %}{% endblock %}
 {% block activeSideMenuContact %}class="activeMenu"{% endblock %}
 {% block activeMenuContact %}class="activeMenu"{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/form_contact.css') }}" type="text/css">
+{% endblock %}
 
 {% block main %}
+    <div class="bloc">
+        <h2>Contact</h2>
+        
+        
+    </div>
+    
+    <div id="contact-bloc" class="bloc">
+        <div>
+            <h4>Mes coordonnées</h4>
+            
+            <iframe style="margin-bottom:25px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.2799089503787!2d3.783980415702901!3d43.55905026653145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b6b261a492ec1f%3A0xb18b41b86d107!2s37+Rue+Johann+Strauss%2C+34690+Fabr%C3%A8gues!5e0!3m2!1sfr!2sfr!4v1477323628916" width="100%" height="auto" frameborder="0" style="border:0" allowfullscreen></iframe>
+            
+            <div class="coordonnees-bloc">
+                <span class="glyphicon glyphicon-home"></span>
+                <div class="center">
+                    37 rue Johann Strauss<br>
+                    34690 Fabrègues
+                </div>
+            </div>
+            
+            <div class="coordonnees-bloc">
+                <span class="glyphicon glyphicon-phone-alt"></span>
+                <div class="center">
+                    <a href="tel:+33622437901" title="Appelez-moi" class="nowrap">06 22 43 79 01</a>
+                </div>
+            </div>
+            
+            <div class="coordonnees-bloc">
+                <span class="glyphicon glyphicon-globe"></span>
+                <div class="center">
+                    <a href="">www.nicolecanivenq.fr</a>
+                </div>
+            </div>
+            
+            <div class="coordonnees-bloc">
+                <span class="glyphicon glyphicon-envelope"></span>
+                <div class="center">
+                    <a href="mailto:nicole.canivenq@worldonline.fr">nicole.canivenq@worldonline.fr</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h4 id="formulaire_contact">Formulaire de contact</h4>
+
+            <p class="small">
+                Si vous désirez faire une demande de rendez-vous, merci de cliquer sur le lien suivant : <a href="">prendre un rendez-vous</a>.
+            </p>
+
+            {% for message in app.session.flashbag.get('notice') %}
+                <div class="alert alert-success"><strong>Message flash :</strong> {{ message }}</div>
+            {% endfor %}
+
+            <div class="form-contact">
+                {{ form_start(form, {'action': '#formulaire_contact'}) }}
+
+                {% if form_errors(form.subject) is not empty or
+                    form_errors(form.content) is not empty or
+                    form_errors(form.email) is not empty or
+                    form_errors(form.lastName) is not empty or
+                    form_errors(form.firstName) is not empty or
+                    form_errors(form.tel) is not empty 
+                %}
+                    <div class="alert alert-danger">
+                        <strong>Erreur ! </strong>Un champ du formulaire n'est pas valide.
+                    </div>
+                {% endif %}
+
+                {{ form_errors(form) }}
+                
+                <div class="form-column-2">
+                    <div class="form-group">
+                        <div class="form-label">
+                            <span class="nowrap">{{ form_label(form.firstName, "Prénom *") }}</span>
+                        </div>
+                        <div class="form-field">
+                            {{ form_widget(form.firstName, {'attr': {'class': 'form-widget'}}) }}
+                        </div>
+                        {{ form_errors(form.firstName) }}
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="form-label">
+                            <span class="nowrap">{{ form_label(form.lastName, "Nom *") }}</span>
+                        </div>
+                        <div class="form-field">
+                            {{ form_widget(form.lastName, {'attr': {'class': 'form-widget'}}) }}
+                        </div>
+                    </div>
+                    {{ form_errors(form.lastName) }}
+                </div>
+                
+                <div class="form-column-2">
+                    <div class="form-group">
+                        <div class="form-label">
+                            <span class="nowrap">{{ form_label(form.email, "E-mail *") }}</span>
+                        </div>
+                        <div class="form-field">
+                            {{ form_widget(form.email, {'attr': {'class': 'form-widget'}}) }}
+                        </div>
+                        {{ form_errors(form.email) }}
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="form-label">
+                            <span class="nowrap">{{ form_label(form.tel, "Téléphone *") }}</span>
+                        </div>
+                        <div class="form-field">
+                            {{ form_widget(form.tel, {'attr': {'class': 'form-widget'}}) }}
+                        </div>
+                        {{ form_errors(form.tel) }}
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <div class="form-label">
+                        <span class="nowrap">{{ form_label(form.subject, "Sujet *") }}</span>
+                    </div>
+                    <div class="form-field">
+                        {{ form_widget(form.subject, {'attr': {'class': 'form-widget'}}) }}
+                    </div>
+                    {{ form_errors(form.subject) }}
+                </div>
+                
+                <div class="form-group">
+                    <div class="form-label">
+                        <span class="nowrap">{{ form_label(form.content, "Votre message *") }}</span>
+                    </div>
+                    <div class="form-field">
+                        {{ form_widget(form.content, {'attr': {'class': 'form-widget'}}) }}
+                    </div>
+                    {{ form_errors(form.content) }}
+                </div>
+                
+                <p>* : champs obligatoires</p>
+
+                <div class="center">
+                    {{ form_widget(form.envoyer, {'label': 'Envoyer'}) }}
+                </div>
+
+                {{ form_rest(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>   
+    </div>
 
 {% endblock %}

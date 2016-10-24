@@ -24,6 +24,25 @@ body {
     transition: background-color 0.5s;
 }
 
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
 h1 {
     font-family: 'Indie Flower', cursive;
     font-size: 40px;
@@ -74,7 +93,7 @@ a:hover {
     white-space: nowrap;
 }
 
-.button {
+.button, form button {
     display: inline-block;
     padding: 10px 20px 10px 20px;
     background-color: white;
@@ -85,7 +104,7 @@ a:hover {
     color: #ffffff;
 }
 
-.button:hover {
+.button:hover, form button:hover {
     background-color: #C0DEAA;
     color: #314e24!important;
 }
@@ -561,16 +580,49 @@ tr:nth-child(odd) {
 
 #themes ul li {
     font-weight: normal;
-    list-style: none;
 }
 
-#themes ul li:before, #sophrologie-caldendrier ul li:before {
+#sophrologie-caldendrier ul li:before {
     content: '- ';
 }
 
 #themes ul {
     margin: 10px;
     padding: 0;
+}
+
+#list-color-rectangle-1 {
+    height: 28px;
+    width: 10px;
+    background-image: url('../img/purple.jpg');
+    margin: 0 10px 5px 0;
+}
+
+#list-color-rectangle-2 {
+    height: 28px;
+    width: 10px;
+    background-image: url('../img/yellow.jpg');
+    margin: 0 10px 5px 0;
+}
+
+#list-color-rectangle-3 {
+    height: 28px;
+    width: 10px;
+    background-image: url('../img/blue.jpg');
+    margin: 0 10px 5px 0;
+}
+
+#list-color-rectangle-4 {
+    height: 28px;
+    width: 10px;
+    background-image: url('../img/pink.jpg');
+    margin: 0 10px 5px 0;
+}
+
+#themes div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .img-float-left {
@@ -621,7 +673,7 @@ tr:nth-child(odd) {
 #qui_suis_je a {
     display: inline-block;
     text-decoration: underline;
-    margin: 10px 0 10px 0;
+    margin: 8px 0 8px 0;
 }
 
 .small {
@@ -630,4 +682,38 @@ tr:nth-child(odd) {
 
 #information_entreprise {
     font-size: smaller;
+}
+
+#contact-bloc {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    
+}
+
+#contact-bloc >div:first-child {
+    width: 35%;
+}
+
+#contact-bloc > div:last-child {
+    width: 60%;
+}
+
+
+
+
+
+.coordonnees-bloc {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.coordonnees-bloc .glyphicon {
+    margin-right: 15px;
 }
