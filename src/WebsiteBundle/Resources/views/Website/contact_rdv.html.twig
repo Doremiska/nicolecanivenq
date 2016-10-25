@@ -1,0 +1,150 @@
+{% extends "::structure.html.twig" %}
+
+{% block metaTitle %}Prendre un rendez-vous{% endblock %}
+{% block metaDescription %}{% endblock %}
+{% block activeSideMenuContact %}class="activeSousMenu"{% endblock %}
+{% block activeSideMenuContactRDV %}class="activeMenu"{% endblock %}
+{% block activeMenuContact %}class="activeSousMenu"{% endblock %}
+{% block activeMenuContactRDV %}class="activeMenu"{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}" type="text/css">
+{% endblock %}
+
+{% block main %}
+    <div class="bloc">
+        <h2 id="formulaire_rdv">Demande de rendez-vous en ligne</h2>
+
+        <p class="smaller">
+            Si vous désirez demander des renseignements ou autre, merci de vous rediriger vers le lien suivant : <a href="{{ path('website_contact') }}">formulaire de contact</a>.
+        </p>
+    </div>
+    
+    <div class="bloc">
+        {% for message in app.session.flashbag.get('notice') %}
+            <div class="alert alert-success"><strong>Message flash :</strong> {{ message }}</div>
+        {% endfor %}
+
+        <div id="form-contact-rdv">
+            {{ form_start(form, {'action': '#formulaire_contact'}) }}
+
+            {% if 
+                form_errors(form.content) is not empty or
+                form_errors(form.email) is not empty or
+                form_errors(form.lastName) is not empty or
+                form_errors(form.firstName) is not empty or
+                form_errors(form.tel) is not empty or
+                form_errors(form.appointmentFor) is not empty or
+                form_errors(form.availableDay) is not empty or
+                form_errors(form.availableTime) is not empty
+            %}
+                <div class="alert alert-danger">
+                    <strong>Erreur ! </strong>Un champ du formulaire n'est pas valide.
+                </div>
+            {% endif %}
+
+            {{ form_errors(form) }}
+
+            <div class="form-column-2">
+                <div class="form-group">
+                    <div class="form-label">
+                        <span class="nowrap">{{ form_label(form.lastName, "Nom *") }}</span>
+                    </div>
+                    <div class="form-field">
+                        {{ form_widget(form.lastName, {'attr': {'class': 'form-widget'}}) }}
+                    </div>
+                    {{ form_errors(form.lastName) }}
+                </div>
+                <div class="form-group">
+                    <div class="form-label">
+                        <span class="nowrap">{{ form_label(form.firstName, "Prénom *") }}</span>
+                    </div>
+                    <div class="form-field">
+                        {{ form_widget(form.firstName, {'attr': {'class': 'form-widget'}}) }}
+                    </div>
+                    {{ form_errors(form.firstName) }}
+                </div>
+            </div>
+
+            <div class="form-column-2">
+                <div class="form-group">
+                    <div class="form-label">
+                        <span class="nowrap">{{ form_label(form.email, "E-mail *") }}</span>
+                    </div>
+                    <div class="form-field">
+                        {{ form_widget(form.email, {'attr': {'class': 'form-widget'}}) }}
+                    </div>
+                    {{ form_errors(form.email) }}
+                </div>
+
+                <div class="form-group">
+                    <div class="form-label">
+                        <span class="nowrap">{{ form_label(form.tel, "Téléphone *") }}</span>
+                    </div>
+                    <div class="form-field">
+                        {{ form_widget(form.tel, {'attr': {'class': 'form-widget phone'}}) }}
+                    </div>
+                    {{ form_errors(form.tel) }}
+                </div>
+            </div>
+            
+            <br>
+            <div class="form-group">
+                <div class="form-label bold">
+                    <span class="nowrap">{{ form_label(form.appointmentFor, "Quelle activité souhaitez-vous pratiquer ?") }}</span>
+                </div>
+                <div class="form-field">
+                    {{ form_widget(form.appointmentFor, {'attr': {'class': 'form-widget-checkbox'}}) }}
+                </div>
+                {{ form_errors(form.appointmentFor) }}
+            </div>
+            
+            <br>
+            <div class="form-group">
+                <div class="form-label bold">
+                    <span class="nowrap">{{ form_label(form.availableDay, "Quelles sont vos disponibilités ?") }}</span>
+                </div>
+                <div class="form-field">
+                    {{ form_widget(form.availableDay, {'attr': {'class': 'form-widget-checkbox'}}) }}
+                </div>
+                {{ form_errors(form.availableDay) }}
+            </div>
+            
+            <br>
+            <div class="form-group">
+                <div class="form-label">
+                    <span class="nowrap">{{ form_label(form.availableTime, "Heures souhaitées *") }}</span>
+                </div>
+                <div class="form-field">
+                    {{ form_widget(form.availableTime, {'attr': {'class': 'form-widget'}}) }}
+                </div>
+                {{ form_errors(form.availableTime) }}
+            </div>
+
+            <br>
+            <div class="form-group">
+                <div class="form-label">
+                    <span class="nowrap">{{ form_label(form.content, "Votre message") }}</span>
+                </div>
+                <div class="form-field">
+                    {{ form_widget(form.content, {'attr': {'class': 'form-widget'}}) }}
+                </div>
+                {{ form_errors(form.content) }}
+            </div>
+
+            <p>* : champs obligatoires</p>
+
+            <div class="center">
+                {{ form_widget(form.envoyer, {'label': 'Envoyer'}) }}
+            </div>
+
+            {{ form_rest(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>   
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/jquery.inputmask.bundle.js') }}"></script>
+{% endblock %}

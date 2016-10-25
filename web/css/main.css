@@ -268,7 +268,7 @@ nav {
     padding-left: 35px;
 }
 
-#side-menu-expand-sophrologie, #side-menu-expand-soins-energetiques, #side-menu-expand-qui-suis-je {
+#side-menu-expand-sophrologie, #side-menu-expand-soins-energetiques, #side-menu-expand-qui-suis-je, #side-menu-expand-bibliographie, #side-menu-expand-contact {
     max-height: 0px;
     overflow: hidden;
     -webkit-transition: max-height 0.5s ease-in-out;
@@ -398,16 +398,18 @@ nav {
 }
 
 #main {
-    width: 77%;
-    padding: 25px;
+    width: 75%;
+    padding: 40px;
     background-color: #fffbe3;
+    box-sizing: border-box;
 }
 
 #aside {
-    width: 23%;
+    width: 25%;
     text-align: center;
     background-color: #fff8d2;
-    padding: 15px;
+    padding: 25px;
+    box-sizing: border-box; 
 }
 
 .bloc {
@@ -580,6 +582,7 @@ tr:nth-child(odd) {
 
 #themes ul li {
     font-weight: normal;
+    list-style: disc;
 }
 
 #sophrologie-caldendrier ul li:before {
@@ -631,23 +634,6 @@ tr:nth-child(odd) {
     margin-right: 20px;
 }
 
-#maps {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    margin: auto;
-}
-
-#maps div {
-    width: 48%;
-    height: 300px;
-}
-
-#maps iframe {
-    border-radius: 20px;
-}
-
 #mes_valeurs li {
     margin-bottom: 8px;
 }
@@ -688,8 +674,7 @@ tr:nth-child(odd) {
     display: -webkit-flex;
     display: flex;
     -webkit-justify-content: space-between;
-    justify-content: space-between;
-    
+    justify-content: space-between; 
 }
 
 #contact-bloc >div:first-child {
@@ -700,20 +685,89 @@ tr:nth-child(odd) {
     width: 60%;
 }
 
-
-
-
-
 .coordonnees-bloc {
     display: -webkit-flex;
     display: flex;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
+    -webkit-align-items: center;
+    align-items: center;
     -webkit-justify-content: center;
     justify-content: center;
-    margin-bottom: 25px;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    background-color: #f8eec4;
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    box-sizing: border-box;
+    padding-top: 25px;
 }
 
-.coordonnees-bloc .glyphicon {
-    margin-right: 15px;
+.coordonnees-bloc p {
+    margin: 10px auto;
+}
+
+#form-contact-rdv {
+    margin: 20px 40px;
+}
+
+#maps {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: auto;
+}
+
+#maps div {
+    width: 380px;
+    height: 250px;
+}
+
+#maps iframe {
+    border-radius: 10px;
+}
+
+#map-37rue {
+    border-radius: 10px;
+    width: 400px;
+    height: 250px;
+    display: block;
+    margin: 20px auto;
+}
+
+#qui_suis_je {
+    margin-top: 50px;
+}
+
+#mes_coordonees {
+    text-align: center;
+}
+
+#mes_coordonees iframe {
+    display: block;
+    width: 350px;
+    height: 250px;
+    margin: 60px auto!important;
+    border-radius: 10px;
+}
+
+#logo-facebook {
+    -webkit-transition: 0.8s ease-in-out;
+    transition: 0.8s ease-in-out;
+    opacity: 0.8
+}
+
+#logo-facebook:hover {
+    opacity: 1;
+}
+
+#logo-facebook img {
+    -webkit-transition: 0.8s ease-in-out;
+    transition: 0.8s ease-in-out;
+}
+
+#logo-facebook img:hover {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
 }

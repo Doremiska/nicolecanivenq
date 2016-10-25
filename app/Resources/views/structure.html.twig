@@ -80,9 +80,27 @@
         </li>
         <li>
             <a {% block activeSideMenuBibliographie %}{% endblock %} href="{{ path('website_bibliographie') }}">Bibliographie</a>
+            
+            <span id="side-menu-glyphicon-right-bibliographie" class="glyphicon glyphicon-menu-right" onclick="expandNav('bibliographie')"></span>
+            <span id="side-menu-glyphicon-down-bibliographie" class="glyphicon glyphicon-menu-down" onclick="unexpandNav('bibliographie')"></span>
+            
+            <ul id="side-menu-expand-bibliographie">
+                <li>
+                    <a {% block activeSideMenuBiblioMedias %}{% endblock %} href="{{ path('website_biblio_medias') }}">Médias</a>
+                </li>
+            </ul>
         </li>
         <li>
             <a {% block contact %}{% endblock %} href="{{ path('website_contact') }}">Contact</a>
+            
+            <span id="side-menu-glyphicon-right-contact" class="glyphicon glyphicon-menu-right" onclick="expandNav('contact')"></span>
+            <span id="side-menu-glyphicon-down-contact" class="glyphicon glyphicon-menu-down" onclick="unexpandNav('contact')"></span>
+            
+            <ul id="side-menu-expand-contact">
+                <li>
+                    <a {% block activeSideMenuContactRDV %}{% endblock %} href="{{ path('website_contact_rdv') }}">Prendre un rendez-vous</a>
+                </li>
+            </ul>
         </li>
     </ul>  
 </div>
@@ -102,7 +120,7 @@
             </div>
             <div id="header-contact">
                 <p>Fabrègues, Montpellier et environs</p>
-                <p><a class="button" href="">Prendre rendez-vous</a></p>
+                <p><a class="button" href="{{ path('website_contact_rdv') }}">Prendre un rendez-vous</a></p>
                 <div class="fb-like" 
                     data-href="http://www.sophrologieactive.com/qui_suis_je___048.htm" 
                     data-layout="button_count" 
@@ -122,6 +140,7 @@
             </li>
             <li>
                 <a {% block activeMenuSophrologie %}{% endblock %} href="{{ path('website_sophrologie') }}">Sophrologie</a>
+                
                 <ul style="width:210px;">
                     <li>
                         <a {% block activeMenuSophrologieIndividuel %}{% endblock %} href="{{ path('website_sophrologie_individuel') }}">Séances individuelles</a>
@@ -136,6 +155,7 @@
             </li>
             <li>
                 <a {% block activeMenuSoinsEnergetiques %}{% endblock %} href="{{ path('website_soins_energetiques') }}">Soins énergétiques</a>
+                
                 <ul>
                     <li>
                         <a href="">Sous-menu 1</a>
@@ -150,6 +170,7 @@
             </li>
             <li>
                 <a {% block activeMenuQuiSuisJe %}{% endblock %} href="{{ path('website_qui_suis_je') }}">Qui suis-je ?</a>
+                
                 <ul>
                     <li>
                         <a {% block activeMenuQuiMaPratique %}{% endblock %} href="{{ path('website_qui_ma_pratique') }}">Ma pratique</a>
@@ -158,9 +179,21 @@
             </li>
             <li>
                 <a {% block activeMenuBibliographie %}{% endblock %} href="{{ path('website_bibliographie') }}">Bibliographie</a>
+                
+                <ul>
+                    <li>
+                        <a {% block activeMenuBiblioMedias %}{% endblock %} href="{{ path('website_biblio_medias') }}">Médias</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a {% block activeMenuContact %}{% endblock %} href="{{ path('website_contact') }}">Contact</a>
+                
+                <ul style="width:220px;">
+                    <li>
+                        <a {% block activeMenuContactRDV %}{% endblock %} href="{{ path('website_contact_rdv') }}">Prendre un rendez-vous</a>
+                    </li>
+                </ul>
             </li>
         </ul>
         
@@ -184,7 +217,7 @@
                     <figcaption style="font-size:1.1em;">Nicole CANIVENQ</figcaption>
                 </figure>
                 <p>
-                    Diplômée de l'Ecole Française de Sophrologie de Montpellier <br><br>
+                    Diplômée de <a href="http://www.ecole-formation-sophrologie.fr/" target="_blank">l'École Française de Sophrologie de Montpellier</a><br><br>
                     <strong>Contact : <a href="tel:+33622437901" title="Appelez-moi" class="nowrap">06 22 43 79 01</a></strong>
                 </p>
             </div>

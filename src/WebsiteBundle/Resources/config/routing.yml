@@ -34,6 +34,14 @@ website_bibliographie:
     path:     /bibliographie
     defaults: { _controller: WebsiteBundle:Website:bibliographie }
 
+website_biblio_medias:
+    path:     /medias
+    defaults: { _controller: WebsiteBundle:Website:biblioMedias }
+
 website_contact:
     path:     /contact
     defaults: { _controller: WebsiteBundle:Website:contact }
+
+website_contact_rdv:
+    path:     /contact/prendre_un_rdv
+    defaults: { _controller: WebsiteBundle:Website:contactRDV }
