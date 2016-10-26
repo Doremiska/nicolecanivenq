@@ -8,6 +8,8 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/form.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/buttonLoader.css') }}" type="text/css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 {% endblock %}
 
 {% block main %}
@@ -50,7 +52,14 @@
             <h4 id="formulaire_contact">Formulaire de contact</h4>
 
             {% for message in app.session.flashbag.get('notice') %}
-                <div class="alert alert-success"><strong>Message flash :</strong> {{ message }}</div>
+                <div class="alert alert-success">
+                <div>
+                    <strong>Message flash :</strong> {{ message }}
+                </div>
+                <div>
+                    <span class="close">×</span>
+                </div>
+            </div>
             {% endfor %}
 
             <div class="form-contact">
@@ -64,7 +73,12 @@
                     form_errors(form.tel) is not empty 
                 %}
                     <div class="alert alert-danger">
-                        <strong>Erreur ! </strong>Un champ du formulaire n'est pas valide.
+                        <div>
+                            <strong>Erreur ! </strong>Un champ du formulaire n'est pas valide.
+                        </div>
+                        <div>
+                            <span class="close">×</span>
+                        </div>
                     </div>
                 {% endif %}
 
@@ -137,13 +151,13 @@
                 <p>* : champs obligatoires</p>
 
                 <div class="center">
-                    {{ form_widget(form.envoyer, {'label': 'Envoyer'}) }}
+                    {{ form_widget(form.envoyer, {'label': 'Envoyer', 'attr': {'class': 'has-spinner'}}) }}
                 </div>
 
                 {{ form_rest(form) }}
                 {{ form_end(form) }}
             </div>
-        </div>   
+        </div>
     </div>
 
 {% endblock %}
@@ -151,4 +165,5 @@
 {% block javascripts %}
     {{ parent() }}
     <script type="text/javascript" src="{{ asset('js/jquery.inputmask.bundle.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.buttonLoader.js') }}"></script>
 {% endblock %}

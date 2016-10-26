@@ -52,3 +52,8 @@ function unexpandNav(name) {
     document.getElementById("side-menu-glyphicon-right-".concat(name)).style.display = "inline-block";
     document.getElementById("side-menu-glyphicon-down-".concat(name)).style.display = "none";
 }
+
+// Boutons close
+$('.close').click(function() {
+    $(this).parent().parent().fadeOut();
+});

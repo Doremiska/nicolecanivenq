@@ -25,10 +25,16 @@ body {
 }
 
 .alert {
-    padding: 15px;
+    padding: 4px 15px;
     margin-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 4px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
 }
 
 .alert-danger {
@@ -275,7 +281,7 @@ nav {
     transition: max-height 0.5s ease-in-out;
 }
 
-#side-menu-glyphicon-down-sophrologie, #side-menu-glyphicon-down-soins-energetiques, #side-menu-glyphicon-down-qui-suis-je {
+#side-menu-glyphicon-down-sophrologie, #side-menu-glyphicon-down-soins-energetiques, #side-menu-glyphicon-down-qui-suis-je, #side-menu-glyphicon-down-bibliographie, #side-menu-glyphicon-down-contact {
     display: none;
 }
 
@@ -755,7 +761,8 @@ tr:nth-child(odd) {
 #logo-facebook {
     -webkit-transition: 0.8s ease-in-out;
     transition: 0.8s ease-in-out;
-    opacity: 0.8
+    opacity: 0.8;
+    outline: none;
 }
 
 #logo-facebook:hover {
@@ -770,4 +777,15 @@ tr:nth-child(odd) {
 #logo-facebook img:hover {
     -webkit-transform: rotateY(360deg);
     transform: rotateY(360deg);
+}
+
+.close {
+    font-size: 2em;
+    color: black;
+    opacity: 0.5;
+}
+
+.close:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
