@@ -5,97 +5,92 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/slider.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/extra.slider.css') }}" type="text/css">
 {% endblock %}
 
 {% block activeSideMenuIndex %}class="activeMenu"{% endblock %}
 {% block activeMenuIndex %}class="activeMenu"{% endblock %}
 
 {% block main %}
-    <div class="bloc">
-        <div class="slider">
-            <div class="slide">
-                <img src="{{ asset('img/slide1.jpg') }}" alt="Slide 1">
-                <figcaption>
-                    <div class="slide-caption">
-                        <span>À qui s'adresse la Sophrologie ?</span>
-                        La sophrologie s'adresse à tous en favorisant l'autonomie et en respectant le rythme et les objectifs de chacun. 
-                    </div>
-                    <a class="slide-link" href="">En savoir plus</a>
-                </figcaption>
+    <div class="bloc slider-bloc">
+        <div class="extra-slider">
+            <div class="wrapper">
+                <ul>
+                    <li>
+                        <img src="{{ asset('img/slide1.jpg') }}" alt="Slide 1">
+                        <figcaption>
+                            <div class="slide-caption">
+                                <span>C’est quoi la sophrologie ?</span>
+                                La sophrologie est une science qui étudie la conscience humaine, elle se pratique par un ensemble de techniques et de méthodes à médiation corporelle.
+                            </div>
+                            <a class="slide-link" href="{{ path('website_sophrologie') }}">En savoir plus</a>
+                        </figcaption>
+                    </li>
+                    <li>
+                        <img src="{{ asset('img/slide2.jpg') }}" alt="Slide 2">
+                        <figcaption>
+                            <div class="slide-caption">
+                                <span>Soins énergétiques</span>
+                                Texte d'exemple. 
+                            </div>
+                            <a class="slide-link" href="{{ path('website_soins_energetiques') }}">En savoir plus</a>
+                        </figcaption>
+                    </li>
+                    <li>
+                        <img src="{{ asset('img/slide3.jpg') }}" alt="Slide 3">
+                        <figcaption>
+                            <div class="slide-caption">
+                                <span>Qui suis-je ?</span>
+                                 J’ai entrepris moi-même un chemin de connaissance de soi, de guérison, de libération et de transformation intérieure.  
+                            </div>
+                            <a class="slide-link" href="{{ path('website_qui_suis_je') }}">En savoir plus</a>
+                        </figcaption>
+                    </li>
+                    <li>
+                        <img src="{{ asset('img/slide4.jpg') }}" alt="Slide 4">
+                        <figcaption>
+                            <div class="slide-caption">
+                                <span>Ma pratique</span>
+                                Mon accompagnement privilégie le transfert d'outils et de savoirs, car la liberté de chaque être réside dans la dynamisation de son propre potentiel et de ses ressources intérieures. 
+                            </div>
+                            <a class="slide-link" href="{{ path('website_qui_ma_pratique') }}">En savoir plus</a>
+                        </figcaption>
+                    </li>
+                </ul>
             </div>
-            <div class="slide">
-                <img src="{{ asset('img/slide2.jpg') }}" alt="Slide 2">
-                <figcaption>
-                    <div class="slide-caption">
-                        <span>Déroulement d'un séance</span>
-                        Les séances peuvent se pratiquer en groupe ou en individuel selon les objectifs de la personne qui consulte. 
-                    </div>
-                    <a class="slide-link" href="">En savoir plus</a>
-                </figcaption> 
+            <div class="navigation">
+                <a href="#" class="prev"><span style="margin-bottom:3px;" class="glyphicon glyphicon-chevron-left"></span></a>
+                <a href="#" class="next"><span style="margin-bottom:3px;" class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
-            <div class="slide">
-                <img src="{{ asset('img/slide3.jpg') }}" alt="Slide 3">
-                <figcaption>
-                    <div class="slide-caption">
-                        <span>Quel sont les bénéfices ?</span>
-                        Un art de vivre, une pratique pour un plus grand bien-être.  
-                    </div>
-                    <a class="slide-link" href="">En savoir plus</a>
-                </figcaption>  
-            </div>
-            <div class="slide">
-                <img src="{{ asset('img/slide4.jpg') }}" alt="Slide 4">
-                <figcaption>
-                    <div class="slide-caption">
-                        <span>Les principes fondateurs de la sophrologie</span>
-                        La pratique de la sophrologie s'appuie sur la relaxation, la respiration et la visualisation. 
-                    </div>
-                    <a class="slide-link" href="">En savoir plus</a>
-                </figcaption>
-            </div>
-            <div class="navigation-slider">
-                <div class="button-slider button-slider-left" onclick="plusDivs(-1)">
-                    <span style="margin-bottom:3px;" class="glyphicon glyphicon-chevron-left"></span>
-                </div>
-                <div class="button-slider button-slider-right" onclick="plusDivs(1)">
-                    <span style="margin-bottom:3px;" class="glyphicon glyphicon-chevron-right"></span>
-                </div>
-                <div class="badge-container">
-                    <span class="badges" onclick="currentDiv(1)"></span>
-                    <span class="badges" onclick="currentDiv(2)"></span>
-                    <span class="badges" onclick="currentDiv(3)"></span>
-                    <span class="badges" onclick="currentDiv(4)"></span>
-                </div>  
-            </div>      
+            <div class="pagination"></div>
         </div>
     </div>
     
     <div class="bloc">
-        <h4>Rechercher le bonheur… oui mais encore ?</h4>
+        <h4>Rechercher le bonheur… oui mais <span class="nowrap">encore ?</span></h4>
         
-        <img style="float:left;margin-right:30px;margin-bottom:10px;border-radius:10px;" width="33%" src="{{ asset('img/woman-peace.jpg') }}" alt="Image de paix">
+        <img class="image-float-left" src="{{ asset('img/woman-peace.jpg') }}" alt="Image de paix">
         <p>
             Nous avons tous en commun de <strong>rechercher le bonheur, la joie, l’amour, l’état de paix</strong> et de vouloir nous libérer de la souffrance, de la maladie, des problèmes relationnels... Quand nous souffrons et cherchons à guérir, c’est pour trouver de la satisfaction à exister dans ce monde. Nous avons tous le goût de pouvoir un jour nous réaliser totalement en tant qu’être incarné en accord avec qui l’on est, ici et maintenant. C’est bien légitime et c’est une belle quête.
         </p>
         <p>
             Pour cela, il est essentiel d’avoir conscience que le bien-être est lié à de nombreux facteurs dont notre santé physique, mentale, émotionnelle et spirituelle et que nous avons un rôle à jouer pour maintenir l’harmonie en nous sur ces 4 plans.<br>
             Notre bien être est également lié à la santé de la planète sur laquelle nous vivons,  à la qualité de notre relation à nous même (notre écologie intérieure), notre relation aux autres, et à notre goût de vivre et d’incarner nos valeurs. Enfin, notre bonheur est lié aussi au respect du Vivant au sens le plus large du terme. Car tout est interconnecté, tout est en mouvement, tout est en évolution. Nous y compris.<br>
-            Connaissez-vous la belle citation de Voltaire ? <strong>« J'ai décidé d'être heureux parce que c'est bon pour la santé ! »</strong>. Cheminer vers le Bonheur, la Joie, la Paix est donc avant tout un choix, une orientation de l’esprit que l’on décide un jour.
+            Connaissez-vous la belle citation de <span class="nowrap">Voltaire ?</span> <strong><span class="nowrap">« J'ai</span> décidé d'être heureux parce que c'est bon pour la <span class="nowrap">santé ! »</strong>.</span> Cheminer vers le Bonheur, la Joie, la Paix est donc avant tout un choix, une orientation de l’esprit que l’on décide un jour.
         </p>
         <p>
             Seulement parfois la vie nous bouscule par des épreuves, un deuil, la maladie et nous pouvons perdre un peu pied. La vie semble nous conduire dans des impasses et peut nous confronter à notre impuissance pour trouver une issue. Parfois, elle nous fait vivre des situations douloureuses face auxquelles on peut se trouver sans force et sans espoir. Dans tous ces moments et bien d’autres, où l‘on se sent comme victime, on peut désespérer et avoir l’impression de subir ce qui nous arrive.<br>
             C’est souvent le moment de se faire aider.
         </p>
-        <img style="float:right;margin-left:30px;margin-bottom:10px;border-radius:10px;" width="33%" height="195px" src="{{ asset('img/aide-mains.jpg') }}" alt="Image d'aide">
+        <img class="image-float-right" src="{{ asset('img/aide-mains.jpg') }}" alt="Image d'aide">
         <p>
-            C’est mon rôle d’accompagner les moments de rupture, de transition, de deuil, ces moments de bascule où nous devrons faire un  « saut quantique » pour retrouver peu à peu notre harmonie intérieure et renouer avec la Vie elle-même.
+            C’est mon rôle d’accompagner les moments de rupture, de transition, de deuil, ces moments de bascule où nous devrons faire un  <span class="nowrap">« saut</span> <span class="nowrap">quantique »</span> pour retrouver peu à peu notre harmonie intérieure et renouer avec la Vie elle-même.
         </p>
         <p>
             Bien sûr je n’ai pas de baguette magique, il s’agira de suivre un processus, un cheminement afin de prendre conscience de vos forces, vos ressources, lâcher les illusions et de les conditionnements qui ont pour conséquence un tiraillement entre le moi et notre être profond.
         </p>
         <p>
-            La sophrologie et les soins énergétiques sont des outils de choix. Ils vous aideront notamment à : 
+            La sophrologie et les soins énergétiques sont des outils de choix. Ils vous aideront notamment <span class="nowrap">à :</span> 
             <ul>
                 <li>apprendre à vous écouter,</li>
                 <li>connaître vos besoins, vos véritables envies,</li>
@@ -110,7 +105,7 @@
             Peu à peu vous changez votre manière d’appréhender les choses, les évènements et cela vous permet de mieux les vivre.
         </p>
         <p class="citation">
-            « La vie c’est comme une bicyclette, il faut avancer pour ne pas perdre <span class="nowrap">l’équilibre »</span> <span class="nowrap">A. Einstein</span>
+            <span class="nowrap">« La</span> vie c’est comme une bicyclette, il faut avancer pour ne pas perdre <span class="nowrap">l’équilibre »</span> <span class="nowrap">A. Einstein</span>
         </p>
     </div>
 {% endblock %}
@@ -118,4 +113,13 @@
 {% block javascripts %}
     {{ parent() }}
     <script type="text/javascript" src="{{ asset('js/slider.js') }}"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/utils/Draggable.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/extra.slider.js') }}"></script>
+    <script>
+    jQuery(document).ready(function($) {
+        $(".extra-slider").extraSlider();
+    });
+    </script>
 {% endblock %}

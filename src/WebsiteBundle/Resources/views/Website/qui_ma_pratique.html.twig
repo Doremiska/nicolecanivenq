@@ -3,35 +3,20 @@
 {% block metaTitle %}Mes valeurs ?{% endblock %}
 {% block metaDescription %}{% endblock %}
 {% block activeSideMenuQuiSuisJe %}class="activeSousMenu"{% endblock %}
-{% block activeSideMenuQuiMesValeurs %}class="activeMenu"{% endblock %}
+{% block activeSideMenuQuiMaPratique %}class="activeMenu"{% endblock %}
 {% block activeMenuQuiSuisJe %}class="activeSousMenu"{% endblock %}
-{% block activeMenuQuiMesValeurs %}class="activeMenu"{% endblock %}
+{% block activeMenuQuiMaPratique %}class="activeMenu"{% endblock %}
 
 {% block main %}
     <div class="bloc">
         <h2>Ma pratique professionnelle</h2>
         
-        <h4>Mes valeurs</h4>
-        <p class="center">
-            <strong>Elles sont le fondement de mon engagement dans mon travail.</strong>
-            <img style="border-radius:10px;margin:30px;" src="{{ asset('img/mes_valeurs_pierres.jpg') }}" alt="Image de pierres.">
-        </p>
-        <ul id="mes_valeurs">
-            <li><strong>Respect de la personne :</strong> chaque être humain est unique et arrive avec son histoire de vie. Chacun est respecté dans son unicité.</li>
-            <li><strong>Confidentialité des échanges :</strong> ce qui se vit dans un groupe ou une séance individuelle reste dans ce cercle et n'en sort pas.</li>
-            <li><strong>Ecoute et dialogue :</strong> un des principes de fonctionnement est le respect de la parole de chacun et une écoute active, un dialogue constructif.</li>
-            <li><strong>Accueil des différences et bienveillance :</strong> quelque soit notre couleur, nos croyances, notre vie, nous avons tous des richesses à développer et à partager, c'est pourquoi nous accueillons les différences avec curiosité et bienveillance, plutôt qu'indifférence ou jugement.</li>
-            <li><strong>Non jugement et ouverture d'esprit :</strong> chacun est libre de ses pensées et de ses ressentis. Ils lui appartiennent. Le non jugement est un gage d'ouverture.</li>
-            <li><strong>Respect du cadre de travail</strong> de la sophrologie telle que fondée par A. CAYCEDO (pratiques et théorie).</li>
-        </ul>  
+        <div class="center">
+            <img class="image-top" style="border-radius:10px;margin-top:15px;margin-bottom:15px;" src="{{ asset('img/mon_approche_riviere.jpg') }}" alt="Image d'une rivère au coucher de soleil.">
+        </div>
     </div>
-    
     <div class="bloc">
         <h4>Mon approche</h4>
-        
-        <div class="center">
-            <img style="border-radius:10px;margin:15px;" src="{{ asset('img/mon_approche_riviere.jpg') }}" alt="Image d'une rivère au coucher de soleil.">
-        </div>
         
         <p>
             La pratique de la sophrologie vise l'autonomisation de la personne et à son bien-être intérieur. Chacun peut s'approprier cette méthode et acquérir ainsi de nouveaux réflexes grâce aux techniques enseignées.
@@ -40,10 +25,28 @@
             Mon accompagnement privilégie le transfert d'outils et de savoirs, car la liberté de chaque être réside dans la dynamisation de son propre potentiel et de ses ressources intérieures.<br>
             En chacun de nous sommeillent des trésors inexploités et des capacités pour conduire sa vie à sa manière. Nous ignorons souvent ces potentiels car nous avons appris à chercher en dehors de nous l'harmonie et des réponses "toutes faites" à l'extérieur. Or l'équilibre intérieur se manifeste aussi à l'extérieur. L'unité entre ce que nous pensons, disons, faisons est fondamentale pour vivre agréablement. Cet équilibre vécu nous donne force, ancrage et stabilité.<br>
             Je me propose de vous accompagner sur ce chemin d'exploration de votre monde intérieur et de vous offrir des clés. Mon expérience et mon savoir faire vous permettront de trouver vos propres réponses, de faire vos choix et de découvrir vos ressources uniques et singulières car chaque être humain est différent.
+        </p> 
+    </div>
+    
+    <div class="bloc">
+        <h4>Mes valeurs</h4>
+        
+        <p class="center">
+            <strong>Elles sont le fondement de mon engagement dans mon travail.</strong>
+            <img class="image-top" style="display:block;border-radius:10px;margin-top:30px;margin-bottom:30px;margin-right:auto;margin-left:auto;" src="{{ asset('img/mes_valeurs_pierres.jpg') }}" alt="Image de pierres.">
         </p>
+        
+        <ul id="mes_valeurs">
+            <li><strong>Respect de la <span class="nowrap">personne :</span></strong> chaque être humain est unique et arrive avec son histoire de vie. Chacun est respecté dans son unicité.</li>
+            <li><strong>Confidentialité des échanges :</strong> ce qui se vit dans un groupe ou une séance individuelle reste dans ce cercle et n'en sort pas.</li>
+            <li><strong>Ecoute et <span class="nowrap">dialogue :</span></strong> un des principes de fonctionnement est le respect de la parole de chacun et une écoute active, un dialogue constructif.</li>
+            <li><strong>Accueil des différences et <span class="nowrap">bienveillance :</span></strong> quelque soit notre couleur, nos croyances, notre vie, nous avons tous des richesses à développer et à partager, c'est pourquoi nous accueillons les différences avec curiosité et bienveillance, plutôt qu'indifférence ou jugement.</li>
+            <li><strong>Non jugement et ouverture <span class="nowrap">d'esprit :</span></strong> chacun est libre de ses pensées et de ses ressentis. Ils lui appartiennent. Le non jugement est un gage d'ouverture.</li>
+        </ul> 
+        
         <br>
         <p class="citation">
-            "L'essentiel est invisible pour les yeux". Antoine de ST EXUPERY
+            <span class="nowrap">« L'essentiel</span> est invisible pour les <span class="nowrap">yeux. »</span> Antoine de <span class="nowrap">ST EXUPERY</span>
         </p>
     </div>
     

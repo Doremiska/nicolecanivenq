@@ -1,0 +1,244 @@
+.extra-slider {
+    max-width: 700px;
+    margin: auto;
+}
+
+.extra-slider img {
+    max-width: 700px;
+}
+
+.extra-slider,
+.extra-slider .wrapper {
+	position: relative;
+}
+.extra-slider .wrapper {
+	overflow: hidden;
+}
+.extra-slider ul {
+	display: block;
+	list-style: none;
+	position: relative;
+    margin: 0;
+    padding: 0;
+}
+.extra-slider li {
+	display: block;
+	list-style: none;
+	position: absolute;
+	top: 0; 
+    left: 0;
+}
+.extra-slider li.extra-slider-first {
+    position: relative;
+}
+
+.extra-slider .navigation a {
+    position: absolute;
+    top: 43%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.1em;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    z-index: 50;
+    outline: none;
+}
+
+.extra-slider .navigation a:hover {
+    background-color: rgba(204, 204, 204, 0.5);
+    color: white!important;
+}
+
+.extra-slider .navigation .next {
+    right: 15px;
+}
+
+.extra-slider .navigation .prev {
+    left: 15px;
+}
+
+.extra-slider .pagination {
+    margin: 0 0 0 0;
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    text-align: center;
+    z-index: 50;
+    width: auto;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.extra-slider .pagination a.extra-slider-link-active {
+    background-color: white;
+}
+
+.extra-slider .pagination a {
+    height: 14px;
+    width: 14px;
+    margin: 0 4px;
+    background-color: transparent;
+    color: #fff;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+}
+
+.extra-slider .pagination a:hover {
+    background-color: white;
+}
+
+.extra-slider figcaption {
+    position: absolute;
+    left: 80px;
+    right: 80px;
+    top: 40px;
+}
+
+.slide-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ffd18d;
+    font-family: arial;
+    font-weight: bold;
+    color: #6d4a3c;
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+
+.slide-link:hover {
+    background-color: #f7dcb5;
+    color: #623521;
+}
+
+.slide-caption {
+    padding: 15px 20px;
+    background-color: rgba(0, 0, 0, 0.50);
+    color: white;
+}
+
+.extra-slider figcaption span {
+    display: block;
+    font-family: sans-serif;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+@media all and (max-width: 1200px) {
+    .extra-slider {
+        width: 100%;
+        margin: auto;
+    }
+
+    .extra-slider img {
+        width: 100%;
+    }
+    
+    .extra-slider .navigation a {
+        top: 40%;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .extra-slider .wrapper {
+        overflow: visible;
+    }
+    
+    .extra-slider figcaption {
+        left: 0;
+        right: 0;
+        top: 96%;
+        background-color: #fffbe3;
+        height: 200px;
+        text-align: center;
+    }
+    
+    .slide-caption {
+        background-color: transparent;
+        color: inherit;
+        padding: 15px 20px;
+    }
+    
+    .extra-slider {
+        margin-bottom: 200px;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .extra-slider figcaption {
+        height: 220px;
+    }
+    
+    .extra-slider {
+        margin-bottom: 220px;
+    }
+    
+    .extra-slider .navigation a {
+        top: 35%;
+    }
+}
+
+@media all and (max-width: 650px) {
+    .slider-bloc {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media all and (max-width: 550px) {
+    .extra-slider figcaption {
+        height: 240px;
+    }
+    
+    .extra-slider {
+        margin-bottom: 240px;
+    }
+    
+    .extra-slider .navigation .next {
+        right: 5px;
+    }
+
+    .extra-slider .navigation .prev {
+        left: 5px;
+    }
+    
+    .extra-slider .pagination {
+        bottom: 5px;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .extra-slider figcaption {
+        height: 280px;
+    }
+    
+    .extra-slider {
+        margin-bottom: 280px;
+    }
+    
+    .extra-slider .pagination {
+        bottom: 0;
+    }
+}
+
+@media all and (max-width: 350px) {
+    .extra-slider figcaption {
+        height: 300px;
+    }
+    
+    .extra-slider {
+        margin-bottom: 300px;
+    }
+}

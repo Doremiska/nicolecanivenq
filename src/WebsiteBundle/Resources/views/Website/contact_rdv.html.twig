@@ -18,7 +18,7 @@
         <h2 id="formulaire_rdv">Demande de rendez-vous en ligne</h2>
 
         <p class="smaller">
-            Si vous désirez demander des renseignements ou autre, merci de vous rediriger vers le lien suivant : <a href="{{ path('website_contact') }}">formulaire de contact</a>.
+            Si vous désirez demander des renseignements, merci de vous rediriger vers le lien suivant : <a href="{{ path('website_contact') }}">formulaire de contact</a>.
         </p>
     </div>
     
@@ -105,7 +105,7 @@
             <br>
             <div class="form-group">
                 <div class="form-label bold">
-                    <span class="nowrap">{{ form_label(form.appointmentFor, "Quelle activité souhaitez-vous pratiquer ?") }}</span>
+                    <span class="nowrap">{{ form_label(form.appointmentFor, "Rendez-vous pour une séance de :") }}</span>
                 </div>
                 <div class="form-field">
                     {{ form_widget(form.appointmentFor, {'attr': {'class': 'form-widget-checkbox'}}) }}

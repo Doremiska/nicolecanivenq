@@ -1,3 +1,7 @@
+* {
+    outline: none;
+}
+
 body {
     font-family: 'Quattrocento', serif;
     margin: 0;
@@ -11,7 +15,7 @@ body {
 #body-content {
     -webkit-transition: margin 0.5s ease-in-out;
     transition: margin 0.5s ease-in-out;
-    background-color: white;
+    background-color: #fffbe3;
 }
 
 #cover {
@@ -78,9 +82,14 @@ h5 {
     margin-bottom: 15px;  
 }
 
+.justify {
+    text-align: justify;
+}
+
 a {
     text-decoration: none;
-    color: inherit;
+    color: #e08810;
+    font-weight: bold;
 }
 
 a:hover {
@@ -108,6 +117,7 @@ a:hover {
     transition: background-color 0.15s ease-in-out;
     background-color: #94bc77;
     color: #ffffff;
+    font-weight: normal;
 }
 
 .button:hover, form button:hover {
@@ -124,6 +134,10 @@ header {
     background-position: center;
 }
 
+#header-content-small-screen {
+    display: none;
+}
+
 #header-content {
     width: 90%;
     height: 100%;
@@ -136,7 +150,7 @@ header {
     align-items: center;
 }
 
-#header-logo {
+#header-logo, #header-logo-small-screen {
     width: 25%;
     display: -webkit-flex;
     display: flex;
@@ -152,12 +166,6 @@ header {
     color: #447745;
 }
 
-@media all and (max-width: 1150px) {
-    #header-logo {
-        font-size: 30px;
-    }
-}
-
 #header-title {
     width: 50%;
     text-align: center;
@@ -166,7 +174,7 @@ header {
     border-radius: 100%;
 }
 
-#header-contact {
+#header-contact, #header-contact-small-screen {
     width: 25%;
     text-align: right;
     display: -webkit-flex;
@@ -181,6 +189,151 @@ header {
 
 .fb-like {
     height: 23.4px;
+}
+
+@media all and (max-width: 1150px) {
+    header {
+        font-size: 90%;
+    }
+
+    #header-content {
+        width: 95%;
+        height: 100%;
+    }
+
+    #header-logo {
+        font-size: 26px;
+    }
+    
+    #header-logo img {
+        width: 130px!important;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    #header-logo {
+        display: none;
+    }
+    
+    #header-contact {
+        display: none;
+    }
+    
+    #header-content {
+        width: 80%;
+    }
+    
+    #header-title {
+        width: 100%;
+        padding: 20px 10px 0 10px;
+    }
+    
+    h1 {
+        font-size: 40px;
+    }
+    
+    #content {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+    
+    #main, #aside {
+        width: 100%!important;
+    }
+    
+    #header-content-small-screen {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+        margin: auto;
+        margin-top: 40px;
+        width: 85%;
+    }
+    
+    #header-logo-small-screen {
+        width: 50%;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+    }
+    
+    #header-logo-small-screen div {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    
+    #header-logo-small-screen img {
+        width: 130px!important;
+    }
+
+    #header-contact-small-screen {
+        width: 50%;
+    }
+    
+    #header-contact-small-screen p:first-child {
+        margin-top: 0;
+    }
+}
+
+@media all and (max-width: 700px) {
+    #header-content-small-screen {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+    
+    #header-logo-small-screen {
+        width: 100%;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    
+    #header-logo-small-screen div {
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+    
+    #header-contact-small-screen {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    #header-contact-small-screen p:first-child {
+        margin-bottom: 0;
+    }
+}
+
+@media all and (max-width: 550px) {
+    #header-content {
+        width: 90%;
+    }
+    
+    #header-title {
+        width: 100%;
+        padding: 20px 20px 20px 20px;
+    }
+    
+    h1 {
+        font-size: 30px;
+    }
+}
+
+@media all and (max-width: 350px) {
+    #header-logo-small-screen div {
+        font-size: 30px;
+    } 
 }
 
 .activeMenu {
@@ -234,6 +387,8 @@ nav {
 #side-menu ul a {
     display: block;
     padding: 14px 20px;
+    color: white;
+    font-weight: normal;
 }
 
 #side-menu ul span {
@@ -274,14 +429,14 @@ nav {
     padding-left: 35px;
 }
 
-#side-menu-expand-sophrologie, #side-menu-expand-soins-energetiques, #side-menu-expand-qui-suis-je, #side-menu-expand-bibliographie, #side-menu-expand-contact {
+#side-menu-expand-sophrologie, #side-menu-expand-soins-energetiques, #side-menu-expand-qui-suis-je, #side-menu-expand-bibliographie {
     max-height: 0px;
     overflow: hidden;
     -webkit-transition: max-height 0.5s ease-in-out;
     transition: max-height 0.5s ease-in-out;
 }
 
-#side-menu-glyphicon-down-sophrologie, #side-menu-glyphicon-down-soins-energetiques, #side-menu-glyphicon-down-qui-suis-je, #side-menu-glyphicon-down-bibliographie, #side-menu-glyphicon-down-contact {
+#side-menu-glyphicon-down-sophrologie, #side-menu-glyphicon-down-soins-energetiques, #side-menu-glyphicon-down-qui-suis-je, #side-menu-glyphicon-down-bibliographie {
     display: none;
 }
 
@@ -300,17 +455,20 @@ nav {
     font-size: 1.4em;
 }
 
-@media all and (max-width: 900px) {
+@media all and (max-width: 1000px) {
     #menu-deroulant {
         display: none;
     }
     
     #side-menu-button {
+        display: -webkit-flex;
         display: flex;
-        width: 150px;
+        width: 120px;
         height: 100%;
+        -webkit-align-items: center;
         align-items: center;
-        padding-left: 40px;
+        padding-left: 20px;
+        margin-left: 20px;
         color: white;
         font-family: arial;
         font-size: 22px;
@@ -386,6 +544,7 @@ nav {
     color: #fff;
     font-family: arial;
     height: 100%;
+    font-weight: normal;
 }
 
 #menu-deroulant ul a {
@@ -401,6 +560,8 @@ nav {
     display: -webkit-flex;
     display: flex;
     width: 100%;
+    max-width: 1900px;
+    margin: auto;
 }
 
 #main {
@@ -431,7 +592,7 @@ nav {
 }
 
 .bloc-links > div {
-    width: 31%;
+    width: 30%;
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
@@ -439,12 +600,12 @@ nav {
     -webkit-justify-content: ;
     justify-content: space-between;
     -webkit-flex-direction: column;
-    flex-direction: column;
-    
+    flex-direction: column;  
 }
 
 .bloc-links img {
-    width: 100%;
+    width: 250px;
+    height: 200px;
     border-radius: 10px;
 }
 
@@ -453,6 +614,26 @@ nav {
     font-weight: bold;
     font-size: 1.4em;
     color: #f8a51e;
+}
+
+@media all and (max-width: 1200px) {
+    .bloc-links {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+    
+    .bloc-links > div {
+        width: 100%;
+        margin-bottom: 80px;
+    }
+    
+    .bloc-links img {
+        width: 250px;
+    }
 }
 
 h3 {
@@ -481,37 +662,72 @@ h3 {
     padding: 0;
 }
 
+#aside-livre div {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+#aside-livre img {
+    margin-bottom: 20px;
+}
+
 footer {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
-    height: 220px;
     color: white;
     background-color: #c6875a;
-    padding: 10px 20px;
+    padding: 10px 40px;
     font-size: 16px;
 }
 
+@media all and (max-width: 550px) {
+    footer {
+        padding: 10px 10px;
+    }
+}
+
 #footer-logos {
-    height: 80%;
-    width: 60%;
     margin: auto;
     display: -webkit-flex;
     display: flex;
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
+    -webkit-justify-content: center;
+    justify-content: center;
     -webkit-align-items: center;
     align-items: center;
+    -webkit-flex-flow: wrap;
+    flex-flow: wrap;
+    margin: 20px 0;
 }
 
 #footer-logos img {
     border-radius: 5px;
+    margin: 10px;
 }
 
 #footer-text {
     height: 20%;
     text-align: center;
+}
+
+#footer-text div:first-child {
+    margin-bottom: 5px;
+}
+
+#footer-text a {
+    color: white;
+    font-weight: normal;
+}
+
+#footer-text a:hover {
+    color: white!important;
 }
 
 #ancre-top {
@@ -525,12 +741,20 @@ footer {
     color: rgba(255, 255, 255, 0.8);
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.2s ease-in-out;
-    z-index: 2;
+    z-index: 100;
 }
 
 #ancre-top:hover {
     color: white!important;
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media all and (max-width: 1000px) {
+    #ancre-top {
+        bottom: 50px;
+        right: 15px;
+        padding: 15px;
+    }
 }
 
 .citation {
@@ -588,7 +812,12 @@ tr:nth-child(odd) {
 
 #themes ul li {
     font-weight: normal;
-    list-style: disc;
+    list-style: none;
+}
+
+#themes ul li:before {
+    content: '• ';
+    font-size: 1.4em;
 }
 
 #sophrologie-caldendrier ul li:before {
@@ -610,7 +839,7 @@ tr:nth-child(odd) {
 #list-color-rectangle-2 {
     height: 28px;
     width: 10px;
-    background-image: url('../img/yellow.jpg');
+    background-image: url('../img/rouge.jpg');
     margin: 0 10px 5px 0;
 }
 
@@ -624,13 +853,16 @@ tr:nth-child(odd) {
 #list-color-rectangle-4 {
     height: 28px;
     width: 10px;
-    background-image: url('../img/pink.jpg');
+    background-image: url('../img/rose.jpg');
     margin: 0 10px 5px 0;
 }
 
 #themes div:first-child {
+    display: -webkit-flex;
     display: flex;
+    -webkit-align-items: center;
     align-items: center;
+    -webkit-justify-content: center;
     justify-content: center;
 }
 
@@ -646,6 +878,10 @@ tr:nth-child(odd) {
 
 .bibliographie li {
     margin-bottom: 15px;
+}
+
+.bibliographie_list i {
+    margin-right: 4px;
 }
 
 .bibliographie_list ul li {
@@ -700,13 +936,18 @@ tr:nth-child(odd) {
     justify-content: center;
     -webkit-flex-direction: column;
     flex-direction: column;
-    background-color: #f8eec4;
+    background-color: #f2e3a6;
     border-radius: 100%;
     width: 300px;
     height: 300px;
     margin: auto;
     box-sizing: border-box;
     padding-top: 25px;
+}
+
+.coordonnees-bloc a {
+    color: inherit;
+    font-weight: inherit;
 }
 
 .coordonnees-bloc p {
@@ -718,8 +959,11 @@ tr:nth-child(odd) {
 }
 
 #maps {
+    display: -webkit-flex;
     display: flex;
+    -webkit-align-items: center;
     align-items: center;
+    -webkit-justify-content: space-around;
     justify-content: space-around;
     width: 100%;
     margin: auto;
@@ -734,12 +978,38 @@ tr:nth-child(odd) {
     border-radius: 10px;
 }
 
+@media all and (max-width: 1250px) {
+    #maps {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+    
+    #maps div:first-child {
+        margin-bottom: 20px;
+    }
+}
+
+@media all and (max-width: 450px) {
+    #maps div {
+        width: 100%;
+        height: 250px;
+    }
+}
+
 #map-37rue {
     border-radius: 10px;
     width: 400px;
     height: 250px;
     display: block;
     margin: 20px auto;
+}
+
+@media all and (max-width: 500px) {
+    #map-37rue {
+        width: 100%;
+        margin-left: -20px;
+        
+    }
 }
 
 #qui_suis_je {
@@ -788,4 +1058,84 @@ tr:nth-child(odd) {
 .close:hover {
     opacity: 0.8;
     cursor: pointer;
+}
+
+.image-float-left {
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 33%;
+}
+
+.image-float-right {
+    float: right;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 33%;
+}
+
+@media all and (max-width: 650px) {
+    #main {
+        padding: 40px 0;
+    }
+    
+    .image-float-left {
+        margin-right: 20px;
+        width: 50%;
+    }
+    
+    .image-float-right {
+        margin-left: 30px;
+        width: 50%;
+    }
+}
+
+#benefices-tree img {
+    width: 600px;
+}
+
+@media all and (max-width: 800px) {
+    #benefices-tree img {
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 350px) {
+    .image-top {
+        width: 100%;
+    }
+}
+
+#video-qui-suis-je {
+    width: 560px;
+    height: 315px;
+}
+
+@media all and (max-width: 700px) {
+    #video-qui-suis-je {
+        width: 100%;
+        height: 315px;
+    }
+}
+
+.medias iframe {
+    display: block;
+    margin: auto;
+}
+
+.medias ul {
+    padding-left: 20px;
+}
+
+@media all and (max-width: 750px) {
+    .medias iframe {
+        width: 100%; 
+    }
+    
+    .full-large {
+        margin-left: -40px;
+        margin-right: -20px;
+    }
 }

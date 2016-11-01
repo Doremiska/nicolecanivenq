@@ -54,8 +54,7 @@ class ContactType extends AbstractType
             ))
             ->add('content', TextareaType::class, array(
                 'constraints' => array(
-                    new NotBlank(array('message' => 'Vous devez remplir le contenu de votre message.')),
-                    new Length(array('min' => 10, 'minMessage' => 'Votre message est trop court.'))
+                    new NotBlank(array('message' => 'Vous devez remplir le contenu de votre message.'))
                 )
             ))
             ->add('envoyer', SubmitType::class)
