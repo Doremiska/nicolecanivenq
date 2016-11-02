@@ -29,7 +29,7 @@ function openNav() {
     document.getElementById("side-menu").style.width = "280px";
     document.getElementById("body-content").style.marginLeft = "280px";
     document.getElementById("body-content").style.marginRight = "-280px";
-    document.getElementById("cover").style.zIndex = "1";
+    document.getElementById("cover").style.zIndex = "1000";
     document.getElementById("cover").style.backgroundColor = "rgba(0, 0, 0, 0.6)";
 }
 
