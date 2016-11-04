@@ -10,7 +10,6 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\Regex;
 
 class ContactType extends AbstractType
@@ -24,14 +23,12 @@ class ContactType extends AbstractType
         $builder
             ->add('lastName', TextType::class, array(
                 'constraints' => array(
-                    new NotBlank(array('message' => 'Vous devez entrer votre prénom.')),
-                    new Length(array('max' => 255, 'maxMessage' => 'Ce champ ne peut pas excéder {{ limit }} caractères.'))
+                    new NotBlank(array('message' => 'Vous devez entrer votre prénom.'))
                 )
             ))
             ->add('firstName', TextType::class, array(
                 'constraints' => array(
-                    new NotBlank(array('message' => 'Vous devez entrer votre nom.')),
-                    new Length(array('max' => 255, 'maxMessage' => 'Ce champ ne peut pas excéder {{ limit }} caractères.'))
+                    new NotBlank(array('message' => 'Vous devez entrer votre nom.'))
                 )
             ))
             ->add('email', EmailType::class, array(
@@ -43,13 +40,12 @@ class ContactType extends AbstractType
             ->add('tel', TextType::class, array(
                 'constraints' => array(
                     new NotBlank(array('message' => 'Vous devez entrer votre numéro de téléphone.')),
-                    new Regex(array('pattern' => '/^\d{2}[[:blank:]]\d{2}[[:blank:]]\d{2}[[:blank:]]\d{2}[[:blank:]]\d{2}$/', 'message' => 'Veuillez rentrer un numéro de téléphone valide.'))
+                    new Regex(array('pattern' => '/^\d{2}[[:blank:]]\d{2}[[:blank:]]\d{2}[[:blank:]]\d{2}[[:blank:]]\d{2}$/', 'message' => 'Veuillez rentrer un numéro de téléphone valide (10 chiffres espacés : XX XX XX XX XX).'))
                 )
             ))
             ->add('subject', TextType::class, array(
                 'constraints' => array(
-                    new NotBlank(array('message' => "Vous devez remplir l'objet de votre message.")),
-                    new Length(array('max' => 255, 'maxMessage' => 'Ce champ ne peut pas excéder {{ limit }} caractères.'))
+                    new NotBlank(array('message' => "Vous devez remplir l'objet de votre message."))
                 )
             ))
             ->add('content', TextareaType::class, array(

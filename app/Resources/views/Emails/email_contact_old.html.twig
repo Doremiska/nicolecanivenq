@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <style type="text/css">
+            h2 {
+                font-size: inherit;
+                text-decoration: underline;
+            }
+            
+            ul {
+                list-style: none;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <p>
+            Cet email vous a été transmi via le formulaire de contact de votre site internet : www.nicolecanivenq.fr (vous pouvez y répondre directement pour contacter l'expéditeur). 
+        </p>
+
+        <p>
+            <h2>Coordonnées du contact :</h2>
+            <ul>
+                <li>Nom : {{ lastName }}</li>
+                <li>Prénom : {{ firstName }}</li>
+                <li>Téléphone : {{ tel }}</li>
+            </ul>
+        </p>
+        <br>
+        <p>
+            <h2>Message :</h2>
+            {{ content|nl2br }}
+        </p>
+    </body>
+</html>
+
+
+
+<html>
+    <head>
+        <style type="text/css">
+            h1 {
+                font-size: 20px;
+            }
+            
+            h2 {
+                font-size: inherit;
+                text-decoration: underline;
+            }
+            
+            ul {
+                list-style: none;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <p>
+            Cet email vous a été transmi via le formulaire dde prise de rendez-vous en ligne de votre site internet : www.nicolecanivenq.fr (vous pouvez y répondre directement pour contacter l'expéditeur).
+        </p>
+        
+        <h1>Demande de rendez-vous</h1>
+
+        <p>
+            <h2>Coordonnées du contact :</h2>
+            <ul>
+                <li>Nom : {{ lastName }}</li>
+                <li>Prénom : {{ firstName }}</li>
+                <li>Téléphone : {{ tel }}</li>
+            </ul>
+        </p>
+        
+        <p>
+            <h2>Activité souhaitée :</h2>
+            <ul>
+                {% for activity in appointmentFor %}
+                    <li>{{ activity }}</li>
+                {% endfor %}
+            </ul>
+        </p>
+        
+        <p>
+            <h2>Jours souhaités :</h2>
+            <ul>
+                {% for day in availableDay %}
+                    <li>{{ day }}</li>
+                {% endfor %}
+            </ul>
+        </p>
+        
+        <p>
+            <h2>Heures souhaitées :</h2>
+            {{ availableTime }}
+        </p>
+        
+        <p>
+            <h2>Message :</h2>
+            {{ content|nl2br }}
+        </p>
+    </body>
+</html>
+

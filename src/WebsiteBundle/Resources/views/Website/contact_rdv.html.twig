@@ -17,7 +17,7 @@
         <h2 id="formulaire_rdv">Demande de rendez-vous en ligne</h2>
 
         <p class="smaller">
-            Si vous désirez demander des renseignements, merci de vous rediriger vers le lien suivant : <a href="{{ path('website_contact') }}">formulaire de contact</a>.
+            Si vous désirez demander des renseignements, merci de vous rediriger vers le lien <span class="nowrap">suivant :</span> <a href="{{ path('website_contact') }}">formulaire de contact</a>.
         </p>
     </div>
     
@@ -34,7 +34,7 @@
         {% endfor %}
 
         <div id="form-contact-rdv">
-            {{ form_start(form, {'action': '#formulaire_contact'}) }}
+            {{ form_start(form, {'action': '#form-contact-rdv'}) }}
 
             {% if 
                 form_errors(form.content) is not empty or
@@ -48,7 +48,7 @@
             %}
                 <div class="alert alert-danger">
                     <div>
-                        <strong>Erreur ! </strong>Un champ du formulaire n'est pas valide.
+                        <strong>Erreur ! </strong>Un ou plusieurs champs du formulaire ne sont pas valides.
                     </div>
                     <div>
                         <span class="close">×</span>
@@ -104,7 +104,7 @@
             <br>
             <div class="form-group">
                 <div class="form-label bold">
-                    <span class="nowrap">{{ form_label(form.appointmentFor, "Rendez-vous pour une séance de :") }}</span>
+                    {{ form_label(form.appointmentFor, "Rendez-vous pour une séance de : *") }}
                 </div>
                 <div class="form-field">
                     {{ form_widget(form.appointmentFor, {'attr': {'class': 'form-widget-checkbox'}}) }}
@@ -115,7 +115,7 @@
             <br>
             <div class="form-group">
                 <div class="form-label bold">
-                    <span class="nowrap">{{ form_label(form.availableDay, "Quelles sont vos disponibilités ?") }}</span>
+                    {{ form_label(form.availableDay, "Quelles sont vos disponibilités ? (facultatif)") }}
                 </div>
                 <div class="form-field">
                     {{ form_widget(form.availableDay, {'attr': {'class': 'form-widget-checkbox'}}) }}
@@ -126,7 +126,7 @@
             <br>
             <div class="form-group">
                 <div class="form-label">
-                    <span class="nowrap">{{ form_label(form.availableTime, "Heures souhaitées *") }}</span>
+                    <span class="nowrap">{{ form_label(form.availableTime, "Heures souhaitées (facultatif)") }}</span>
                 </div>
                 <div class="form-field">
                     {{ form_widget(form.availableTime, {'attr': {'class': 'form-widget'}}) }}
@@ -137,7 +137,7 @@
             <br>
             <div class="form-group">
                 <div class="form-label">
-                    <span class="nowrap">{{ form_label(form.content, "Votre message") }}</span>
+                    <span class="nowrap">{{ form_label(form.content, "Votre message *") }}</span>
                 </div>
                 <div class="form-field">
                     {{ form_widget(form.content, {'attr': {'class': 'form-widget'}}) }}
@@ -161,4 +161,59 @@
     {{ parent() }}
     <script type="text/javascript" src="{{ asset('js/jquery.inputmask.bundle.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.buttonLoader.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.validate.js') }}"></script>
+    <script>
+        $.validator.addMethod( "tel", function(value, element) {
+            return this.optional(element) || /^\d{2} \d{2} \d{2} \d{2} \d{2}$/.test(value);
+        }, "Merci d'entrer un numéro de téléphone valide (10 chiffres espacés : XX XX XX XX XX)" );
+        
+        $.validator.methods.email = function(value, element) {
+            return this.optional(element) || /[a-z]+@[a-z]+\.[a-z]+/.test(value);
+        }
+
+        $("form").validate({
+            rules: {
+                "contact_rdv[lastName]": "required",
+                "contact_rdv[firstName]": "required",
+                "contact_rdv[email]": {
+                    required: true,
+                    email: true
+                },
+                "contact_rdv[tel]": {
+                    required: true,
+                    tel: true
+                },
+                "contact_rdv[appointmentFor][]": {
+                    required: true
+                },
+                "contact_rdv[content]": "required"
+            },
+            messages: {
+                "contact_rdv[lastName]": "Vous devez entrer votre nom.",
+                "contact_rdv[firstName]": "Vous devez entrer votre prénom.",
+                "contact_rdv[email]": {
+                    required: "Vous devez entrer votre adresse email.",
+                    email: "Veuillez rentrer une adresse email valide."
+                },
+                "contact_rdv[tel]": {
+                    required: "Vous devez entrer votre numéro de téléphone."
+                },
+                "contact_rdv[appointmentFor][]": "Vous devez sélectionner au moins une activité.",
+                "contact_rdv[content]": "Vous devez remplir le contenu de votre message."
+            },
+            errorPlacement: function(error, element) {
+                error.appendTo(element.parent().parent());
+            }
+            
+        });
+        
+
+        $('.has-spinner').click(function() {
+            var btn = $(this);
+            var form = $("form");
+            if (form.valid()) {
+                $(btn).buttonLoader('start');
+            }
+        });
+    </script>
 {% endblock %}

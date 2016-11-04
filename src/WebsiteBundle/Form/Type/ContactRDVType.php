@@ -26,14 +26,12 @@ class ContactRDVType extends AbstractType
         $builder
             ->add('firstName', TextType::class, array(
                 'constraints' => array(
-                    new NotBlank(array('message' => 'Vous devez entrer votre nom.')),
-                    new Length(array('max' => 255, 'maxMessage' => 'Ce champ ne peut pas excéder {{ limit }} caractères.'))
+                    new NotBlank(array('message' => 'Vous devez entrer votre nom.'))
                 )
             ))
             ->add('lastName', TextType::class, array(
                 'constraints' => array(
-                    new NotBlank(array('message' => 'Vous devez entrer votre prénom.')),
-                    new Length(array('max' => 255, 'maxMessage' => 'Ce champ ne peut pas excéder {{ limit }} caractères.'))
+                    new NotBlank(array('message' => 'Vous devez entrer votre prénom.'))
                 )
             ))
             ->add('email', EmailType::class, array(
@@ -45,7 +43,7 @@ class ContactRDVType extends AbstractType
             ->add('tel', TextType::class, array(
                 'constraints' => array(
                     new NotBlank(array('message' => 'Vous devez entrer votre numéro de téléphone.')),
-                    new Regex(array('pattern' => '/^\d{2}[[:blank:]]\d{2}[[:blank:]]\d{2}[[:blank:]]\d{2}[[:blank:]]\d{2}$/', 'message' => 'Veuillez rentrer un numéro de téléphone valide.'))
+                    new Regex(array('pattern' => '/^\d{2}[[:blank:]]\d{2}[[:blank:]]\d{2}[[:blank:]]\d{2}[[:blank:]]\d{2}$/', 'message' => 'Veuillez rentrer un numéro de téléphone valide (10 chiffres espacés : XX XX XX XX XX).'))
                 )
             ))
             ->add('appointmentFor', ChoiceType::class, array(
@@ -69,18 +67,15 @@ class ContactRDVType extends AbstractType
                 ),
                 'expanded' => true,
                 'multiple' => true,
-                'constraints' => array(
-                    new NotBlank(array('message' => "Merci de sélectionner les jours où vous êtes disponibles.")),
-                )
+                'required' => false
             ))
             ->add('availableTime', TextType::class, array(
-                'constraints' => array(
-                    new NotBlank(array('message' => "Merci d'indiquer les horaires auxquels vous êtes disponibles.")),
-                    new Length(array('max' => 255, 'maxMessage' => 'Ce champ ne peut pas excéder {{ limit }} caractères.'))
-                )
+                'required' => false
             ))
             ->add('content', TextareaType::class, array(
-                'required' => false
+                'constraints' => array(
+                    new NotBlank(array('message' => "Vous devez remplir le contenu de votre message."))
+                )
             ))
             ->add('envoyer', SubmitType::class)
         ;

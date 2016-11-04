@@ -16,7 +16,7 @@
         <h2>Contact</h2>
         
         <p>
-                Si vous désirez faire une demande de rendez-vous, merci de cliquer sur le lien suivant : <a href="{{ path('website_contact_rdv') }}">prendre un rendez-vous</a>.
+                Si vous désirez faire une demande de rendez-vous, merci de cliquer sur le lien <span class="nowrap">suivant :</span> <a href="{{ path('website_contact_rdv') }}">prendre un rendez-vous</a>.
             </p>
     </div>
     
@@ -73,7 +73,7 @@
                 %}
                     <div class="alert alert-danger">
                         <div>
-                            <strong>Erreur ! </strong>Un champ du formulaire n'est pas valide.
+                            <strong>Erreur ! </strong>Un ou plusieurs champs du formulaire ne sont pas valides.
                         </div>
                         <div>
                             <span class="close">×</span>
@@ -165,4 +165,54 @@
     {{ parent() }}
     <script type="text/javascript" src="{{ asset('js/jquery.inputmask.bundle.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.buttonLoader.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.validate.js') }}"></script> 
+    <script>
+        $.validator.addMethod( "tel", function(value, element) {
+            return this.optional(element) || /^\d{2} \d{2} \d{2} \d{2} \d{2}$/.test(value);
+        }, "Merci d'entrer un numéro de téléphone valide (10 chiffres espacés : XX XX XX XX XX)" );
+        
+        $.validator.methods.email = function(value, element) {
+            return this.optional(element) || /[a-z]+@[a-z]+\.[a-z]+/.test(value);
+        }
+
+        
+        $("form").validate({
+            rules: {
+                "contact[lastName]": "required",
+                "contact[firstName]": "required",
+                "contact[email]": {
+                    required: true,
+                    email: true
+                },
+                "contact[tel]": {
+                    required: true,
+                    tel: true
+                },
+                "contact[subject]": "required",
+                "contact[content]": "required"
+            },
+            messages: {
+                "contact[lastName]": "Vous devez entrer votre nom.",
+                "contact[firstName]": "Vous devez entrer votre prénom.",
+                "contact[email]": {
+                    required: "Vous devez entrer votre adresse email.",
+                    email: "Veuillez rentrer une adresse email valide."
+                },
+                "contact[tel]": {
+                    required: "Vous devez entrer votre numéro de téléphone."
+                },
+                "contact[subject]": "Vous devez remplir l'objet de votre message.",
+                "contact[content]": "Vous devez remplir le contenu de votre message."
+            }
+        });
+        
+
+        $('.has-spinner').click(function() {
+            var btn = $(this);
+            var form = $("form");
+            if (form.valid()) {
+                $(btn).buttonLoader('start');
+            }
+        });
+    </script>  
 {% endblock %}

@@ -11,14 +11,12 @@ body {
     font-size: 18px;
     line-height: 1.3;
     overflow-x: hidden;
-    width: 100%;
 }
 
 #body-content {
     -webkit-transition: margin 0.5s ease-in-out;
     transition: margin 0.5s ease-in-out;
     background-color: #fffbe3;
-    width: 100%;
 }
 
 #cover {
@@ -93,6 +91,7 @@ a {
     text-decoration: none;
     color: #e08810;
     font-weight: bold;
+    word-wrap: break-word;
 }
 
 a:hover {
@@ -396,10 +395,10 @@ nav {
 
 #side-menu ul span {
     position: absolute;
-    left: 200px;
+    left: 220px;
     top: 0;
     font-size: 1.3em;
-    padding: 14px 20px;
+    padding: 14px 18px;
     color: white;
     cursor: pointer;
 }
@@ -470,8 +469,8 @@ nav {
         height: 100%;
         -webkit-align-items: center;
         align-items: center;
-        padding-left: 40px;
-        padding-right: 20px;
+        padding-left: 30px;
+        padding-right: 10px;
         color: white;
         font-family: arial;
         font-size: 22px;
@@ -687,7 +686,6 @@ footer {
     background-color: #c6875a;
     padding: 10px 40px;
     font-size: 16px;
-    bottom: 0;
 }
 
 @media all and (max-width: 550px) {
@@ -715,7 +713,6 @@ footer {
 }
 
 #footer-text {
-    height: 20%;
     text-align: center;
 }
 
@@ -734,8 +731,8 @@ footer {
 
 #ancre-top {
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    bottom: 30px;
+    right: 30px;
     display: none;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.6);
@@ -929,6 +926,22 @@ tr:nth-child(odd) {
     width: 60%;
 }
 
+@media all and (max-width: 1000px) {
+    #contact-bloc {
+        -webkit-flex-direction: column; 
+        flex-direction: column; 
+    }
+
+    #contact-bloc >div:first-child {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    #contact-bloc > div:last-child {
+        width: 100%;
+    }
+}
+
 .coordonnees-bloc {
     display: -webkit-flex;
     display: flex;
@@ -956,8 +969,26 @@ tr:nth-child(odd) {
     margin: 10px auto;
 }
 
+@media all and (max-width: 400px) {
+    .coordonnees-bloc {
+        width: 250px;
+        height: 250px;
+        padding-top: 30px;
+    }
+
+    .coordonnees-bloc p {
+        margin: 7px auto;
+    }
+}
+
 #form-contact-rdv {
     margin: 20px 40px;
+}
+
+@media all and (max-width: 900px) {
+    #form-contact-rdv {
+        margin: 10px 0;
+    }
 }
 
 #maps {
@@ -1125,19 +1156,58 @@ tr:nth-child(odd) {
 .medias iframe {
     display: block;
     margin: auto;
+    width: 450px;
+    height: 250px;
 }
 
 .medias ul {
     padding-left: 20px;
 }
 
-@media all and (max-width: 750px) {
+.medias div {
+    text-align: center;
+    word-wrap: break-word;
+}
+
+@media all and (max-width: 550px) {
     .medias iframe {
-        width: 100%; 
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media all and (max-width: 1100px) {
+    #contact_rdv_availableDay label {
+        margin-right: 40px;
+    } 
+}
+
+@media all and (max-width: 800px) {
+    #contact_rdv_availableDay label {
+        margin-right: 20px;
+    } 
+}
+
+@media all and (max-width: 600px) {
+    #contact_rdv_availableDay, #contact_rdv_appointmentFor {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
     }
     
-    .full-large {
-        margin-left: -40px;
-        margin-right: -20px;
+    #contact_rdv_availableDay input, #contact_rdv_appointmentFor input {
+        position: absolute;
+        margin: 5px 0 0 0;
+        left: 60px;
     }
+    
+    #contact_rdv_availableDay label, #contact_rdv_appointmentFor label {
+        margin: 0 0 5px 65px;
+    }
+}
+
+.error-page img {
+    border-radius: 10px;
+    margin-bottom: 40px;
 }

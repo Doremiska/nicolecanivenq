@@ -1,0 +1,36 @@
+{% extends "::structure.html.twig" %}
+
+{% block metaTitle %}Erreur {{ status_code }}{% endblock %}
+
+{% block main %}
+    <div class="bloc error-page">
+        <h2>Problème de chargement de la page</h2>
+        
+        <div class="center">
+            <img class="image-top" width="300" src="{{ asset('img/error.jpg') }}" alt="Image d'erreur">
+        </div>
+    
+        <h4>Erreur {{ status_code }} : {{ status_text }}</h4>
+
+        <p>
+            Il se peut qu'il y ait eu une erreur lors de chargement de la page. Essayez d'actualiser la page actuelle pour voir si celle-ci revient. Vérifiez également que l'adresse dans votre barre de recherche est correcte.
+        </p>
+        <p>
+            Si cela ne fonctionne toujours pas, il est possible que cette page soit actuellement indisponible pour cause de maintenance. Dans ce cas-là, réessayez plus tard. 
+        </p>
+        <p>
+            Toutefois, si le problème persiste, il se peut qu'un lien soit cassé ou qu'il y ait un problème de communication avec le serveur (cas d'une erreur 500). Dans ce cas-là, merci de contacter le webmaster à l'adresse suivante :
+            <ul>
+                <li>
+                    <a href="mailto:lalandeartdesign@gmail.com" target="_blank">lalandeartdesign@gmail.com</a>
+                </li>
+            </ul>
+        </p>
+        <p>
+            Merci de communiquer le code et le message d'erreur ainsi que l'adresse indiquée dans votre barre de recherche. N'hésitez pas à transmettre toutes autres informations que vous jugerez utiles (quelle est la situation qui vous a mené à cette erreur : sur quel lien avez-vous cliqué, depuis quelle page, etc.).
+        </p>
+        <p>
+            Merci pour votre aide ! Nous allons tout mettre en œuvre pour essayer de remettre en service cette page le plus rapidement possible.
+        </p>
+    </div>
+{% endblock %}

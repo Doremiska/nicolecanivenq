@@ -56,6 +56,17 @@
     width: 48%; 
 }
 
+@media all and (max-width: 600px) {
+    .form-column-2 {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+    
+    .form-column-2 > div {
+        width: 100%; 
+    }
+}
+
 .form-field textarea {
     height: 200px;
     resize: vertical;
@@ -73,6 +84,17 @@ form li {
     color: #db5552;
     list-style: none;
     font-size: smaller;
+}
+
+label.error {
+    color: #db5552;
+    display: block;
+    font-size: smaller;
+    margin-top: 10px;
+}
+
+.form-widget.error {
+    box-shadow: 0 0 5px #db5552;
 }
 
 form ul {

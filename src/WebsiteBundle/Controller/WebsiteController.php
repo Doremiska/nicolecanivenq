@@ -65,8 +65,8 @@ class WebsiteController extends Controller
         
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
             $data = $form->getData();
-            $message = \Swift_Message::newInstance()->setSubject($data['subject'])->setFrom($data['email'])->setTo('nicole.canivenq@worldonline.fr')
-//            $message = \Swift_Message::newInstance()->setSubject($data['subject'])->setFrom($data['email'])->setTo('doremiska@gmail.com')
+//            $message = \Swift_Message::newInstance()->setSubject($data['subject'])->setFrom($data['email'])->setTo('nicole.canivenq@worldonline.fr')
+            $message = \Swift_Message::newInstance()->setSubject($data['subject'])->setFrom($data['email'])->setTo('doremiska@gmail.com')
                 ->setBody($this->renderView('Emails/email_contact.html.twig', array(
                         'firstName' => $data['firstName'],
                         'lastName' => $data['lastName'],
@@ -89,8 +89,8 @@ class WebsiteController extends Controller
         
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
             $data = $form->getData();
-            $message = \Swift_Message::newInstance()->setSubject("Demande de rendez-vous")->setFrom($data['email'])->setTo('nicole.canivenq@worldonline.fr')
-//            $message = \Swift_Message::newInstance()->setSubject("Demande de rendez-vous")->setFrom($data['email'])->setTo('doremiska@gmail.com')
+//            $message = \Swift_Message::newInstance()->setSubject("Demande de rendez-vous")->setFrom($data['email'])->setTo('nicole.canivenq@worldonline.fr')
+            $message = \Swift_Message::newInstance()->setSubject("Demande de rendez-vous")->setFrom($data['email'])->setTo('doremiska@gmail.com')
                 ->setBody($this->renderView('Emails/email_contact_rdv.html.twig', array(
                         'firstName' => $data['firstName'],
                         'lastName' => $data['lastName'],
