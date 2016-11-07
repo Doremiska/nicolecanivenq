@@ -54,7 +54,7 @@ class ContactRDVType extends AbstractType
                 'expanded' => true,
                 'multiple' => true,
                 'constraints' => array(
-                    new NotBlank(array('message' => "Vous devez sélectionner au moins une activité.")),
+                    new NotBlank(array('message' => "Vous devez sélectionner au moins un choix.")),
                 )
             ))
             ->add('availableDay', ChoiceType::class, array(

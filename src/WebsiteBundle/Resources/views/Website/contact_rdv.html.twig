@@ -9,7 +9,6 @@
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/form.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/buttonLoader.css') }}" type="text/css">
 {% endblock %}
 
 {% block main %}
@@ -160,7 +159,6 @@
 {% block javascripts %}
     {{ parent() }}
     <script type="text/javascript" src="{{ asset('js/jquery.inputmask.bundle.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery.buttonLoader.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.validate.js') }}"></script>
     <script>
         $.validator.addMethod( "tel", function(value, element) {
@@ -198,7 +196,7 @@
                 "contact_rdv[tel]": {
                     required: "Vous devez entrer votre numéro de téléphone."
                 },
-                "contact_rdv[appointmentFor][]": "Vous devez sélectionner au moins une activité.",
+                "contact_rdv[appointmentFor][]": "Vous devez sélectionner au moins un choix.",
                 "contact_rdv[content]": "Vous devez remplir le contenu de votre message."
             },
             errorPlacement: function(error, element) {
@@ -208,11 +206,11 @@
         });
         
 
-        $('.has-spinner').click(function() {
+        $('#contact_rdv_envoyer').click(function() {
             var btn = $(this);
             var form = $("form");
             if (form.valid()) {
-                $(btn).buttonLoader('start');
+                $(btn).html('<i class="fa fa-spinner fa-spin"></i> Envoi en cours');
             }
         });
     </script>

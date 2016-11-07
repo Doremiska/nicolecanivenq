@@ -8,7 +8,6 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/form.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/buttonLoader.css') }}" type="text/css">
 {% endblock %}
 
 {% block main %}
@@ -150,7 +149,7 @@
                 <p>* : champs obligatoires</p>
 
                 <div class="center">
-                    {{ form_widget(form.envoyer, {'label': 'Envoyer', 'attr': {'class': 'has-spinner'}}) }}
+                    {{ form_widget(form.envoyer, {'label': 'Envoyer'}) }}
                 </div>
 
                 {{ form_rest(form) }}
@@ -164,7 +163,6 @@
 {% block javascripts %}
     {{ parent() }}
     <script type="text/javascript" src="{{ asset('js/jquery.inputmask.bundle.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery.buttonLoader.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.validate.js') }}"></script> 
     <script>
         $.validator.addMethod( "tel", function(value, element) {
@@ -206,12 +204,12 @@
             }
         });
         
-
-        $('.has-spinner').click(function() {
+        
+        $('#contact_envoyer').click(function() {
             var btn = $(this);
             var form = $("form");
             if (form.valid()) {
-                $(btn).buttonLoader('start');
+                $(btn).html('<i class="fa fa-spinner fa-spin"></i> Envoi en cours');
             }
         });
     </script>  
