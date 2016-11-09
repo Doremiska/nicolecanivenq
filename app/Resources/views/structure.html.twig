@@ -42,7 +42,7 @@
                     <a {% block activeSideMenuSophrologieIndividuel %}{% endblock %} href="{{ path('website_sophrologie_individuel') }}">Séances individuelles</a>
                 </li>
                 <li>
-                    <a {% block activeSideMenuSophrologieGroupe %}{% endblock %} href="{{ path('website_sophrologie_groupe') }}">Séances de groupe</a>
+                    <a {% block activeSideMenuSophrologieGroupe %}{% endblock %} href="{{ path('website_sophrologie_groupe') }}">Séances en groupe</a>
                 </li>
                 <li>
                     <a {% block activeSideMenuSophrologieAteliersStages %}{% endblock %} href="{{ path('website_sophrologie_ateliers_stages') }}">Ateliers et stages</a>
@@ -57,13 +57,10 @@
             
             <ul id="side-menu-expand-soins-energetiques">
                 <li>
-                    <a href="">Sous-menu 1</a>
+                    <a {% block activeSideMenuSoinsEnergetiquesTherapies %}{% endblock %} href="{{ path('website_soins_energetiques_therapies') }}">Thérapies énergétiques</a>
                 </li>
                 <li>
-                    <a href="">Sous-menu 2</a>
-                </li>
-                <li>
-                    <a href="">Sous-menu 3</a>
+                    <a {% block activeSideMenuSoinsEnergetiquesChamaniques %}{% endblock %} href="{{ path('website_soins_energetiques_chamaniques') }}">Soin chamanique</a>
                 </li>
             </ul>
         </li>
@@ -138,7 +135,7 @@
                         <a {% block activeMenuSophrologieIndividuel %}{% endblock %} href="{{ path('website_sophrologie_individuel') }}">Séances individuelles</a>
                     </li>
                     <li>
-                        <a {% block activeMenuSophrologieGroupe %}{% endblock %} href="{{ path('website_sophrologie_groupe') }}">Séances de groupe</a>
+                        <a {% block activeMenuSophrologieGroupe %}{% endblock %} href="{{ path('website_sophrologie_groupe') }}">Séances en groupe</a>
                     </li>
                     <li>
                         <a {% block activeMenuSophrologieAteliersStages %}{% endblock %} href="{{ path('website_sophrologie_ateliers_stages') }}">Ateliers et stages</a>
@@ -150,13 +147,10 @@
                 
                 <ul>
                     <li>
-                        <a href="">Sous-menu 1</a>
+                        <a {% block activeMenuSoinsEnergetiquesTherapies %}{% endblock %} href="{{ path('website_soins_energetiques_therapies') }}">Thérapies énergétiques</a>
                     </li>
                     <li>
-                        <a href="">Sous-menu 2</a>
-                    </li>
-                    <li>
-                        <a href="">Sous-menu 3</a>
+                        <a {% block activeMenuSoinsEnergetiquesChamaniques %}{% endblock %} href="{{ path('website_soins_energetiques_chamaniques') }}">Soin chamanique</a>
                     </li>
                 </ul>
             </li>

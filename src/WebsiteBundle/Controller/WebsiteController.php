@@ -39,6 +39,16 @@ class WebsiteController extends Controller
         return $this->render('WebsiteBundle:Website:soins_energetiques.html.twig');
     }
     
+    public function soinsAuratherapieMagnetismeAction()
+    {
+        return $this->render('WebsiteBundle:Website:soins_ener_therapies.html.twig');
+    }
+    
+    public function soinsChamaniquesAction()
+    {
+        return $this->render('WebsiteBundle:Website:soins_ener_chamaniques.html.twig');
+    }
+    
     public function quiSuisJeAction()
     {
         return $this->render('WebsiteBundle:Website:qui_suis_je.html.twig');

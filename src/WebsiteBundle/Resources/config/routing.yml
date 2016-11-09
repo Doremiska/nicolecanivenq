@@ -11,7 +11,7 @@ website_sophrologie_individuel:
     defaults: { _controller: WebsiteBundle:Website:sophrologieIndividuel }
 
 website_sophrologie_groupe:
-    path:     /sophrologie/seances_de_groupe
+    path:     /sophrologie/seances_en_groupe
     defaults: { _controller: WebsiteBundle:Website:sophrologieGroupe }
 
 website_sophrologie_ateliers_stages:
@@ -22,12 +22,20 @@ website_soins_energetiques:
     path:     /soins_energetiques
     defaults: { _controller: WebsiteBundle:Website:soinsEnergetiques }
 
+website_soins_energetiques_therapies:
+    path:     /soins_energetiques/auratherapie_magnetisme
+    defaults: { _controller: WebsiteBundle:Website:soinsAuratherapieMagnetisme }
+
+website_soins_energetiques_chamaniques:
+    path:     /soins_energetiques/soin_chamanique
+    defaults: { _controller: WebsiteBundle:Website:soinsChamaniques }
+
 website_qui_suis_je:
     path:     /qui_suis_je
     defaults: { _controller: WebsiteBundle:Website:quiSuisJe }
 
 website_qui_ma_pratique:
-    path:     /qui_suis_je/ma_pratique_profesionnelle
+    path:     /qui_suis_je/ma_pratique
     defaults: { _controller: WebsiteBundle:Website:quiMaPratique }
 
 website_bibliographie:
