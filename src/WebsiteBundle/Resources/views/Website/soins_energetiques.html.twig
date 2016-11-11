@@ -6,36 +6,41 @@
 {% block activeMenuSoinsEnergetiques %}class="activeMenu"{% endblock %}
 
 {% block main %}
-    <div class="bloc center">
+    <div class="bloc">
         <h2>Soins énergétiques</h2>
         
-        <img id="img-soins-energetiques" src="{{ asset('img/soins-energetiques.jpg') }}" alt="Image de soins énergétiques">
+        <div class="center">
+            <img id="img-soins-energetiques" src="{{ asset('img/soins-energetiques.jpg') }}" alt="Image de soins énergétiques">        
+        </div>
         
         <p>
-            Donec in justo lorem. Praesent sed sem quis libero imperdiet hendrerit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus eget sollicitudin felis, vel facilisis ligula. Nunc luctus sit amet tellus dignissim rutrum. Cras ac tellus eget risus dignissim lacinia. Nulla eget tincidunt lacus. Phasellus sit amet nunc dictum lorem blandit tincidunt vitae id leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse tristique ultricies metus, eu rutrum lorem molestie eu. 
+            Les techniques de soins énergétiques reposent sur le principe que l’organisme est composé d’un réseau d’énergie vitale. Les traumatismes auxquels on a pu être confrontés vont alors créer des déséquilibres plus ou moins importants, des fuites d’énergies qui vont se manifester sur le plan physique (sous la forme de troubles divers), émotionnel ou mental. Les traumatismes peuvent être nôtres bien entendu (vécus dans l’enfance ou plus tard) mais aussi ceux de notre lignée quand ils n’ont pas été intégrés et dissous par nos ancêtres (déni, secrets de famille…). Ils n’en restent pas moins actifs en nous, même si nous n’en voulons pas.
+        </p>
+        <p>
+            Un soin énergétique est donc une approche holistique de la personne incluant les champs énergétiques subtils. Il travaille sur les 4 plans de <span class="nowrap">l’être :</span> physique par résonnance, mental, émotionnel et spirituel. 
+        </p>
+        <p>
+            Il consiste à purifier, nettoyer, libérer, harmoniser et rétablir la circulation de l’énergie vitale du corps. Parfois, on est amené à travailler sur la libération des nœuds familiaux et karmiques.
         </p>
     </div>
        
     <div class="bloc">
-        <h4>Lorem Ipsum</h4>
+        <h4 id="soins-comment">Comment ça <span class="nowrap">fonctionne ?</span></h4>
         
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo nisi, venenatis id mollis a, commodo et leo. Aliquam nec lectus ut odio auctor imperdiet at quis ligula. Maecenas accumsan libero ac magna vehicula, euismod luctus nibh condimentum. Nulla malesuada semper egestas. Vivamus lobortis vestibulum ligula vitae posuere. Ut eget lorem ut ex finibus dignissim. Ut quam mauris, feugiat ac est vitae, dictum faucibus turpis. Etiam vulputate vel odio at semper. Nullam vel nisi ut quam dictum ultrices quis vitae augue. Maecenas euismod volutpat aliquam. 
+            Notre corps est entouré d’une enveloppe énergétique appelée «aura». En passant mes mains au dessus de votre corps physique, je peux ressentir et percevoir les trous, les décalages de l’aura, les fuites, les chocs émotionnels et effectuer la réparation par l’Energie. Je suis simplement un canal dans ce type de soins. Lorsque qu’une personne subie un choc physique, psychologique, émotionnel ou une intervention chirurgicale, les différents corps (physique et subtils) enregistrent notre vécu et il est souvent nécessaire de retirer les mémoires pour se libérer et mieux vivre avec de plus en plus de conscience.
         </p>
         <p>
-            Quisque consequat egestas consectetur. Nullam porttitor libero vitae lacus posuere commodo. Phasellus a leo hendrerit, laoreet justo eu, laoreet enim. Nulla malesuada pulvinar justo id ornare. Morbi tempor, neque non vehicula venenatis, tortor justo euismod orci, nec facilisis ipsum massa ac felis. Cras euismod lorem et metus sollicitudin luctus. Curabitur sodales libero lectus, non iaculis dui laoreet nec. Maecenas dignissim elit a justo pretium porttitor. Praesent tellus ipsum, consequat quis lobortis at, semper porttitor mauris. Integer aliquam egestas viverra. Nullam dictum consequat massa quis aliquet. Duis et metus finibus, luctus nulla sed, bibendum ligula. Nulla non tortor dignissim, tincidunt purus a, pretium nunc. Nulla facilisi. Mauris at metus mollis, finibus leo at, mattis elit. Praesent tincidunt, arcu ut rhoncus varius, ex tortor placerat nisi, non placerat erat ligula et velit. 
+            Pour terminer le soin, je canalise et transmet l'Énergie au patient par imposition des mains pour activer le processus naturel de guérison.
         </p>
     </div>
         
-        
-        
-    
     <div class="bloc">   
         <div class="bloc-links-2">
             <div>
                 <div>
                     <img src="{{ asset('img/soins-energetiques.jpg') }}" alt="Thérapies énergétiques">
-                    <figcaption>Aura-thérapie et magnétisme</figcaption>
+                    <figcaption>Aurathérapie et magnétisme</figcaption>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla leo nisi, venenatis id mollis a, commodo et leo.</p>
                 </div>
                 <a class="button" href="{{ path('website_soins_energetiques_therapies') }}">Découvrir</a>
@@ -49,5 +54,11 @@
                 <a class="button" href="{{ path('website_soins_energetiques_chamaniques') }}">Découvrir</a>
             </div>    
         </div>
+    </div>
+    
+    <div class="bloc">
+        <p class="citation">
+            <span class="nowrap">« La</span> recherche moderne a apporté la preuve que l’être humain n’était pas uniquement constitué de matière, mais qu’il était également psychique et énergétique. De plus, l’astrophysique, la physique quantique et la recherche sur la pensée et les émotions ont permis de relier les différentes médecines modernes, traditionnelles et <span class="nowrap">énergétiques. »</span> Docteur <span class="nowrap">Luc Bodin</span>
+        </p>
     </div>
 {% endblock %}

@@ -740,9 +740,24 @@ footer {
     margin: 20px 0;
 }
 
+#footer-logos div {
+    margin: 4px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #footer-logos img {
     border-radius: 5px;
-    margin: 10px;
+    width: 80px;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+#footer-logos img:hover {
+    width: 100px;
 }
 
 #footer-text {
