@@ -113,7 +113,6 @@ a:hover {
 .button, form button {
     display: inline-block;
     padding: 10px 20px 10px 20px;
-    background-color: white;
     border-radius: 5px;
     -webkit-transition: background-color 0.15s ease-in-out;
     transition: background-color 0.15s ease-in-out;
@@ -125,6 +124,23 @@ a:hover {
 .button:hover, form button:hover {
     background-color: #C0DEAA;
     color: #314e24!important;
+}
+
+.button-add {
+    display: inline-block;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    -webkit-transition: background-color 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out;
+    background-color: transparent;
+    color: #f8a51e;
+    border: 1px solid #f8a51e;
+}
+
+.button-add:hover {
+    background-color: #fff8d2;
+    color: #d97a36!important;
+    border-color: #d97a36;
 }
 
 header {
@@ -744,8 +760,11 @@ footer {
     margin: 4px;
     width: 100px;
     height: 100px;
+    display: -webkit-flex;
     display: flex;
+    -webkit-align-items: center;
     align-items: center;
+    -webkit-justify-content: center;
     justify-content: center;
 }
 
@@ -1029,12 +1048,12 @@ tr:nth-child(odd) {
     }
 }
 
-#form-contact-rdv {
+#form-contact-rdv, .form-actus {
     margin: 20px 40px;
 }
 
 @media all and (max-width: 900px) {
-    #form-contact-rdv {
+    #form-contact-rdv, .form-actus {
         margin: 10px 0;
     }
 }
@@ -1257,5 +1276,34 @@ tr:nth-child(odd) {
 @media all and (max-width: 400px) {
     #img-soins-energetiques {
         width: 100%;
+    }
+}
+
+
+
+#navigation-buttons-advert {
+    position: relative;
+}
+
+#button-back {
+    position: absolute;
+}
+
+@media all and (max-width: 750px) {
+    #navigation-buttons-advert {
+        position: inherit;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    }
+
+    #button-back {
+        position: inherit;
+        margin-top: 20px;
     }
 }

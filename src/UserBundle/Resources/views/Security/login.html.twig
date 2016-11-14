@@ -1,0 +1,65 @@
+{% extends "::structure.html.twig" %}
+
+{% block metaTitle %}Identification{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}" type="text/css">
+{% endblock %}
+
+{% block main %}
+    <div class="bloc center">
+        <h2>Portail d'identification</h2>
+
+        {% if error %}
+            <div class="alert alert-danger">
+                    <div>
+                        <strong>Erreur ! </strong> Votre nom d'utilisateur et/ou mot de passe ne sont pas valide.
+                    </div>
+                    <div>
+                        <span class="close">×</span>
+                    </div>
+                </div>
+        {% endif %}
+
+        <form action="{{ path('login_check') }}" method="post">
+            {# Nom d'utilisateur #}
+            <div class="form-group">
+                <div class="form-label">
+                    <label for="username">Nom d'utilisateur</label>    
+                </div>
+                <div class="form-field" style="width:250px;margin:auto;">
+                    <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-widget">
+                </div>    
+            </div>
+
+
+            {# Mot de passe #}
+            <div class="form-group">
+                <div class="form-label">
+                    <label for="password">Mot de passe</label>    
+                </div>
+                <div class="form-field" style="width:250px;margin:auto;">
+                    <input type="password" id="password" name="_password" class="form-widget">
+                </div>    
+            </div>
+
+            <br>
+
+            <div class="center">
+                <button id="connect-button" type="submit">Connexion</button>
+            </div>
+
+        </form>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $('#connect-button').click(function() {
+            var btn = $(this);
+            $(btn).html('<i class="fa fa-spinner fa-spin"></i> Connexion en cours');
+        });
+    </script>
+{% endblock %}

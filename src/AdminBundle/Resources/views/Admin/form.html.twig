@@ -1,0 +1,160 @@
+{{ form_start(form) }}
+   
+{% if form_errors(form.title) is not empty or
+    form_errors(form.date) is not empty or
+    form_errors(form.timeStart) is not empty or
+    form_errors(form.timeEnd) is not empty or
+    form_errors(form.description) is not empty or
+    form_errors(form.price) is not empty or
+    form_errors(form.priceOff) is not empty or
+    form_errors(form.image.file) is not empty or
+    form_errors(form.pdf) is not empty or
+    form_errors(form.address) is not empty or
+    form_errors(form.addressOther) is not empty
+%}
+    <div class="alert alert-danger">
+        <div>
+            <strong>Erreur ! </strong>Un ou plusieurs champs du formulaire ne sont pas valides.
+        </div>
+        <div>
+            <span class="close">×</span>
+        </div>
+    </div>
+{% endif %}
+
+{{ form_errors(form) }}
+
+{# Titre #}
+<div class="form-group">
+    <div class="form-label">
+        {{ form_label(form.title, "Titre *") }}
+    </div>
+    <div class="form-field">
+        {{ form_widget(form.title, {'attr': {'class': 'form-widget'}}) }}
+    </div>
+    {{ form_errors(form.title) }}
+</div>
+
+{# Image #}
+<div class="form-group">
+    <div class="form-label">
+        {{ form_label(form.image.file, "Choisissez une image (facultatif)") }}
+    </div>
+    <div class="form-field">
+        {{ form_widget(form.image.file) }}
+    </div>
+    {{ form_errors(form.image.file) }}
+</div>
+
+{# Date #}
+<div class="form-group">
+    <div class="form-label">
+        {{ form_label(form.date, "Date *") }}
+    </div>
+    <div class="form-field">
+        {{ form_widget(form.date) }}
+    </div>
+    {{ form_errors(form.date) }}
+</div>
+
+{# Heure de début #}
+<div class="form-group">
+    <div class="form-label">
+        {{ form_label(form.timeStart, "Heure de début *") }}
+    </div>
+    <div class="form-field">
+        {{ form_widget(form.timeStart) }}
+    </div>
+    {{ form_errors(form.timeStart) }}
+</div>
+
+{# Heure de fin #}
+<div class="form-group">
+    <div class="form-label">
+        {{ form_label(form.timeEnd, "Heure de fin *") }}
+    </div>
+    <div class="form-field">
+        {{ form_widget(form.timeEnd) }}
+    </div>
+    {{ form_errors(form.timeEnd) }}
+</div>
+
+{# Description #}
+<div class="form-group">
+    <div class="form-label">
+        {{ form_label(form.description, "Description *") }}
+    </div>
+    <div class="form-field">
+        {{ form_widget(form.description, {'attr': {'class': 'form-widget'}}) }}
+    </div>
+    {{ form_errors(form.description) }}
+</div>
+
+
+{# Prix #}
+<div class="form-group">
+    <div class="form-label">
+        {{ form_label(form.price, "Prix (€) *") }}
+    </div>
+    <div class="form-field" style="width:100px;margin:auto;">
+        {{ form_widget(form.price, {'attr': {'class': 'form-widget'}}) }}
+    </div>
+    {{ form_errors(form.price) }}
+</div>
+
+{# Prix avantageux #}
+<div class="form-group">
+    <div class="form-label">
+        {{ form_label(form.priceOff, "Prix avantageux (€) *") }}
+    </div>
+    <div class="form-field" style="width:100px;margin:auto;">
+        {{ form_widget(form.priceOff, {'attr': {'class': 'form-widget'}}) }}
+    </div>
+    {{ form_errors(form.priceOff) }}
+</div>
+
+{# Adresse #}
+<div class="form-group">
+    <div class="form-label">
+        {{ form_label(form.address, "Adresse *") }}
+    </div>
+    <div class="form-field">
+        {{ form_widget(form.address) }}
+    </div>
+    {{ form_errors(form.address) }}
+</div>
+
+{# Nouvelle adresse #}
+<div class="form-group">
+    <div class="form-label">
+        {{ form_label(form.addressOther, "Nouvelle adresse *") }}
+    </div>
+    <div class="form-field">
+        {{ form_widget(form.addressOther) }}
+    </div>
+    {{ form_errors(form.addressOther) }}
+</div>
+
+{# Fiche d'inscription #}
+<div class="form-group">
+    <div class="form-label">
+        {{ form_label(form.pdf.file, "Fiche d'inscription (format pdf uniquement) *") }}
+    </div>
+    <div class="form-field">
+        {{ form_widget(form.pdf.file) }}
+    </div>
+    {{ form_errors(form.pdf.file) }}
+</div>
+
+{# Sauvegarder #}
+<div class="center">
+    <a href="{{ path('website_index') }}#calendar" class="btn-cancel">
+        Annuler
+    </a>
+    {{ form_widget(form.submit, {'attr': {'class': 'btn-submit'}, 'label': 'Envoyer'}) }}
+</div>
+
+
+
+{{ form_rest(form) }}
+{{ form_end(form) }}

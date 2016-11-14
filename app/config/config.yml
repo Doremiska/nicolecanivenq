@@ -3,6 +3,8 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@WebsiteBundle/Resources/config/services.yml" }
+    - { resource: "@UserBundle/Resources/config/services.yml" }
+    - { resource: "@AdminBundle/Resources/config/services.yml" }
 
 parameters:
     locale: fr

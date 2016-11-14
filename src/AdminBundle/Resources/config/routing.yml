@@ -1,0 +1,11 @@
+admin_add:
+    path:     /add
+    defaults: { _controller: AdminBundle:Admin:add }
+
+admin_edit:
+    path:     /edit
+    defaults: { _controller: AdminBundle:Admin:edit }
+
+admin_delete:
+    path:     /delete
+    defaults: { _controller: AdminBundle:Admin:delete }

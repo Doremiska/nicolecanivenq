@@ -1,0 +1,80 @@
+{% extends "::structure.html.twig" %}
+
+{% block metaTitle %}Sophrologie - Ateliers et stages - Actualités{% endblock %}
+{% block metaDescription %}{% endblock %}
+{% block activeSideMenuSophrologie %}class="activeSousMenu"{% endblock %}
+{% block activeSideMenuSophrologieAteliersStages %}class="activeMenu"{% endblock %}
+{% block activeMenuSophrologie %}class="activeSousMenu"{% endblock %}
+{% block activeMenuSophrologieAteliersStages %}class="activeMenu"{% endblock %}
+
+{% block granted %}{% endblock %}
+
+{% block main %}
+    {# Messages flash #}
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="bloc">
+            {% for message in app.session.flashbag.get('notice') %}
+                <div class="alert alert-success">
+                    <div>
+                        <strong>Message flash :</strong> {{ message }}
+                    </div>
+                    <div>
+                        <span class="close">×</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+       
+    <div class="bloc">
+        <h2>{{ advert.title }}</h2>
+        
+        {% if advert.image is not null %}
+            <div class="center">
+                <img class="image-top" style="border-radius:10px;max-width:300px;" src="{{ asset(advert.image.webPath) }}" alt="{{ advert.image.alt }}">
+            </div>
+        {% endif %}
+        <br>
+        <p class="center">
+            {{ advert.description }}
+        </p>
+    </div>
+    
+    <div class="bloc">
+        <h4>Informations pratiques et tarifs</h4>
+        
+        <ul class="space-list" style="padding-left:20px;">
+            <li><strong>Date :</strong> {{ advert.date|localizeddate('full', 'none', null, null, 'cccc dd LLLL yyyy')|capitalize }}</li>
+            <li><strong>Horaires :</strong> {{ advert.timeStart|date('H\\hi') }} à {{ advert.timeEnd|date('H\\hi') }}</li>
+            <li><strong>Prix :</strong> {{ advert.price }} € ou {{ advert.priceOff }} € si au moins deux ateliers sont réservés et payés (voir détail dans la fiche d'inscription)</li>
+            <li>
+                <strong>Lieu :</strong>
+                {% if advert.address.id != 3 %}
+                    {{ advert.address.street }}, {{ advert.address.postalCode }} {{ advert.address.town|upper }}
+                        </li>
+                    </ul>
+                    {% if advert.address.mapLink is not null %}
+                        <iframe style="display:block;margin:auto;max-width:400px;margin-top:25px;border-radius:10px;" src="{{ advert.address.mapLink }}" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    {% endif %}  
+                {% else %}
+                    {{ advert.addressOther.street }}, {{ advert.addressOther.postalCode }} {{ advert.addressOther.town|upper }}
+                        </li>
+                    </ul>
+                    {% if advert.addressOther.mapLink is not null %}
+                        <iframe style="display:block;margin:auto;max-width:400px;margin-top:25px;border-radius:10px;" src="{{ advert.addressOther.mapLink }}" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    {% endif %}    
+                {% endif %}
+    </div>
+    <br>
+    <div id="navigation-buttons-advert" class="bloc">
+        <a id="button-back" class="button-add" href="{{ path('website_sophrologie_ateliers_stages') }}#calendar">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            Retour
+        </a>
+        <div class="center">
+            <a class="button" href="{{ asset(advert.pdf.webPath) }}" download="Fiche d'inscription">Télécharger la fiche d'inscription</a>        
+        </div>
+    </div>
+    
+    
+{% endblock %}

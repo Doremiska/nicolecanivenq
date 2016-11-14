@@ -1,0 +1,20 @@
+{% extends "::structure.html.twig" %}
+
+{% block metaTitle %}Ajouter une actualité{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}" type="text/css">
+{% endblock %}
+
+{% block granted %}{% endblock %}
+
+{% block main %}
+    <div class="bloc">
+        <h2 id="actus-add">Ajouter une actualité</h2>
+        
+        <div class="form-actus center">
+            {{ include("AdminBundle:Admin:form.html.twig") }}
+        </div>
+    </div>
+{% endblock %}

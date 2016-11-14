@@ -207,6 +207,37 @@
         </div>
         
         <div id="main">
+            {% block granted %}
+                {% if is_granted('ROLE_ADMIN') %}
+                    <div class="bloc center">
+                        <p style="margin-bottom:40px;margin-top:0">
+                            Bonjour Nicole, bienvenue sur ton espace d'administration.
+                        </p>
+                        <p>    
+                            Celui-ci te permet d'ajouter, modifier et supprimer les actualités qui sont présentent dans la section<br>
+                            <a style="display:inline-block;margin-top:5px;" href="{{ path('website_sophrologie_ateliers_stages') }}#calendar">Sophrologie -> Ateliers et stages -> Le calendrier</a>
+                        </p>
+                        <p>
+                            Le lien ci-dessous te permet d'ajouter directement une actualité depuis n'importe quelle page :
+                        </p>
+                        <p style="margin-bottom:40px;">
+                            <a href="{{ path('admin_add') }}" class="button-add">
+                                Ajouter une actualité
+                            </a>
+                        </p>
+                        <p>
+                            Une fois les modifications effectuées, pense bien à te déconnecter via le bouton ci-dessous :
+                            <br>
+                            <br>
+                            <a id="disconnect-button" href="{{ path('logout') }}" class="button">
+                                Déconnexion
+                            </a>
+                        </p>
+                    </div>
+                {% endif %}
+            {% endblock %}
+                
+            
             {% block main %}
             
             {% endblock %}
@@ -283,6 +314,12 @@
     </script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+    <script type="text/javascript">
+        $('#disconnect-button').click(function() {
+            var btn = $(this);
+            $(btn).html('<i class="fa fa-spinner fa-spin"></i> Déconnexion en cours');
+        });
+    </script> 
 {% endblock %}
 </body>
 </html>

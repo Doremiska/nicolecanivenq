@@ -15,8 +15,96 @@
            <img class="image-top" style="border-radius:10px;" src="{{ asset('img/ateliers_et_stages.jpg') }}" alt="Image d'une salle pour des ateliers ou des stages">
         </div>
         <p>
-            J’anime des ateliers mensuels de <span class="nowrap">3 H</span> autour de divers thèmes à <span class="nowrap">l’institut Holos</span> à <span class="nowrap">St Georges d’Orques</span> et à la <span class="nowrap">Maison des Associations</span> à <span class="nowrap">St Jean de Védas.</span><br><br>
+            J’anime des ateliers mensuels de <span class="nowrap">3 H</span> autour de divers thèmes à <span class="nowrap">l’institut Holos</span> à <span class="nowrap">St Georges d’Orques</span> et à la <span class="nowrap">Maison des Associations</span> à <span class="nowrap">St Jean de Védas.</span>
+        </p>
+    </div>
+    
+    <div class="bloc">
+        <h4 id="calendar">Le calendrier</h4>
+        
+        {# Bouton ajouter une actualité + messages flash #}
+        {% if is_granted('ROLE_ADMIN') %}
+            {% for message in app.session.flashbag.get('notice') %}
+                <div class="alert alert-success">
+                    <div>
+                        <strong>Message flash :</strong> {{ message }}
+                    </div>
+                    <div>
+                        <span class="close">×</span>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="center">
+                <a href="{{ path('admin_add') }}" class="button-add">
+                    Ajouter une actualité
+                </a>
+            </div>
+        {% endif %}
+        
+        {# Actualités en base de données #}
+        {# St Georges d'Orques #}
+        <div id="sophrologie-caldendrier" class="center">
+            <h5>À <span class="nowrap">St Georges d'Orques :</span></h5>
+            {% if listAdverts1 is not empty %}
+                <ul class="space-list">
+                    {% for advert in listAdverts1 %}
+                        <li><a href="{{ path('website_actualites', {'id': advert.id}) }}">{{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} : "{{ advert.title }}"</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                Programme à venir.
+            {% endif %}
+        </div>
+           
+        {# St Jean de Védas #}
+        <div id="sophrologie-caldendrier" class="center">
+            <h5>À <span class="nowrap">St Jean de Védas :</span></h5>
+            {% if listAdverts2 is not empty %}
+                <ul class="space-list">
+                    {% for advert in listAdverts2 %}
+                        <li>{{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} : "{{ advert.title }}"</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                Programme à venir.
+            {% endif %}
+        </div>
+           
+        {# Autres lieux #}
+        {% if listAdverts3 is not empty %}
+            <div id="sophrologie-caldendrier" class="center">
+                <h5><span class="nowrap">Autres lieux :</span></h5>
+                <ul class="space-list">
+                    {% for advert in listAdverts3 %}
+                        <li>{{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} : "{{ advert.title }}"</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
             
+            
+            
+        <br>
+        <br>
+        {# Actualités en dur #}
+        <div class="center">
+            <h5>À <span class="nowrap">St Georges d'Orques :</span></h5>
+            <ul class="space-list">
+                <li>16/10/2016 : "Un temps pour soi, centrage et présence"</li>
+                <li>13/11/2016 : "Traverser la douleur et vivre l'instant présent"</li>
+                <li>04/12/2016 : "Libération émotionnelle"</li>
+            </ul>
+            
+            <h5>À <span class="nowrap">St Jean de Védas : </span></h5> 
+            Programme à venir.
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="bloc">
+        <h4>Informations pratiques et tarifs</h4>
+        
+        <p>
             <strong><span class="nowrap">Adresses :</span></strong>
             <ul>
                 <li>à <span class="nowrap">l’institut Holos :</span> <span class="nowrap">17 rue de la Cadelle</span> à <span class="nowrap">St Georges d’Orques,</span></li>
@@ -35,22 +123,6 @@
             <br>
             <strong>Tarif par <span class="nowrap">atelier :</span> </strong><span class="nowrap">50 euros.</span> Dégressif dès le 2ème atelier <span class="nowrap">réservé :</span> <span class="nowrap">45 euros l’un.</span>
         </p>
-    </div>
-    
-    <div class="bloc">
-        <h4>Le <span class="nowrap">calendrier :</span></h4>
-        <div id="sophrologie-caldendrier" class="center">
-            <h5>À <span class="nowrap">St Georges d'Orques :</span></h5>
-            <ul class="space-list">
-                <li>16/10/2016 : "Un temps pour soi, centrage et présence"</li>
-                <li>13/11/2016 : "Traverser la douleur et vivre l'instant présent"</li>
-                <li>04/12/2016 : "Libération émotionnelle"</li>
-            </ul>
-            
-            <h5>À <span class="nowrap">St Jean de Védas : </span></h5> 
-            Programme à venir.
-        </div>
-        
     </div>
     
     <div class="bloc">

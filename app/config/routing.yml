@@ -1,3 +1,18 @@
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /admin/
+
+login:
+    path: /login
+    defaults:
+        _controller: UserBundle:Security:login
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
+
 website:
     resource: "@WebsiteBundle/Resources/config/routing.yml"
     prefix:   /

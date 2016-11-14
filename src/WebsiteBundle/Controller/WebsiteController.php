@@ -31,7 +31,35 @@ class WebsiteController extends Controller
     
     public function sophrologieAteliersStagesAction()
     {
-        return $this->render('WebsiteBundle:Website:sophro_ateliers_stages.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $date = new \Datetime();
+        $date->modify('-1day');
+        
+        $listAdverts1 = $em->getRepository('AdminBundle:Advert')->getAdvertsAddress($date, 1);
+        $listAdverts2 = $em->getRepository('AdminBundle:Advert')->getAdvertsAddress($date, 2);
+        $listAdverts3 = $em->getRepository('AdminBundle:Advert')->getAdvertsAddress($date, 3);
+        
+        return $this->render('WebsiteBundle:Website:sophro_ateliers_stages.html.twig', array(
+            'listAdverts1' => $listAdverts1,
+            'listAdverts2' => $listAdverts2,
+            'listAdverts3' => $listAdverts3
+        ));
+    }
+    
+    public function actualitesAction($id) 
+    {
+        $em = $this->getDoctrine()->getManager();
+        
+        // On récupère l'article d'id $id
+        $advert = $em->getRepository('AdminBundle:Advert')->find($id);
+        
+        if ($advert === null) {
+            throw new NotFoundHttpException("L'actualité d'id ".$id." n'existe pas.");
+        }
+         
+        return $this->render('WebsiteBundle:Website:actualites.html.twig', array(
+            'advert' => $advert
+        ));
     }
     
     public function soinsEnergetiquesAction()

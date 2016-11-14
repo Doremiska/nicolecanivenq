@@ -18,6 +18,12 @@ website_sophrologie_ateliers_stages:
     path:     /sophrologie/ateliers_et_stages
     defaults: { _controller: WebsiteBundle:Website:sophrologieAteliersStages }
 
+website_actualites:
+    path:     /sophrologie/ateliers_et_stages/actualites/{id}
+    defaults: { _controller: WebsiteBundle:Website:actualites }
+    requirements:
+        id: \d+
+
 website_soins_energetiques:
     path:     /soins_energetiques
     defaults: { _controller: WebsiteBundle:Website:soinsEnergetiques }
