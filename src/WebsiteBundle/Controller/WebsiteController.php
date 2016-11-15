@@ -14,6 +14,20 @@ class WebsiteController extends Controller
         return $this->render('WebsiteBundle:Website:index.html.twig');
     }
     
+    public function sideBarAdvertsAction() 
+    {
+        $em = $this->getDoctrine()->getManager();
+        
+        $date = new \Datetime();
+        $date->modify('-1day');
+        
+        $listAdverts = $em->getRepository('AdminBundle:Advert')->getLastAdverts($date);
+        
+        return $this->render('WebsiteBundle:Website:inc_sideBarAdverts.html.twig', array(
+            'listAdverts' => $listAdverts
+        ));
+    }
+    
     public function sophrologieAction()
     {
         return $this->render('WebsiteBundle:Website:sophrologie.html.twig');

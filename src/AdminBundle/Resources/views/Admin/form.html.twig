@@ -10,7 +10,10 @@
     form_errors(form.image.file) is not empty or
     form_errors(form.pdf) is not empty or
     form_errors(form.address) is not empty or
-    form_errors(form.addressOther) is not empty
+    form_errors(form.addressOther.street) is not empty or
+    form_errors(form.addressOther.postalCode) is not empty or
+    form_errors(form.addressOther.town) is not empty or
+    form_errors(form.addressOther.mapLink) is not empty
 %}
     <div class="alert alert-danger">
         <div>
@@ -24,117 +27,161 @@
 
 {{ form_errors(form) }}
 
-{# Titre #}
-<div class="form-group">
-    <div class="form-label">
-        {{ form_label(form.title, "Titre *") }}
+<div class="center">
+    {# Titre #}
+    <div class="form-group">
+        <div class="form-label">
+            {{ form_label(form.title, "Titre *") }}
+        </div>
+        <div class="form-field">
+            {{ form_widget(form.title, {'attr': {'class': 'form-widget'}}) }}
+        </div>
+        {{ form_errors(form.title) }}
     </div>
-    <div class="form-field">
-        {{ form_widget(form.title, {'attr': {'class': 'form-widget'}}) }}
+
+    {# Image #}
+    <div class="form-group">
+        <div class="form-label">
+            {{ form_label(form.image.file, "Choisissez une image (facultatif)") }}
+        </div>
+        <div class="form-field">
+            {{ form_widget(form.image.file) }}
+        </div>
+        {{ form_errors(form.image.file) }}
     </div>
-    {{ form_errors(form.title) }}
+    <br>
+    {# Description #}
+    <div class="form-group">
+        <div class="form-label">
+            {{ form_label(form.description, "Description (facultatif)") }}
+        </div>
+        <div class="form-field">
+            {{ form_widget(form.description, {'attr': {'class': 'form-widget'}}) }}
+        </div>
+        {{ form_errors(form.description) }}
+    </div>    
+</div>
+<br>
+<div class="form-horizontal">
+    {# Date #}
+    <div class="form-group">
+        <div class="form-label">
+            {{ form_label(form.date, "Date *") }}
+        </div>
+        <div class="form-field">
+            {{ form_widget(form.date) }}
+        </div>
+        {{ form_errors(form.date) }}
+    </div>
+
+    {# Heure de début #}
+    <div class="form-group">
+        <div class="form-label">
+            {{ form_label(form.timeStart, "Heure de début *") }}
+        </div>
+        <div class="form-field">
+            {{ form_widget(form.timeStart) }}
+        </div>
+        {{ form_errors(form.timeStart) }}
+    </div>
+
+    {# Heure de fin #}
+    <div class="form-group">
+        <div class="form-label">
+            {{ form_label(form.timeEnd, "Heure de fin *") }}
+        </div>
+        <div class="form-field">
+            {{ form_widget(form.timeEnd) }}
+        </div>
+        {{ form_errors(form.timeEnd) }}
+    </div>
 </div>
 
-{# Image #}
-<div class="form-group">
-    <div class="form-label">
-        {{ form_label(form.image.file, "Choisissez une image (facultatif)") }}
+<div class="form-horizontal-center">
+    {# Prix #}
+    <div class="form-group">
+        <div class="form-label">
+            {{ form_label(form.price, "Prix (€) *") }}
+        </div>
+        <div class="form-field" style="width:70px;margin:auto;">
+            {{ form_widget(form.price, {'attr': {'class': 'form-widget'}}) }}
+        </div>
+        {{ form_errors(form.price) }}
     </div>
-    <div class="form-field">
-        {{ form_widget(form.image.file) }}
+
+    {# Prix avantageux #}
+    <div class="form-group">
+        <div class="form-label">
+            {{ form_label(form.priceOff, "Prix avantageux (€) *") }}
+        </div>
+        <div class="form-field" style="width:70px;margin:auto;">
+            {{ form_widget(form.priceOff, {'attr': {'class': 'form-widget'}}) }}
+        </div>
+        {{ form_errors(form.priceOff) }}
     </div>
-    {{ form_errors(form.image.file) }}
 </div>
-
-{# Date #}
-<div class="form-group">
-    <div class="form-label">
-        {{ form_label(form.date, "Date *") }}
-    </div>
-    <div class="form-field">
-        {{ form_widget(form.date) }}
-    </div>
-    {{ form_errors(form.date) }}
-</div>
-
-{# Heure de début #}
-<div class="form-group">
-    <div class="form-label">
-        {{ form_label(form.timeStart, "Heure de début *") }}
-    </div>
-    <div class="form-field">
-        {{ form_widget(form.timeStart) }}
-    </div>
-    {{ form_errors(form.timeStart) }}
-</div>
-
-{# Heure de fin #}
-<div class="form-group">
-    <div class="form-label">
-        {{ form_label(form.timeEnd, "Heure de fin *") }}
-    </div>
-    <div class="form-field">
-        {{ form_widget(form.timeEnd) }}
-    </div>
-    {{ form_errors(form.timeEnd) }}
-</div>
-
-{# Description #}
-<div class="form-group">
-    <div class="form-label">
-        {{ form_label(form.description, "Description *") }}
-    </div>
-    <div class="form-field">
-        {{ form_widget(form.description, {'attr': {'class': 'form-widget'}}) }}
-    </div>
-    {{ form_errors(form.description) }}
-</div>
-
-
-{# Prix #}
-<div class="form-group">
-    <div class="form-label">
-        {{ form_label(form.price, "Prix (€) *") }}
-    </div>
-    <div class="form-field" style="width:100px;margin:auto;">
-        {{ form_widget(form.price, {'attr': {'class': 'form-widget'}}) }}
-    </div>
-    {{ form_errors(form.price) }}
-</div>
-
-{# Prix avantageux #}
-<div class="form-group">
-    <div class="form-label">
-        {{ form_label(form.priceOff, "Prix avantageux (€) *") }}
-    </div>
-    <div class="form-field" style="width:100px;margin:auto;">
-        {{ form_widget(form.priceOff, {'attr': {'class': 'form-widget'}}) }}
-    </div>
-    {{ form_errors(form.priceOff) }}
-</div>
-
+<br>
 {# Adresse #}
 <div class="form-group">
     <div class="form-label">
         {{ form_label(form.address, "Adresse *") }}
     </div>
     <div class="form-field">
-        {{ form_widget(form.address) }}
+        {{ form_widget(form.address, {'attr': {'class': 'form-widget-choice'}}) }}
     </div>
     {{ form_errors(form.address) }}
 </div>
 
-{# Nouvelle adresse #}
-<div class="form-group">
-    <div class="form-label">
-        {{ form_label(form.addressOther, "Nouvelle adresse *") }}
-    </div>
-    <div class="form-field">
-        {{ form_widget(form.addressOther) }}
-    </div>
-    {{ form_errors(form.addressOther) }}
-</div>
+<div style="display:none;" id="otherAddress">
+    <div class="form-column-2">
+        {# Rue #}
+        <div class="form-group">
+            <div class="form-label">
+                {{ form_label(form.addressOther.street, "Rue *") }}
+            </div>
+            <div class="form-field">
+                {{ form_widget(form.addressOther.street, {'attr': {'class': 'form-widget'}}) }}
+            </div>
+            {{ form_errors(form.addressOther.street) }}
+        </div>
 
+        {# Code postal #}
+        <div class="form-group">
+            <div class="form-label">
+                {{ form_label(form.addressOther.postalCode, "Code postal *") }}
+            </div>
+            <div class="form-field">
+                {{ form_widget(form.addressOther.postalCode, {'attr': {'class': 'form-widget'}}) }}
+            </div>
+            {{ form_errors(form.addressOther.postalCode) }}
+        </div>    
+    </div>
+
+    <div class="form-column-2">
+        {# Ville #}
+        <div class="form-group">
+            <div class="form-label">
+                {{ form_label(form.addressOther.town, "Ville *") }}
+            </div>
+            <div class="form-field">
+                {{ form_widget(form.addressOther.town, {'attr': {'class': 'form-widget'}}) }}
+            </div>
+            {{ form_errors(form.addressOther.town) }}
+        </div>
+
+        {# Lien Google Map #}
+        <div class="form-group">
+            <div class="form-label">
+                {{ form_label(form.addressOther.mapLink, "Lien Google Map") }}
+            </div>
+            <div class="form-field">
+                {{ form_widget(form.addressOther.mapLink, {'attr': {'class': 'form-widget'}}) }}
+            </div>
+            {{ form_errors(form.addressOther.mapLink) }}
+        </div>    
+    </div>    
+</div>
+<br>
 {# Fiche d'inscription #}
 <div class="form-group">
     <div class="form-label">
@@ -145,13 +192,14 @@
     </div>
     {{ form_errors(form.pdf.file) }}
 </div>
-
+<br>
+<br>
 {# Sauvegarder #}
-<div class="center">
-    <a href="{{ path('website_index') }}#calendar" class="btn-cancel">
+<div id="button-admin-add-edit" class="bloc center">
+    <a href="{{ path('website_sophrologie_ateliers_stages') }}#calendar" class="button-add">
         Annuler
     </a>
-    {{ form_widget(form.submit, {'attr': {'class': 'btn-submit'}, 'label': 'Envoyer'}) }}
+    {{ form_widget(form.submit, {'attr': {'class': 'btn-submit'}, 'label': 'Publier'}) }}
 </div>
 
 

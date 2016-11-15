@@ -17,10 +17,19 @@ class AdvertRepository extends \Doctrine\ORM\EntityRepository
             ->leftJoin('a.pdf', 'p')->addSelect('p')
             ->leftJoin('a.address', 'ad')->addSelect('ad')
             ->leftJoin('a.addressOther', 'ado')->addSelect('ado')
-            ->where('a.date >= :date')
-            ->setParameter('date', $date)
-            ->andWhere('ad.id = :id')
-            ->setParameter('id', $id)
+            ->where('a.date >= :date')->setParameter('date', $date)
+            ->andWhere('ad.id = :id')->setParameter('id', $id)
+            ->orderBy('a.date', 'ASC')
+            ->getQuery()
+        ;
+        
+        return $query->getResult();
+    }
+    
+    public function getLastAdverts(\Datetime $date)
+    {
+        $query = $this->createQueryBuilder('a')
+            ->where('a.date >= :date')->setParameter('date', $date)
             ->orderBy('a.date', 'ASC')
             ->getQuery()
         ;

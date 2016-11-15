@@ -48,7 +48,7 @@
             {% if listAdverts1 is not empty %}
                 <ul class="space-list">
                     {% for advert in listAdverts1 %}
-                        <li><a href="{{ path('website_actualites', {'id': advert.id}) }}">{{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} : "{{ advert.title }}"</a></li>
+                        {{ include("WebsiteBundle:Website:inc_actualites_calendar.html.twig") }}
                     {% endfor %}
                 </ul>
             {% else %}
@@ -62,7 +62,7 @@
             {% if listAdverts2 is not empty %}
                 <ul class="space-list">
                     {% for advert in listAdverts2 %}
-                        <li>{{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} : "{{ advert.title }}"</li>
+                        {{ include("WebsiteBundle:Website:inc_actualites_calendar.html.twig") }}
                     {% endfor %}
                 </ul>
             {% else %}
@@ -76,28 +76,11 @@
                 <h5><span class="nowrap">Autres lieux :</span></h5>
                 <ul class="space-list">
                     {% for advert in listAdverts3 %}
-                        <li>{{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} : "{{ advert.title }}"</li>
+                        {{ include("WebsiteBundle:Website:inc_actualites_calendar.html.twig") }}
                     {% endfor %}
                 </ul>
             </div>
         {% endif %}
-            
-            
-            
-        <br>
-        <br>
-        {# Actualités en dur #}
-        <div class="center">
-            <h5>À <span class="nowrap">St Georges d'Orques :</span></h5>
-            <ul class="space-list">
-                <li>16/10/2016 : "Un temps pour soi, centrage et présence"</li>
-                <li>13/11/2016 : "Traverser la douleur et vivre l'instant présent"</li>
-                <li>04/12/2016 : "Libération émotionnelle"</li>
-            </ul>
-            
-            <h5>À <span class="nowrap">St Jean de Védas : </span></h5> 
-            Programme à venir.
-        </div>
     </div>
     <br>
     <br>

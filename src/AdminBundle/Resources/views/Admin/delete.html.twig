@@ -1,6 +1,6 @@
 {% extends "::structure.html.twig" %}
 
-{% block metaTitle %}Supprimer une annonce{% endblock %}
+{% block metaTitle %}Supprimer une actualité{% endblock %}
 
 {% block stylesheets %}
     {{ parent() }}
@@ -11,6 +11,36 @@
 
 {% block main %}
     <div class="bloc">
-       
+        <h2>Supprimer une actualité</h2>
+        
+        <p>
+            Êtes-vous certain de vouloir supprimer l'actualité : "{{ advert.title }}" ?
+        </p>
     </div>
+    
+    <div class="bloc">
+        {# On met l'id de l'annonce dans la route de l'action du formulaire #}
+        <form id="navigation-buttons-advert" action="{{ path('admin_delete', {'id': advert.id}) }}" method="post">
+            <a id="button-back" href="{{ path('website_actualites', {'id': advert.id}) }}" class="button-add">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                Retour à l'actualité
+            </a>
+            <div class="center">
+                <button id="delete-button" type="submit" class="button">Supprimer</button>           
+            </div>
+
+            {# Ceci va générer le champ CSRF #}
+            {{ form_rest(form) }}
+        </form>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $('#delete-button').click(function() {
+            var btn = $(this);
+            $(btn).html('<i class="fa fa-spinner fa-spin"></i> Suppression en cours');
+        });
+    </script>
 {% endblock %}

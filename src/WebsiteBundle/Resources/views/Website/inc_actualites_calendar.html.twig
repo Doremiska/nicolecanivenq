@@ -1,0 +1,9 @@
+<li>
+    <a style="font-weight:normal;" href="{{ path('website_actualites', {'id': advert.id}) }}">{{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} : "{{ advert.title }}"</a>
+    {% if is_granted('ROLE_ADMIN') %}
+        <span class="nowrap">
+            <a class="icon-edit" href="{{ path('admin_edit', {'id': advert.id}) }}" title="Éditer"><span class="glyphicon glyphicon-edit"></span></a>
+            <a class="icon-delete" href="{{ path('admin_delete', {'id': advert.id}) }}" title="Supprimer"><span class="glyphicon glyphicon-trash"></span></a>
+        </span>   
+    {% endif %}
+</li>

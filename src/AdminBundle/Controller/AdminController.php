@@ -53,7 +53,7 @@ class AdminController extends Controller
     public function deleteAction($id, Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $advert = $em->getRepository('WebsiteBundle:Advert')->find($id);
+        $advert = $em->getRepository('AdminBundle:Advert')->find($id);
         
         if ($advert === null) {
             throw new NotFoundHttpException("L'actualité d'id ".$id." n'existe pas.");

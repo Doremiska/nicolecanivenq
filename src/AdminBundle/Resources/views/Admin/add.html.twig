@@ -18,3 +18,32 @@
         </div>
     </div>
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/jquery.inputmask.bundle.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.validate.js') }}"></script> 
+    <script type="text/javascript">
+        $('#advert_submit').click(function() {
+            var btn = $(this);
+            var form = $("form");
+            if (form.valid()) {
+                $(btn).html('<i class="fa fa-spinner fa-spin"></i> Publication en cours');
+            }
+        });
+        
+        // Hidden Other Address
+        $(document).ready(function () {
+            $('#advert_address').click(function () {
+                if($('#advert_address_3').is(':checked')) {
+                    $('#otherAddress').fadeIn();
+                } else {
+                    $('#otherAddress').fadeOut();
+                }
+            });
+
+            $('#advert_address').trigger('click');
+        });
+    </script>
+      
+{% endblock %}

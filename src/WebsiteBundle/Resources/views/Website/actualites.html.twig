@@ -27,17 +27,20 @@
     {% endif %}
        
     <div class="bloc">
-        <h2>{{ advert.title }}</h2>
+        <h2><span class="nowrap">Atelier :</span> "{{ advert.title }}"</h2>
         
         {% if advert.image is not null %}
             <div class="center">
                 <img class="image-top" style="border-radius:10px;max-width:300px;" src="{{ asset(advert.image.webPath) }}" alt="{{ advert.image.alt }}">
             </div>
+            <br>
         {% endif %}
-        <br>
-        <p class="center">
-            {{ advert.description }}
-        </p>
+        
+        {% if advert.description is not null %}
+            <p class="center">
+                {{ advert.description }}
+            </p>
+        {% endif %}
     </div>
     
     <div class="bloc">
@@ -46,7 +49,7 @@
         <ul class="space-list" style="padding-left:20px;">
             <li><strong>Date :</strong> {{ advert.date|localizeddate('full', 'none', null, null, 'cccc dd LLLL yyyy')|capitalize }}</li>
             <li><strong>Horaires :</strong> {{ advert.timeStart|date('H\\hi') }} à {{ advert.timeEnd|date('H\\hi') }}</li>
-            <li><strong>Prix :</strong> {{ advert.price }} € ou {{ advert.priceOff }} € si au moins deux ateliers sont réservés et payés (voir détail dans la fiche d'inscription)</li>
+            <li><strong>Prix :</strong> {{ advert.price }} € ou {{ advert.priceOff }} € si au moins deux ateliers sont réservés et payés (voir détail dans le formulaire d'inscription)</li>
             <li>
                 <strong>Lieu :</strong>
                 {% if advert.address.id != 3 %}
@@ -72,9 +75,28 @@
             Retour
         </a>
         <div class="center">
-            <a class="button" href="{{ asset(advert.pdf.webPath) }}" download="Fiche d'inscription">Télécharger la fiche d'inscription</a>        
+            <a class="button" href="{{ asset(advert.pdf.webPath) }}" download="Formulaire d'inscription">Télécharger le formulaire d'inscription</a>        
         </div>
     </div>
+    
+    <div class="bloc">
+        <p>
+            Il vous faudra également joindre la <a href="{{ asset('files/fiche-d-anamnese.pdf') }}" title="Télécharger la fiche d'anamnèse" download="Fiche d'anamnèse">fiche d'anamnèse</a> à votre formulaire d'inscription.
+        </p>
+    </div>
+    
+    {% if is_granted('ROLE_ADMIN') %}
+        <div id="button-admin-navigation-actualites" class="bloc center">
+            <a class="button-add" href="{{ path('admin_edit', {'id': advert.id}) }}">
+                <span class="glyphicon glyphicon-edit"></span>
+                Éditer
+            </a>
+            <a class="button-add" href="{{ path('admin_delete', {'id': advert.id}) }}">
+                <span class="glyphicon glyphicon-trash"></span>
+                Supprimer
+            </a>
+        </div>
+    {% endif %}
     
     
 {% endblock %}

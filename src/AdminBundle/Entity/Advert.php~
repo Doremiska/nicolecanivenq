@@ -64,24 +64,17 @@ class Advert
      * @var string
      *
      * @ORM\Column(name="description", type="text")
-     * @Assert\NotBlank()
      */
     private $description;
 
     /**
-     * @var \stdClass
-     *
-     * @ORM\Column(name="image", type="object", nullable=true)
-     * @ORM\ManyToOne(targetEntity="AdminBundle\Entity\Image", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="AdminBundle\Entity\Image", cascade={"persist", "remove"})
      * @Assert\Valid()
      */
     private $image;
 
     /**
-     * @var \stdClass
-     *
-     * @ORM\Column(name="pdf", type="object", nullable=true)
-     * @ORM\ManyToOne(targetEntity="AdminBundle\Entity\Pdf", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="AdminBundle\Entity\Pdf", cascade={"persist", "remove"})
      * @Assert\Valid()
      */
     private $pdf;
@@ -114,10 +107,15 @@ class Advert
      */
     private $priceOff;
     
-    
     public function __construct() 
     {
         $this->date = new \Datetime();
+        $this->timeStart = new \Datetime();
+        $this->timeStart->setTime(10, 00);
+        $this->timeEnd = new \Datetime();
+        $this->timeEnd->setTime(13, 00);
+        $this->price = "50";
+        $this->priceOff = "45";
     }
 
 
@@ -371,4 +369,28 @@ class Advert
         return $this->address;
     }
     
+
+    /**
+     * Set addressOther
+     *
+     * @param \AdminBundle\Entity\AddressOther $addressOther
+     *
+     * @return Advert
+     */
+    public function setAddressOther(\AdminBundle\Entity\AddressOther $addressOther = null)
+    {
+        $this->addressOther = $addressOther;
+
+        return $this;
+    }
+
+    /**
+     * Get addressOther
+     *
+     * @return \AdminBundle\Entity\AddressOther
+     */
+    public function getAddressOther()
+    {
+        return $this->addressOther;
+    }
 }

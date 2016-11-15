@@ -63,8 +63,7 @@ class Advert
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text")
-     * @Assert\NotBlank()
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
@@ -233,7 +232,7 @@ class Advert
      *
      * @return Advert
      */
-    public function setDescription($description)
+    public function setDescription($description = null)
     {
         $this->description = $description;
 

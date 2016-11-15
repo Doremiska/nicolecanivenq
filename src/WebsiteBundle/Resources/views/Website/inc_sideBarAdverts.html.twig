@@ -1,0 +1,12 @@
+{% if listAdverts is not null %}
+    {% for advert in listAdverts %}
+        <p>
+            - <a style="font-weight:normal;" href="{{ path('website_actualites', {'id': advert.id}) }}">{{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} : "{{ advert.title }}"</a>
+        </p>
+    {% endfor %}
+{% else %}
+<p>
+    Programme à venir.
+</p>
+{% endif %}
+

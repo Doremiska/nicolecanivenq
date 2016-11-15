@@ -32,7 +32,7 @@ class AdvertType extends AbstractType
             ->add('date', DateType::class, array('invalid_message' => "La date n'est pas valide."))
             ->add('timeStart', TimeType::class, array('invalid_message' => "L'heure n'est pas valide."))
             ->add('timeEnd', TimeType::class, array('invalid_message' => "L'heure n'est pas valide."))
-            ->add('description', TextareaType::class)
+            ->add('description', TextareaType::class, array('required' => false))
             ->add('image', ImageType::class, array('required' => false))
             ->add('pdf', PdfType::class, array('required' => false)) 
             ->add('address', EntityType::class, array(
