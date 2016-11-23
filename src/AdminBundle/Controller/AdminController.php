@@ -25,7 +25,9 @@ class AdminController extends Controller
             
             $request->getSession()->getFlashBag()->add('notice', "Votre nouvelle actualité a bien été publiée.");
             
-            return $this->redirect($this->generateUrl('website_sophrologie_ateliers_stages').'#calendar');
+            return $this->render('WebsiteBundle:Website:actualites.html.twig', array(
+                'advert' => $advert
+            ));
         }
         
         return $this->render('AdminBundle:Admin:add.html.twig', array('form' => $form->createView()));

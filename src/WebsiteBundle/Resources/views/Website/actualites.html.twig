@@ -47,7 +47,7 @@
         
         {% if advert.description is not null %}
             <p class="center">
-                {{ advert.description }}
+                {{ advert.description|nl2br }}
             </p>
         {% endif %}
     </div>
