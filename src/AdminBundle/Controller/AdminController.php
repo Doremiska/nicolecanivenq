@@ -12,6 +12,9 @@ class AdminController extends Controller
 { 
     public function addAction(Request $request)
     {
+        // Suppression automatique des annonces de plus d'un mois
+        $this->container->get('admin.purger.advert')->purge(90);
+        
         $advert = new Advert;
         $form = $this->createForm(AdvertType::class, $advert);
         
@@ -44,7 +47,9 @@ class AdminController extends Controller
             
             $request->getSession()->getFlashBag()->add('notice', "L'actualité a bien été modifiée.");
             
-            return $this->redirect($this->generateUrl('website_sophrologie_ateliers_stages').'#calendar');
+            return $this->render('WebsiteBundle:Website:actualites.html.twig', array(
+                'advert' => $advert
+            ));
         }
         
         return $this->render('AdminBundle:Admin:edit.html.twig', array('form' => $form->createView()));

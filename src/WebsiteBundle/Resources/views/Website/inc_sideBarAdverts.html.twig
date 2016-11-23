@@ -1,12 +1,53 @@
-{% if listAdverts is not null %}
-    {% for advert in listAdverts %}
+<h5><a style="color:inherit;" href="{{ path('website_sophrologie_ateliers_stages') }}#calendar" title="Voir toutes les actualités de Sophrologie">Sophrologie</a></h5>
+{% if listAdvertsSophro is not empty %}
+    {% for advert in listAdvertsSophro %}
         <p>
-            - <a style="font-weight:normal;" href="{{ path('website_actualites', {'id': advert.id}) }}">{{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} : "{{ advert.title }}"</a>
+            - <a style="font-weight:normal;" href="{{ path('website_actualites', {'id': advert.id}) }}">
+            {% if advert.dateEnd is null %}
+                {{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} 
+            {% else %}
+                du {{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} au {{ advert.dateEnd|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} 
+            {% endif %}
+            : "{{ advert.title }}"</a>
         </p>
     {% endfor %}
 {% else %}
-<p>
-    Programme à venir.
-</p>
+    <p>
+        Programme à venir.
+    </p>
+{% endif %}
+
+<h5>Soins énergétiques</h5>
+{% if listAdvertsSoins is not empty %}
+    {% for advert in listAdvertsSoins %}
+        <p>
+            - <a style="font-weight:normal;" href="{{ path('website_actualites', {'id': advert.id}) }}">
+            {% if advert.dateEnd is null %}
+                {{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} 
+            {% else %}
+                du {{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} au {{ advert.dateEnd|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} 
+            {% endif %}
+            : "{{ advert.title }}"</a>
+        </p>
+    {% endfor %}
+{% else %}
+    <p>
+        Programme à venir.
+    </p>
+{% endif %}
+
+{% if listAdvertsAutre is not empty %}
+    <h5>Autre</h5>
+    {% for advert in listAdvertsAutre %}
+        <p>
+            - <a style="font-weight:normal;" href="{{ path('website_actualites', {'id': advert.id}) }}">
+            {% if advert.dateEnd is null %}
+                {{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} 
+            {% else %}
+                du {{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} au {{ advert.dateEnd|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} 
+            {% endif %}
+            : "{{ advert.title }}"</a>
+        </p>
+    {% endfor %}
 {% endif %}
 

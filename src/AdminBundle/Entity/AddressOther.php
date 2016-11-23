@@ -27,7 +27,7 @@ class AddressOther
      *
      * @ORM\Column(name="street", type="string", length=255)
      * @Assert\Length(max=255, maxMessage="Le titre ne peut pas contenir plus de {{ limit }} caractères.")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="Vous devez remplir la rue.")
      */
     private $street;
 
@@ -36,7 +36,7 @@ class AddressOther
      *
      * @ORM\Column(name="postalCode", type="string", length=255)
      * @Assert\Length(max=255, maxMessage="Le code postal ne peut pas contenir plus de {{ limit }} caractères.")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="Vous devez remplir le code postal.")
      */
     private $postalCode;
 
@@ -45,7 +45,7 @@ class AddressOther
      *
      * @ORM\Column(name="town", type="string", length=255)
      * @Assert\Length(max=255, maxMessage="La ville ne peut pas contenir plus de {{ limit }} caractères.")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="Vous devez remplir la ville.")
      */
     private $town;
 

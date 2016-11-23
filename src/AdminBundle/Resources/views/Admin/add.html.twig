@@ -24,6 +24,22 @@
     <script type="text/javascript" src="{{ asset('js/jquery.inputmask.bundle.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.validate.js') }}"></script> 
     <script type="text/javascript">
+        $("form").validate({
+            rules: {
+                "advert[title]": "required",
+                "advert[category]": "required",
+                "advert[address]": "required",
+            },
+            messages: {
+                "advert[title]": "Vous devez entrer un titre.",
+                "advert[category]": "Vous devez sélectionner une catégorie.",
+                "advert[address]": "Vous devez sélectionner une adresse.",
+            },
+            errorPlacement: function(error, element) {
+                error.appendTo(element.parent().parent());
+            }
+        });
+        
         $('#advert_submit').click(function() {
             var btn = $(this);
             var form = $("form");
@@ -47,3 +63,4 @@
     </script>
       
 {% endblock %}
+ 

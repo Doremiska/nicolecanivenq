@@ -1232,37 +1232,37 @@ tr:nth-child(odd) {
 }
 
 @media all and (max-width: 1100px) {
-    #contact_rdv_availableDay label, #advert_address label {
+    #contact_rdv_availableDay label, #advert_address label, #advert_category label {
         margin-right: 40px;
     } 
 }
 
 @media all and (max-width: 800px) {
-    #contact_rdv_availableDay label, #advert_address label {
+    #contact_rdv_availableDay label, #advert_address label, #advert_category label {
         margin-right: 20px;
     } 
 }
 
 @media all and (max-width: 600px) {
-    #contact_rdv_availableDay, #contact_rdv_appointmentFor, #advert_address {
+    #contact_rdv_availableDay, #contact_rdv_appointmentFor, #advert_address, #advert_category {
         -webkit-flex-direction: column;
         flex-direction: column;
         -webkit-align-items: flex-start;
         align-items: flex-start;
     }
     
-    #contact_rdv_availableDay input, #contact_rdv_appointmentFor input, #advert_address input {
+    #contact_rdv_availableDay input, #contact_rdv_appointmentFor input, #advert_address input, #advert_category input {
         position: absolute;
         margin: 5px 0 0 0;
         left: 60px;
     }
     
-    #contact_rdv_availableDay label, #contact_rdv_appointmentFor label, #advert_address label {
+    #contact_rdv_availableDay label, #contact_rdv_appointmentFor label, #advert_address label, #advert_category label {
         margin: 0 0 5px 65px;
     }
 }
 
-#advert_address input {
+#advert_address input, #advert_category input {
     margin-bottom: 5px;
 }
 
@@ -1303,7 +1303,7 @@ tr:nth-child(odd) {
     margin-right: 5px;
 }
 
-@media all and (max-width: 750px) {
+@media all and (max-width: 1500px) {
     #navigation-buttons-advert {
         position: inherit;
         display: -webkit-flex;
@@ -1373,5 +1373,3 @@ tr:nth-child(odd) {
         padding-right: 0;
     }
 }
-
-

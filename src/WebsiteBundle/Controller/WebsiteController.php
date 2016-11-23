@@ -21,10 +21,14 @@ class WebsiteController extends Controller
         $date = new \Datetime();
         $date->modify('-1day');
         
-        $listAdverts = $em->getRepository('AdminBundle:Advert')->getLastAdverts($date);
+        $listAdvertsAutre = $em->getRepository('AdminBundle:Advert')->getLastAdverts($date, "Autre");
+        $listAdvertsSophro = $em->getRepository('AdminBundle:Advert')->getLastAdvertsLimit($date, "Sophrologie", 2);
+        $listAdvertsSoins = $em->getRepository('AdminBundle:Advert')->getLastAdvertsLimit($date, "Soins énergétiques", 2);
         
         return $this->render('WebsiteBundle:Website:inc_sideBarAdverts.html.twig', array(
-            'listAdverts' => $listAdverts
+            'listAdvertsAutre' => $listAdvertsAutre,
+            'listAdvertsSophro' => $listAdvertsSophro,
+            'listAdvertsSoins' => $listAdvertsSoins
         ));
     }
     
@@ -49,9 +53,9 @@ class WebsiteController extends Controller
         $date = new \Datetime();
         $date->modify('-1day');
         
-        $listAdverts1 = $em->getRepository('AdminBundle:Advert')->getAdvertsAddress($date, 1);
-        $listAdverts2 = $em->getRepository('AdminBundle:Advert')->getAdvertsAddress($date, 2);
-        $listAdverts3 = $em->getRepository('AdminBundle:Advert')->getAdvertsAddress($date, 3);
+        $listAdverts1 = $em->getRepository('AdminBundle:Advert')->getAdvertsAddress($date, 1, "Sophrologie");
+        $listAdverts2 = $em->getRepository('AdminBundle:Advert')->getAdvertsAddress($date, 2, "Sophrologie");
+        $listAdverts3 = $em->getRepository('AdminBundle:Advert')->getAdvertsAddress($date, 3, "Sophrologie");
         
         return $this->render('WebsiteBundle:Website:sophro_ateliers_stages.html.twig', array(
             'listAdverts1' => $listAdverts1,

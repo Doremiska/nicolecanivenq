@@ -41,29 +41,35 @@ class Advert
      * @Assert\NotBlank()
      */
     private $date;
+    
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateEnd", type="date", nullable=true)
+     * @Assert\Date(message="La date n'est pas valide.")
+     */
+    private $dateEnd;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="timeStart", type="time")
+     * @ORM\Column(name="timeStart", type="time", nullable=true)
      * @Assert\Time(message="L'heure n'est pas valide.")
-     * @Assert\NotBlank()
      */
     private $timeStart;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="timeEnd", type="time")
+     * @ORM\Column(name="timeEnd", type="time", nullable=true)
      * @Assert\Time(message="L'heure n'est pas valide.")
-     * @Assert\NotBlank()
      */
     private $timeEnd;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
@@ -95,7 +101,6 @@ class Advert
      * @var int
      *
      * @ORM\Column(name="price", type="integer")
-     * @Assert\NotBlank()
      */
     private $price;
 
@@ -103,9 +108,15 @@ class Advert
      * @var int
      *
      * @ORM\Column(name="priceOff", type="integer")
-     * @Assert\NotBlank()
      */
     private $priceOff;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="AdminBundle\Entity\Category", cascade={"persist"})
+     * @Assert\Valid()
+     * @Assert\NotBlank()
+     */
+    private $category;
     
     public function __construct() 
     {
@@ -232,7 +243,7 @@ class Advert
      *
      * @return Advert
      */
-    public function setDescription($description)
+    public function setDescription($description = null)
     {
         $this->description = $description;
 

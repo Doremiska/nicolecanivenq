@@ -2,6 +2,7 @@
    
 {% if form_errors(form.title) is not empty or
     form_errors(form.date) is not empty or
+    form_errors(form.dateEnd) is not empty or
     form_errors(form.timeStart) is not empty or
     form_errors(form.timeEnd) is not empty or
     form_errors(form.description) is not empty or
@@ -13,7 +14,8 @@
     form_errors(form.addressOther.street) is not empty or
     form_errors(form.addressOther.postalCode) is not empty or
     form_errors(form.addressOther.town) is not empty or
-    form_errors(form.addressOther.mapLink) is not empty
+    form_errors(form.addressOther.mapLink) is not empty or
+    form_errors(form.category) is not empty
 %}
     <div class="alert alert-danger">
         <div>
@@ -38,11 +40,22 @@
         </div>
         {{ form_errors(form.title) }}
     </div>
-
+    <br>
+    {# Catégorie #}
+    <div class="form-group">
+        <div class="form-label">
+            {{ form_label(form.category, "Catégorie *") }}
+        </div>
+        <div class="form-field">
+            {{ form_widget(form.category, {'attr': {'class': 'form-widget-choice'}}) }}
+        </div>
+        {{ form_errors(form.category) }}
+    </div>
+    <br>
     {# Image #}
     <div class="form-group">
         <div class="form-label">
-            {{ form_label(form.image.file, "Choisissez une image (facultatif)") }}
+            {{ form_label(form.image.file, "Choisissez une image") }}
         </div>
         <div class="form-field">
             {{ form_widget(form.image.file) }}
@@ -53,7 +66,7 @@
     {# Description #}
     <div class="form-group">
         <div class="form-label">
-            {{ form_label(form.description, "Description (facultatif)") }}
+            {{ form_label(form.description, "Description") }}
         </div>
         <div class="form-field">
             {{ form_widget(form.description, {'attr': {'class': 'form-widget'}}) }}
@@ -62,7 +75,7 @@
     </div>    
 </div>
 <br>
-<div class="form-horizontal">
+<div class="form-horizontal-center">
     {# Date #}
     <div class="form-group">
         <div class="form-label">
@@ -73,7 +86,20 @@
         </div>
         {{ form_errors(form.date) }}
     </div>
+    
+    {# Date de fin #}
+    <div class="form-group">
+        <div class="form-label">
+            {{ form_label(form.dateEnd, "Date de fin") }}
+        </div>
+        <div class="form-field">
+            {{ form_widget(form.dateEnd) }}
+        </div>
+        {{ form_errors(form.dateEnd) }}
+    </div>
+</div>
 
+<div class="form-horizontal-center">
     {# Heure de début #}
     <div class="form-group">
         <div class="form-label">
@@ -101,7 +127,7 @@
     {# Prix #}
     <div class="form-group">
         <div class="form-label">
-            {{ form_label(form.price, "Prix (€) *") }}
+            {{ form_label(form.price, "Prix (€)") }}
         </div>
         <div class="form-field" style="width:70px;margin:auto;">
             {{ form_widget(form.price, {'attr': {'class': 'form-widget'}}) }}
@@ -112,7 +138,7 @@
     {# Prix avantageux #}
     <div class="form-group">
         <div class="form-label">
-            {{ form_label(form.priceOff, "Prix avantageux (€) *") }}
+            {{ form_label(form.priceOff, "Prix avantageux (€)") }}
         </div>
         <div class="form-field" style="width:70px;margin:auto;">
             {{ form_widget(form.priceOff, {'attr': {'class': 'form-widget'}}) }}
@@ -185,14 +211,15 @@
 {# Fiche d'inscription #}
 <div class="form-group">
     <div class="form-label">
-        {{ form_label(form.pdf.file, "Fiche d'inscription (format pdf uniquement) *") }}
+        {{ form_label(form.pdf.file, "Fiche d'inscription (format pdf uniquement)") }}
     </div>
     <div class="form-field">
         {{ form_widget(form.pdf.file) }}
     </div>
     {{ form_errors(form.pdf.file) }}
 </div>
-<br>
+
+<p style="margin-top:40px;">* : champs obligatoires</p>
 <br>
 {# Sauvegarder #}
 <div id="button-admin-add-edit" class="bloc center">
@@ -201,8 +228,6 @@
     </a>
     {{ form_widget(form.submit, {'attr': {'class': 'btn-submit'}, 'label': 'Publier'}) }}
 </div>
-
-
 
 {{ form_rest(form) }}
 {{ form_end(form) }}

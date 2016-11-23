@@ -2,6 +2,15 @@
 
 {% block metaTitle %}Sophrologie - Ateliers et stages - Actualités{% endblock %}
 {% block metaDescription %}{% endblock %}
+
+{% block metaOg %}
+    <meta property="og:url"           content="{{ path('website_actualites', {'id': advert.id}) }}" />
+	<meta property="og:type"          content="article" />
+	<meta property="og:title"         content="{{ advert.title }}" />
+	<meta property="og:description"   content="{{ advert.description }}" />
+	<meta property="og:image"         content="{{ advert.image }}" />
+{% endblock %}
+
 {% block activeSideMenuSophrologie %}class="activeSousMenu"{% endblock %}
 {% block activeSideMenuSophrologieAteliersStages %}class="activeMenu"{% endblock %}
 {% block activeMenuSophrologie %}class="activeSousMenu"{% endblock %}
@@ -27,7 +36,7 @@
     {% endif %}
        
     <div class="bloc">
-        <h2><span class="nowrap">Atelier :</span> "{{ advert.title }}"</h2>
+        <h2>{{ advert.title }}</h2>
         
         {% if advert.image is not null %}
             <div class="center">
@@ -47,43 +56,75 @@
         <h4>Informations pratiques et tarifs</h4>
         
         <ul class="space-list" style="padding-left:20px;">
-            <li><strong>Date :</strong> {{ advert.date|localizeddate('full', 'none', null, null, 'cccc dd LLLL yyyy')|capitalize }}</li>
-            <li><strong>Horaires :</strong> {{ advert.timeStart|date('H\\hi') }} à {{ advert.timeEnd|date('H\\hi') }}</li>
-            <li><strong>Prix :</strong> {{ advert.price }} € ou {{ advert.priceOff }} € si au moins deux ateliers sont réservés et payés (voir détail dans le formulaire d'inscription)</li>
-            <li>
-                <strong>Lieu :</strong>
-                {% if advert.address.id != 3 %}
-                    {{ advert.address.street }}, {{ advert.address.postalCode }} {{ advert.address.town|upper }}
-                        </li>
-                    </ul>
-                    {% if advert.address.mapLink is not null %}
-                        <iframe style="display:block;margin:auto;max-width:400px;margin-top:25px;border-radius:10px;" src="{{ advert.address.mapLink }}" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
-                    {% endif %}  
+            <li><strong>Date :</strong> 
+                {% if advert.dateEnd is null %}
+                    {{ advert.date|localizeddate('full', 'none', null, null, 'cccc dd LLLL yyyy')|capitalize }}
                 {% else %}
-                    {{ advert.addressOther.street }}, {{ advert.addressOther.postalCode }} {{ advert.addressOther.town|upper }}
-                        </li>
-                    </ul>
-                    {% if advert.addressOther.mapLink is not null %}
-                        <iframe style="display:block;margin:auto;max-width:400px;margin-top:25px;border-radius:10px;" src="{{ advert.addressOther.mapLink }}" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
-                    {% endif %}    
+                    du {{ advert.date|localizeddate('full', 'none', null, null, 'cccc dd LLLL yyyy')|capitalize }} au {{ advert.dateEnd|localizeddate('full', 'none', null, null, 'cccc dd LLLL yyyy')|capitalize }}
                 {% endif %}
+            </li>
+            <li><strong>Horaires :</strong> {{ advert.timeStart|date('H\\hi') }} à {{ advert.timeEnd|date('H\\hi') }}</li>
+            {% if advert.price is not null %}
+                <li><strong>Prix :</strong> {{ advert.price }} € ou {{ advert.priceOff }} € si au moins deux ateliers sont réservés et payés (voir détail dans le formulaire d'inscription)</li>
+            {% endif %}
+            
+            {% if advert.address.id != 3 %}
+                <li>
+                    <strong>Lieu :</strong>
+                    {{ advert.address.street }}, {{ advert.address.postalCode }} {{ advert.address.town|upper }}
+                </li></ul>
+                {% if advert.address.mapLink is not null %}
+                    <iframe style="display:block;margin:auto;max-width:400px;margin-top:25px;border-radius:10px;" src="{{ advert.address.mapLink|raw }}" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                {% endif %}  
+            {% elseif advert.addressOther is not null %}
+                <li>
+                    <strong>Lieu :</strong>
+                    {{ advert.addressOther.street }}, {{ advert.addressOther.postalCode }} {{ advert.addressOther.town|upper }}
+                </li></ul>
+                {% if advert.addressOther.mapLink is not null %}
+                    <iframe style="display:block;margin:auto;max-width:400px;margin-top:25px;border-radius:10px;" src="{{ advert.addressOther.mapLink|raw }}" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                {% endif %}
+            {% else %}
+                </ul>
+            {% endif %}
     </div>
-    <br>
-    <div id="navigation-buttons-advert" class="bloc">
-        <a id="button-back" class="button-add" href="{{ path('website_sophrologie_ateliers_stages') }}#calendar">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            Retour
-        </a>
-        <div class="center">
-            <a class="button" href="{{ asset(advert.pdf.webPath) }}" download="Formulaire d'inscription">Télécharger le formulaire d'inscription</a>        
-        </div>
+    <div class="center">
+        <div class="fb-share-button" data-href="{{ path('website_actualites', {'id': advert.id}) }}" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Partager</a></div>
     </div>
     
-    <div class="bloc">
-        <p>
-            Il vous faudra également joindre la <a href="{{ asset('files/fiche-d-anamnese.pdf') }}" title="Télécharger la fiche d'anamnèse" download="Fiche d'anamnèse">fiche d'anamnèse</a> à votre formulaire d'inscription.
-        </p>
+    <br>
+    <div id="navigation-buttons-advert" class="bloc">
+        {% if advert.category.name == "Sophrologie" %}
+            <a id="button-back" class="button-add" href="{{ path('website_sophrologie_ateliers_stages') }}#calendar">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                Retour au calendrier : Sophrologie
+            </a>
+        {% elseif advert.category.name == "Soins énergétiques" %}
+            <a id="button-back" class="button-add" href="{{ path('website_sophrologie_ateliers_stages') }}#calendar">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                Retour au calendrier : Soins énergétiques
+            </a>
+        {% else %}
+            <a id="button-back" class="button-add" href="{{ path('website_index') }}">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                Retour à la page d'accueil
+            </a>
+        {% endif %}
+        
+        {% if advert.pdf is not null %}
+            <div class="center">
+                <a class="button" href="{{ asset(advert.pdf.webPath) }}" download="Formulaire d'inscription">Télécharger le formulaire d'inscription</a>        
+            </div>
+        {% endif %}     
     </div>
+    
+    {% if advert.pdf is not null %}
+        <div class="bloc">
+            <p>
+                Merci de joindre également la <a href="{{ asset('files/fiche-d-anamnese.pdf') }}" title="Télécharger la fiche d'anamnèse" download="Fiche d'anamnèse">fiche d'anamnèse</a> complétée à votre formulaire d'inscription si c’est votre 1<sup>er</sup> atelier avec moi ou si des évènements importants sont à me signaler.
+            </p>
+        </div>
+    {% endif %}
     
     {% if is_granted('ROLE_ADMIN') %}
         <div id="button-admin-navigation-actualites" class="bloc center">

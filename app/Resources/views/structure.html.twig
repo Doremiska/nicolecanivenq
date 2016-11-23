@@ -15,6 +15,8 @@
         <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
     {% endblock %}
     
+    {% block metaOg %}{% endblock %}
+    
     <!-- Google Analytics -->
     <script>
     </script>
@@ -57,7 +59,7 @@
             
             <ul id="side-menu-expand-soins-energetiques">
                 <li>
-                    <a {% block activeSideMenuSoinsEnergetiquesTherapies %}{% endblock %} href="{{ path('website_soins_energetiques_therapies') }}">Thérapies énergétiques</a>
+                    <a {% block activeSideMenuSoinsEnergetiquesTherapies %}{% endblock %} href="{{ path('website_soins_energetiques_therapies') }}">Aurathérapie et magnétisme</a>
                 </li>
                 <li>
                     <a {% block activeSideMenuSoinsEnergetiquesChamaniques %}{% endblock %} href="{{ path('website_soins_energetiques_chamaniques') }}">Soin chamanique</a>
@@ -145,9 +147,9 @@
             <li>
                 <a {% block activeMenuSoinsEnergetiques %}{% endblock %} href="{{ path('website_soins_energetiques') }}">Soins énergétiques</a>
                 
-                <ul>
+                <ul style="width:260px;">
                     <li>
-                        <a {% block activeMenuSoinsEnergetiquesTherapies %}{% endblock %} href="{{ path('website_soins_energetiques_therapies') }}">Thérapies énergétiques</a>
+                        <a {% block activeMenuSoinsEnergetiquesTherapies %}{% endblock %} href="{{ path('website_soins_energetiques_therapies') }}">Aurathérapie et magnétisme</a>
                     </li>
                     <li>
                         <a {% block activeMenuSoinsEnergetiquesChamaniques %}{% endblock %} href="{{ path('website_soins_energetiques_chamaniques') }}">Soin chamanique</a>

@@ -10,15 +10,19 @@ namespace AdminBundle\Repository;
  */
 class AdvertRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function getAdvertsAddress(\Datetime $date, $id) 
+    public function getAdvertsAddress(\Datetime $date, $idAddress, $category) 
     {
         $query = $this->createQueryBuilder('a')
             ->leftJoin('a.image', 'i')->addSelect('i')
             ->leftJoin('a.pdf', 'p')->addSelect('p')
             ->leftJoin('a.address', 'ad')->addSelect('ad')
             ->leftJoin('a.addressOther', 'ado')->addSelect('ado')
-            ->where('a.date >= :date')->setParameter('date', $date)
-            ->andWhere('ad.id = :id')->setParameter('id', $id)
+            ->leftJoin('a.category', 'ac')->addSelect('ac')
+            ->where('a.dateEnd >= :date')
+            ->orWhere('a.date >= :date')
+            ->setParameter('date', $date)
+            ->andWhere('ad.id = :idAddress')->setParameter('idAddress', $idAddress)
+            ->andWhere('ac.name = :category')->setParameter('category', $category)
             ->orderBy('a.date', 'ASC')
             ->getQuery()
         ;
@@ -26,14 +30,47 @@ class AdvertRepository extends \Doctrine\ORM\EntityRepository
         return $query->getResult();
     }
     
-    public function getLastAdverts(\Datetime $date)
+    public function getLastAdverts(\Datetime $date, $category)
     {
         $query = $this->createQueryBuilder('a')
-            ->where('a.date >= :date')->setParameter('date', $date)
+            ->leftJoin('a.category', 'ac')->addSelect('ac')
+            ->where('a.dateEnd >= :date')
+            ->orWhere('a.date >= :date')
+            ->setParameter('date', $date)
+            ->andWhere('ac.name = :category')->setParameter('category', $category)
             ->orderBy('a.date', 'ASC')
             ->getQuery()
         ;
         
         return $query->getResult();
+    }
+    
+    public function getLastAdvertsLimit(\Datetime $date, $category, $limit)
+    {
+        $query = $this->createQueryBuilder('a')
+            ->leftJoin('a.category', 'ac')->addSelect('ac')
+            ->where('a.dateEnd >= :date')
+            ->orWhere('a.date >= :date')
+            ->setParameter('date', $date)
+            ->andWhere('ac.name = :category')->setParameter('category', $category)
+            ->orderBy('a.date', 'ASC')
+            ->setMaxResults($limit)
+            ->getQuery()
+        ;
+        
+        return $query->getResult();
+    }
+    
+    public function getAdvertsOlderThan(\Datetime $date) 
+    {
+        return $this->createQueryBuilder('a')
+            ->leftJoin('a.image', 'i')->addSelect('i')
+            ->leftJoin('a.pdf', 'p')->addSelect('p')
+            ->leftJoin('a.address', 'ad')->addSelect('ad')
+            ->leftJoin('a.addressOther', 'ado')->addSelect('ado')
+            ->leftJoin('a.category', 'c')->addSelect('c')
+            ->where('a.date < :date')->setParameter('date', $date)
+            ->getQuery()->getResult()
+        ;
     }
 }

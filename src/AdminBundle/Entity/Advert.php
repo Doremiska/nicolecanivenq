@@ -41,22 +41,28 @@ class Advert
      * @Assert\NotBlank()
      */
     private $date;
+    
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateEnd", type="date", nullable=true)
+     * @Assert\Date(message="La date n'est pas valide.")
+     */
+    private $dateEnd;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="timeStart", type="time")
+     * @ORM\Column(name="timeStart", type="time", nullable=true)
      * @Assert\Time(message="L'heure n'est pas valide.")
-     * @Assert\NotBlank()
      */
     private $timeStart;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="timeEnd", type="time")
+     * @ORM\Column(name="timeEnd", type="time", nullable=true)
      * @Assert\Time(message="L'heure n'est pas valide.")
-     * @Assert\NotBlank()
      */
     private $timeEnd;
 
@@ -94,18 +100,23 @@ class Advert
     /**
      * @var int
      *
-     * @ORM\Column(name="price", type="integer")
-     * @Assert\NotBlank()
+     * @ORM\Column(name="price", type="integer", nullable=true)
      */
     private $price;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="priceOff", type="integer")
-     * @Assert\NotBlank()
+     * @ORM\Column(name="priceOff", type="integer", nullable=true)
      */
     private $priceOff;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="AdminBundle\Entity\Category", cascade={"persist"})
+     * @Assert\Valid()
+     * @Assert\NotBlank()
+     */
+    private $category;
     
     public function __construct() 
     {
@@ -117,7 +128,6 @@ class Advert
         $this->price = "50";
         $this->priceOff = "45";
     }
-
 
     /**
      * Get id
@@ -360,7 +370,7 @@ class Advert
     }
 
     /**
-     * Get categories
+     * Get address
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -392,5 +402,53 @@ class Advert
     public function getAddressOther()
     {
         return $this->addressOther;
+    }
+
+    /**
+     * Set dateEnd
+     *
+     * @param \DateTime $dateEnd
+     *
+     * @return Advert
+     */
+    public function setDateEnd($dateEnd)
+    {
+        $this->dateEnd = $dateEnd;
+
+        return $this;
+    }
+
+    /**
+     * Get dateEnd
+     *
+     * @return \DateTime
+     */
+    public function getDateEnd()
+    {
+        return $this->dateEnd;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \AdminBundle\Entity\Category $category
+     *
+     * @return Advert
+     */
+    public function setCategory(\AdminBundle\Entity\Category $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \AdminBundle\Entity\Category
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 }
