@@ -8,7 +8,7 @@
 	<meta property="og:type"          content="article" />
 	<meta property="og:title"         content="{{ advert.title }}" />
 	<meta property="og:description"   content="{{ advert.description }}" />
-	<meta property="og:image"         content="{{ advert.image }}" />
+	<meta property="og:image"         content="{{ asset(advert.image.webPath) }}" />
 {% endblock %}
 
 {% block activeSideMenuSophrologie %}class="activeSousMenu"{% endblock %}
