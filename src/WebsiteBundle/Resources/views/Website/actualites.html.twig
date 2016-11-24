@@ -65,7 +65,12 @@
             </li>
             <li><strong>Horaires :</strong> {{ advert.timeStart|date('H\\hi') }} à {{ advert.timeEnd|date('H\\hi') }}</li>
             {% if advert.price is not null %}
-                <li><strong>Prix :</strong> {{ advert.price }} € ou {{ advert.priceOff }} € si au moins deux ateliers sont réservés et payés (voir détail dans le formulaire d'inscription)</li>
+                <li>
+                    <strong>Prix :</strong> {{ advert.price }} € 
+                    {% if advert.priceOff is not null %}
+                        ou {{ advert.priceOff }} € si au moins deux ateliers sont réservés et payés (voir détail dans le formulaire d'inscription)                    
+                    {% endif %}
+                </li>
             {% endif %}
             
             {% if advert.address.id != 3 %}
