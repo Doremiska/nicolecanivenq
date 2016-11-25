@@ -115,6 +115,12 @@ a:hover {
     white-space: nowrap;
 }
 
+.image {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 10px;
+}
+
 .button, form button {
     display: inline-block;
     padding: 10px 20px 10px 20px;
@@ -1257,13 +1263,12 @@ tr:nth-child(odd) {
     }
     
     #contact_rdv_availableDay input, #contact_rdv_appointmentFor input, #advert_address input, #advert_category input {
-        position: absolute;
-        margin: 5px 0 0 0;
-        left: 60px;
+        float: left;
+        margin: 5px 0 -17px 30px;
     }
     
     #contact_rdv_availableDay label, #contact_rdv_appointmentFor label, #advert_address label, #advert_category label {
-        margin: 0 0 5px 65px;
+        margin: 0 0 5px 55px;
     }
 }
 
