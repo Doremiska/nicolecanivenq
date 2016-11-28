@@ -632,7 +632,7 @@ nav {
 
 .bloc-links img {
     width: 250px;
-    height: 200px;
+    height: 166px;
     border-radius: 10px;
 }
 
@@ -972,7 +972,7 @@ tr:nth-child(odd) {
 
 .bibliographie img {
     border-radius: 10px;
-    margin-top: 25px;
+    margin: 10px 0;
 }
 
 #qui_suis_je a {
@@ -987,6 +987,8 @@ tr:nth-child(odd) {
 
 #information_entreprise {
     font-size: smaller;
+    margin-bottom: -30px;
+    margin-top: 50px;
 }
 
 #contact-bloc {
@@ -1179,6 +1181,14 @@ tr:nth-child(odd) {
     width: 33%;
 }
 
+.image-float-left-vertical {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 200px;
+}
+
 .image-float-right {
     float: right;
     margin-left: 30px;
@@ -1200,6 +1210,14 @@ tr:nth-child(odd) {
     .image-float-right {
         margin-left: 30px;
         width: 50%;
+    }
+}
+
+@media all and (max-width: 450px) {
+    .image-float-left-vertical {
+        display: block;
+        margin: auto;
+        float: inherit;
     }
 }
 
