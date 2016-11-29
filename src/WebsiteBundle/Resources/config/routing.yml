@@ -33,7 +33,7 @@ website_soins_energetiques_therapies:
     defaults: { _controller: WebsiteBundle:Website:soinsAuratherapieMagnetisme }
 
 website_soins_energetiques_chamaniques:
-    path:     /soins_energetiques/soin_chamanique
+    path:     /soins_energetiques/soins_chamaniques
     defaults: { _controller: WebsiteBundle:Website:soinsChamaniques }
 
 website_qui_suis_je:
