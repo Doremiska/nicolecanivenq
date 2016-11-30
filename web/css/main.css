@@ -121,6 +121,18 @@ a:hover {
     border-radius: 10px;
 }
 
+.image-400 {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.image-240 {
+    max-width: 240px;
+    width: 100%;
+    border-radius: 10px;
+}
+
 .button, form button {
     display: inline-block;
     padding: 10px 20px 10px 20px;
@@ -672,7 +684,7 @@ nav {
 }
 
 .bloc-links-2 img {
-    width: 300px;
+    width: 240px;
     border-radius: 10px;
 }
 
