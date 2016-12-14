@@ -651,7 +651,7 @@ nav {
 .bloc-links figcaption, .bloc-links-2 figcaption {
     margin-top: 15px;
     font-weight: bold;
-    font-size: 1.4em;
+    font-size: 1.35em;
     color: #f8a51e;
 }
 
@@ -849,7 +849,7 @@ footer {
 .citation {
     font-family: 'Indie Flower', cursive;
     text-align: center;
-    color: #9bbb59;
+    color: #8aaf3f;
     font-size: 1.4em;
 }
 

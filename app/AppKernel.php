@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new UserBundle\UserBundle(),
             new AdminBundle\AdminBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new Liip\UrlAutoConverterBundle\LiipUrlAutoConverterBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -8,7 +8,9 @@
 	<meta property="og:type"          content="article" />
 	<meta property="og:title"         content="{{ advert.title }}" />
 	<meta property="og:description"   content="{{ advert.description }}" />
-	<meta property="og:image"         content="{{ asset(advert.image.webPath) }}" />
+	{% if advert.image is not null %}
+        <meta property="og:image"         content="{{ asset(advert.image.webPath) }}" />  
+	{% endif %}
 {% endblock %}
 
 {% block activeSideMenuSophrologie %}class="activeSousMenu"{% endblock %}
@@ -47,7 +49,7 @@
         
         {% if advert.description is not null %}
             <p class="center">
-                {{ advert.description|nl2br }}
+                {{ advert.description|nl2br|converturls }}
             </p>
         {% endif %}
     </div>

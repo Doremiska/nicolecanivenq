@@ -25,7 +25,8 @@
         "robinherbots/jquery.inputmask": "^3.3",
         "twig/extensions": "^1.4",
         "doctrine/doctrine-migrations-bundle": "^1.0",
-        "coresphere/console-bundle": "^0.4.0"
+        "coresphere/console-bundle": "^0.4.0",
+        "liip/url-auto-converter-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

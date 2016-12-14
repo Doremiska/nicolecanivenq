@@ -63,3 +63,8 @@ doctrine_migrations:
     namespace: Application\Migrations
     table_name: migration_versions
     name: Application Migrations
+    
+liip_url_auto_converter:
+    linkclass:
+    target: _blank
+    debugmode: false
