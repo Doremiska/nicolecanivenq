@@ -22,8 +22,8 @@ class WebsiteController extends Controller
         $date->modify('-1day');
         
         $listAdvertsAutre = $em->getRepository('AdminBundle:Advert')->getLastAdverts($date, "Autre");
-        $listAdvertsSophro = $em->getRepository('AdminBundle:Advert')->getLastAdvertsLimit($date, "Sophrologie", 2);
-        $listAdvertsSoins = $em->getRepository('AdminBundle:Advert')->getLastAdvertsLimit($date, "Soins énergétiques", 2);
+        $listAdvertsSophro = $em->getRepository('AdminBundle:Advert')->getLastAdvertsLimit($date, "Sophrologie", 3);
+        $listAdvertsSoins = $em->getRepository('AdminBundle:Advert')->getLastAdvertsLimit($date, "Soins énergétiques", 3);
         
         return $this->render('WebsiteBundle:Website:inc_sideBarAdverts.html.twig', array(
             'listAdvertsAutre' => $listAdvertsAutre,

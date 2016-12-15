@@ -1,5 +1,5 @@
-<h5><a style="color:inherit;" href="{{ path('website_sophrologie_ateliers_stages') }}#calendar" title="Voir toutes les actualités de Sophrologie">Sophrologie</a></h5>
 {% if listAdvertsSophro is not empty %}
+    <h5><a style="color:inherit;" href="{{ path('website_sophrologie_ateliers_stages') }}#calendar" title="Voir toutes les actualités de Sophrologie">Sophrologie</a></h5>
     {% for advert in listAdvertsSophro %}
         <p>
             - <a style="font-weight:normal;" href="{{ path('website_actualites', {'id': advert.id}) }}">
@@ -11,14 +11,10 @@
             : "{{ advert.title }}"</a>
         </p>
     {% endfor %}
-{% else %}
-    <p>
-        Programme à venir.
-    </p>
 {% endif %}
 
-<h5>Soins énergétiques</h5>
 {% if listAdvertsSoins is not empty %}
+    <h5>Soins énergétiques</h5>
     {% for advert in listAdvertsSoins %}
         <p>
             - <a style="font-weight:normal;" href="{{ path('website_actualites', {'id': advert.id}) }}">
@@ -30,10 +26,6 @@
             : "{{ advert.title }}"</a>
         </p>
     {% endfor %}
-{% else %}
-    <p>
-        Programme à venir.
-    </p>
 {% endif %}
 
 {% if listAdvertsAutre is not empty %}
