@@ -8,7 +8,7 @@
             {% else %}
                 du {{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} au {{ advert.dateEnd|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} 
             {% endif %}
-            : "{{ advert.title }}"</a>
+            : {{ advert.title }}</a>
         </p>
     {% endfor %}
 {% endif %}
@@ -23,7 +23,7 @@
             {% else %}
                 du {{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} au {{ advert.dateEnd|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} 
             {% endif %}
-            : "{{ advert.title }}"</a>
+            : {{ advert.title }}</a>
         </p>
     {% endfor %}
 {% endif %}
@@ -38,7 +38,7 @@
             {% else %}
                 du {{ advert.date|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} au {{ advert.dateEnd|localizeddate('full', 'none', null, null, 'dd/MM/yyyy') }} 
             {% endif %}
-            : "{{ advert.title }}"</a>
+            : {{ advert.title }}</a>
         </p>
     {% endfor %}
 {% endif %}
