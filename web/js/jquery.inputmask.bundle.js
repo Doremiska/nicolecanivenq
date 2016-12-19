@@ -2640,7 +2640,7 @@ $(document).ready(function(){
         "placeholder" : " ", 
         showMaskOnFocus: false, 
         showMaskOnHover: false,
-        "oncomplete": function(){ $("input").focus(); }
+        "oncomplete": function(){  }
     });
 });
 
