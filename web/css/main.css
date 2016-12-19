@@ -169,10 +169,22 @@ a:hover {
 header {
     width: 100%;
     height: 270px;
-    background-image: url(../img/header.jpg);
+    background-image: url(../img/header_large.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+@media all and (max-width: 1296px) {
+    header {
+        background-image: url(../img/header_medium.jpg);
+    }
+}
+
+@media all and (max-width: 650px) {
+    header {
+        background-image: url(../img/header_small.jpg);
+    }
 }
 
 #header-content-small-screen {
@@ -636,7 +648,7 @@ nav {
     display: flex;
     -webkit-align-items: center;
     align-items: center;
-    -webkit-justify-content: ;
+    -webkit-justify-content: space-between;
     justify-content: space-between;
     -webkit-flex-direction: column;
     flex-direction: column;  
@@ -1333,14 +1345,15 @@ tr:nth-child(odd) {
     position: absolute;
     display: flex;
     display: -webkit-flex;
-    -webkit-align-items: flex;
-    align-items: flex;
-    -webkit-justify-content: flex;
-    justify-content: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
 }
 
 #button-back span {
     margin-right: 5px;
+    margin-bottom: 4px;
 }
 
 @media all and (max-width: 1500px) {
