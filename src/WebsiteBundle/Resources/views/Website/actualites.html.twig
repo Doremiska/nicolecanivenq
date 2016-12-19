@@ -107,9 +107,13 @@
                 Retour au calendrier : Sophrologie
             </a>
         {% elseif advert.category.name == "Soins énergétiques" %}
-            <a id="button-back" class="button-add" href="{{ path('website_sophrologie_ateliers_stages') }}#calendar">
+            {#<a id="button-back" class="button-add" href="{{ path('website_sophrologie_ateliers_stages') }}#calendar">#}
+                {#<span class="glyphicon glyphicon-chevron-left"></span>#}
+                {#Retour au calendrier : Soins énergétiques#}
+            {#</a>#}
+            <a id="button-back" class="button-add" href="{{ path('website_index') }}">
                 <span class="glyphicon glyphicon-chevron-left"></span>
-                Retour au calendrier : Soins énergétiques
+                Retour à la page d'accueil
             </a>
         {% else %}
             <a id="button-back" class="button-add" href="{{ path('website_index') }}">
