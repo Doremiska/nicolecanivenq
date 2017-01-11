@@ -1426,3 +1426,17 @@ tr:nth-child(odd) {
         padding-right: 0;
     }
 }
+
+.paypal table {
+    border-collapse: inherit;
+    border: inherit;
+    margin-bottom: 15px;
+}
+
+.paypal tr {
+    background-color: inherit;
+}
+
+.paypal td {
+    padding: inherit;
+}
