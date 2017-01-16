@@ -111,6 +111,10 @@
                 </ul> 
             </li>
             <br>
+            <p>
+                Toute séance annulée moins de 24H à l'avance est due. Règlement par chèque ou espèces.
+            </p>
+            <br>
             <li>
                 <span class="underline">À distance</span> ou par webcam <span class="nowrap">(Skype) :</span><br>
                 <p>
@@ -125,15 +129,29 @@
                     Après la séance, il est recommandé de <strong>boire davantage d'eau</strong> pour aider à évacuer les toxines libérées et faciliter l'intégration du soin.
                 </p>
 
-  
-                {#<div class="center paypal"></div>#}
+                <p>
+                    Vous pouvez ici commander vos séances :
+                </p>
+
+                <div class="center paypal">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="2JT6R4T4J2U4Y">
+                        <table>
+                            <tr><td><input type="hidden" name="on0" value="Nombre de seances">Nombre de séances</td></tr><tr><td><select name="os0">
+                                        <option value="1 seance">1 séance 50,00 €</option>
+                                        <option value="2 seances">2 séances 90,00 €</option>
+                                        <option value="3 seances">3 séances 130,00 €</option>
+                                    </select> </td></tr>
+                        </table>
+                        <input type="hidden" name="currency_code" value="EUR">
+                        <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+                </div>
 
             </li>
         </ul>
-        <br>
-        <p>
-            Toute séance annulée moins de 24H à l'avance est due. Règlement par chèque ou espèces.
-        </p>
     </div>
     
     <div class="bloc">
