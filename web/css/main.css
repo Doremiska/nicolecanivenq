@@ -1356,7 +1356,7 @@ tr:nth-child(odd) {
     margin-bottom: 4px;
 }
 
-@media all and (max-width: 1500px) {
+@media all and (max-width: 1650px) {
     #navigation-buttons-advert {
         position: inherit;
         display: -webkit-flex;
